@@ -1,8 +1,4 @@
-interface Navlinks  {
-  id: string;
-  url: string;
-  text: string
-}
+import { Navlinks } from "../types/typeLinks"
 
 export const womenLinks: Navlinks[] = [
   { 
