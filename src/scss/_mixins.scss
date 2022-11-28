@@ -1,4 +1,10 @@
 /*==================================
+  display flex
+  ==================================*/
+@mixin displayFlex {
+  display: flex;
+}
+/*==================================
   display space around
   ==================================*/
 @mixin displaySpace-around {
@@ -39,13 +45,36 @@
   list-style-type: none;
 }
 
-
 /*==================================
   display flex end center
   ==================================*/
-  @mixin displayFlexEndCenter {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+@mixin displayFlexEndCenter {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
 
-  }
+/*==================================
+  count favorites + product in cart
+  ==================================*/
+@mixin countProduct(
+  $background-color,
+  $width,
+  $height,
+  $border-radius,
+  $position: absolute,
+  $top,
+  $left,
+  $font-size,
+  $padding
+) {
+  background-color: $background-color;
+  width: $width;
+  height: $height;
+  border-radius: $border-radius;
+  position: $position;
+  top: $top;
+  left: $left;
+  font-size: $font-size;
+  padding: $padding;
+}
