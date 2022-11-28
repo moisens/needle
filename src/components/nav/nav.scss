@@ -79,6 +79,7 @@
       @include mixins.listStyleType;
       a {
         text-decoration: none;
+        color: variables.$grayish-color;
       }
     }
   }
