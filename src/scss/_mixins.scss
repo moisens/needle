@@ -1,0 +1,51 @@
+/*==================================
+  display space around
+  ==================================*/
+@mixin displaySpace-around {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/*==================================
+  display space between
+  ==================================*/
+@mixin displaySpace-between {
+  display: flex;
+  justify-content: space-between;
+}
+
+/*==================================
+  display space center center
+  ==================================*/
+@mixin displayCenter-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*==================================
+  display align center
+  ==================================*/
+@mixin displayAlign-center {
+  display: flex;
+  align-items: center;
+}
+
+/*==================================
+  list-style-type
+  ==================================*/
+@mixin listStyleType {
+  list-style-type: none;
+}
+
+
+/*==================================
+  display flex end center
+  ==================================*/
+  @mixin displayFlexEndCenter {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+  }
