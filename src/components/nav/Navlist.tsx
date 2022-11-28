@@ -1,5 +1,5 @@
 import { womenLinks } from "../../utils/linksNav";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 type Props = {};
 
@@ -10,7 +10,9 @@ const Navlist = (props: Props) => {
         const { id, url, text } = link;
         return (
           <li key={id}>
-            <Link to={url}>{text}</Link>
+            <NavLink to={url} className={({ isActive }) => isActive ? "li-a activeLink" : "li-a"}>
+              {text}
+            </NavLink>
           </li>
         );
       })}

@@ -7,9 +7,7 @@ import Navlist from "./Navlist";
 
 type Props = {};
 
-
 const Nav = (props: Props) => {
-
   return (
     <nav className="navbar-container">
       <div className="logo">needle</div>
@@ -18,13 +16,15 @@ const Nav = (props: Props) => {
         <Navlist />
         <div className="fav-cart-user">
           <div className="favorites-container">
-            <AiOutlineHeart size="1.5rem" />
+            <AiOutlineHeart size="1.875rem" />
+            <div className="favorites-count">8</div>
           </div>
           <div className="carts-container">
-            <MdOutlineShoppingBag size="1.5rem" />
+            <MdOutlineShoppingBag size="1.875rem" />
+            <div className="cart-count">2</div>
           </div>
           <div className="user-container">
-            <CgProfile size="1.5rem" />
+            <CgProfile size="1.875rem" />
           </div>
         </div>
       </div>

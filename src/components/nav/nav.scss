@@ -1,11 +1,10 @@
 @use "../../scss/variables";
 @use "../../scss/mixins";
 
-
 .navbar-container {
   background-color: variables.$bck-yellow;
   @include mixins.displaySpace-around;
-  padding: 10px 0;
+  font-family: "Nunito";
 }
 
 .logo {
@@ -25,7 +24,8 @@
       background-color: variables.$yellow-listbox;
       width: 100px;
       height: 0px;
-      padding: 25px 0;
+      padding: 22px 0;
+      margin: 3px 0;
       @include mixins.displayCenter-center;
       cursor: pointer;
       border-radius: 29px;
@@ -43,12 +43,12 @@
     background-color: variables.$bck-yellow;
     @include mixins.listStyleType;
     position: absolute;
-    top: 63px;
+    top: 55px;
     width: 100px;
     line-height: 1.9;
     cursor: pointer;
     font-family: "Nunito";
-    border: solid .5px variables.$dark-purple;
+    border: solid 0.5px variables.$dark-purple;
     border-radius: 5px;
 
     .category-option {
@@ -69,23 +69,68 @@
   }
 
   .uls-list {
-    //background-color: red;
     @include mixins.displayFlexEndCenter;
     flex-grow: 0.4;
     font-family: "Nunito";
-    gap: 30px;
+    gap: 10px;
 
     li {
       @include mixins.listStyleType;
-      a {
+      .li-a {
         text-decoration: none;
         color: variables.$grayish-color;
+        padding: 14.1px 10px;
+
+        &.activeLink {
+          background-color: variables.$red-color;
+          color: variables.$white-color;
+        }
       }
     }
   }
 
   .fav-cart-user {
     @include mixins.displaySpace-around;
-    gap: 15px;
+    gap: 18px;
+
+    .favorites-container {
+      @include mixins.displayFlex;
+      position: relative;
+
+      .favorites-count {
+        @include mixins.countProduct(
+          variables.$light-yellow,
+          12px,
+          12px,
+          50%,
+          absolute,
+          -2px,
+          18px,
+          0.75rem,
+          11px
+        );
+        @include mixins.displayCenter-center;
+      }
+    }
+
+    .carts-container {
+      @include mixins.displayFlex;
+      position: relative;
+
+      .cart-count {
+        @include mixins.countProduct(
+          variables.$light-yellow,
+          12px,
+          12px,
+          50%,
+          absolute,
+          -2px,
+          18px,
+          0.75rem,
+          11px
+        );
+        @include mixins.displayCenter-center;
+      }
+    }
   }
 }
