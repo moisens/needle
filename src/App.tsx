@@ -1,5 +1,6 @@
 import './App.scss';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Nav from "./components/nav/Nav";
 import LandingPage from "./pages/Landing.page";
 import Women from "./pages/Women.page";
 import Men from "./pages/Men.page";
@@ -13,6 +14,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
+    <Nav />
      <Routes>
       <Route path="/" element={<LandingPage />} />
       <Route path="/women" element={<Women />} >
