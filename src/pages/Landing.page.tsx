@@ -3,7 +3,7 @@
 const LandingPage = () => {
   return (
     <main className="landing-container">
-      dddd
+      <p>landing</p>
     </main>
   )
 }
