@@ -1,6 +1,7 @@
 import "./landingpage.scss";
 import Button from "../button/Button";
 import { Link } from "react-router-dom";
+import Images from "../imageComponent/Images";
 
 type Props = {};
 
@@ -16,9 +17,9 @@ const Discover = (props: Props) => {
             interested in ?
           </p>
           <div className="discover-btns">
-            <Button 
-              as="button" 
-              className="btn-btndiscover" 
+            <Button
+              as="button"
+              className="btn-btndiscover"
               handleClick={() => {}}
               aria-label="Link to men category"
             >
@@ -34,7 +35,13 @@ const Discover = (props: Props) => {
             </Button>
           </div>
         </div>
-        <div className="discover-image">zafkzkjfbkjezbvjdzbvkjdbsvkjbsvkj</div>
+        <div className="discover-image">
+          <Images
+            src="https://images.unsplash.com/photo-1589810635657-232948472d98?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1160&q=80"
+            alt="fashion"
+            title="Your new style"
+          />
+        </div>
       </header>
     </div>
   );
