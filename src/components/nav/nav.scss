@@ -21,7 +21,8 @@
     border: none;
 
     .btn-btn {
-      background-color: variables.$yellow-listbox;
+      background-color: variables.$bck-hover1;
+      color: variables.$grayish-color;
       width: 100px;
       height: 0px;
       padding: 22px 0;
@@ -29,6 +30,7 @@
       @include mixins.displayCenter-center;
       cursor: pointer;
       border-radius: 29px;
+      font-weight: bolder;
 
       .selected-category {
         font-family: "Nunito";

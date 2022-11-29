@@ -1,0 +1,64 @@
+@use "../../scss/mixins";
+@use "../../scss/variables";
+
+.discover-container {
+  max-width: 100vw;
+  height: auto;
+  background-color: variables.$bck-yellow;
+}
+
+.discover-header {
+  max-width: 1440px;
+  height: 93vh;
+  margin: 0 auto;
+  background-color: transparent;
+  padding: 93px 200px 160px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+
+  .discover-text {
+    //background-color: lightcoral;
+    @include mixins.FlexCenterColumn;
+
+    .discover-title {
+      @include mixins.title-h2;
+    }
+
+    .discover-paragraph {
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+
+    .discover-btns {
+      display: flex;
+      gap: 20px;
+
+      .btn-btndiscover {
+        border: none;
+        border-radius: 18px;
+        background-color: variables.$faded-purple;
+        cursor: pointer;
+        transition: all ease 0.8s;
+
+        & a {
+          width: 180px;
+          padding: 20px 0;
+          font-size: 1.375rem;
+          color: variables.$white-color;
+          @include mixins.displayCenter-center;
+        }
+
+        &:hover {
+          background-color: variables.$faded-darkpurple;
+        }
+      }
+    }
+  }
+  .discover-image {
+    //width: 200px;
+    //height: 200px;
+    background-color: lightgray;
+    border-radius: 50px;
+  }
+}

@@ -1,3 +1,6 @@
+@use "../scss/variables";
+
+
 /*==================================
   display flex
   ==================================*/
@@ -53,6 +56,14 @@
   justify-content: flex-end;
   align-items: center;
 }
+/*==================================
+  display flex center column
+  ==================================*/
+@mixin FlexCenterColumn {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
 
 /*==================================
   count favorites + product in cart
@@ -77,4 +88,10 @@
   left: $left;
   font-size: $font-size;
   padding: $padding;
+}
+
+@mixin title-h2 {
+  font-size: 48px;
+  padding: 0 0 20px;
+  color: variables.$super-darkpurple;
 }
