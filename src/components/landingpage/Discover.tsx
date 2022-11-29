@@ -2,6 +2,7 @@ import "./landingpage.scss";
 import Button from "../button/Button";
 import { Link } from "react-router-dom";
 import Images from "../imageComponent/Images";
+import LandingBtns from "./LandingBtns";
 
 type Props = {};
 
@@ -16,24 +17,7 @@ const Discover = (props: Props) => {
             tailor's creations. Before we start, what kind of fashion are you
             interested in ?
           </p>
-          <div className="discover-btns">
-            <Button
-              as="button"
-              className="btn-btndiscover"
-              handleClick={() => {}}
-              aria-label="Link to men category"
-            >
-              <Link to="/women">Women</Link>
-            </Button>
-            <Button
-              as="button"
-              className="btn-btndiscover"
-              handleClick={() => {}}
-              aria-label="Link to men category"
-            >
-              <Link to="/men">Men</Link>
-            </Button>
-          </div>
+          <LandingBtns />
         </div>
         <div className="discover-image">
           <Images
