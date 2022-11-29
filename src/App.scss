@@ -15,7 +15,6 @@
   font-style: normal;
 }
 
-
 *,
 *::before,
 *::after {
@@ -28,9 +27,9 @@ body {
   ::selection {
     background-color: #f55340;
     color: #fff;
-    font-family: "Nunito";
-    font-size: 1rem;
   }
+  font-family: "Nunito";
+  font-size: 1.125rem;
 }
 
 h1 {
@@ -40,9 +39,9 @@ h1 {
 }
 h2 {
   font-family: "Oswald";
-  font-size: 1rem;
-  font-weight: 400;
+  font-weight: bolder;
 }
-p {
- font-family: "Nunito";
+
+a {
+  text-decoration: none;
 }

@@ -1,9 +1,10 @@
-
+import Discover from "../components/landingpage/Discover"
+import "./pages.scss"
 
 const LandingPage = () => {
   return (
-    <main className="landing-container">
-      <p>landing</p>
+    <main className="pages-container">
+      <Discover />
     </main>
   )
 }
