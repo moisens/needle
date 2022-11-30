@@ -1,17 +1,17 @@
 @use "../../scss/mixins";
 @use "../../scss/variables";
 
+
+/*================================
+  Discover section
+  ================================*/
 .discover-container {
-  max-width: 100vw;
-  height: auto;
+  @include mixins.pageWidthHeight;
   background-color: variables.$bck-yellow;
 }
 
 .discover-header {
-  max-width: 1440px;
-  height: auto;//93vh;
-  margin: 0 auto;
-  background-color: transparent;
+  @include mixins.innerPageWidthHeigh;
   padding: 93px 200px 160px;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -64,6 +64,22 @@
       aspect-ratio: 1 / 1;
       object-fit: cover;
       border-radius: 50px;
+      pointer-events: none;
     }
   }
 }
+
+
+/*================================
+  Stylish Eamil section
+  ================================*/
+.stylish-container {
+  @include mixins.pageWidthHeight;
+  background-color: variables.$light-yellow;
+}
+
+.stylish-content {
+  @include mixins.innerPageWidthHeigh;
+  @include mixins.FlexAlignColumn;
+}
+
