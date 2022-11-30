@@ -1,4 +1,4 @@
-import { CategoriesPrime, Navlinks } from "../types/typeLinks";
+import { CategoriesPrime, Navlinks, StyleProps } from "../types/typeLinks";
 
 
 export const primaryCategories: CategoriesPrime[] = [
@@ -21,3 +21,15 @@ export const linksBtns: Navlinks[] = [
     arias: "Link to men category"
   }
 ]
+
+
+export const chooseStyles:StyleProps[] = [
+  {
+    id: "f1478b86-70fa",
+    text: "WOMEN STYLE",
+  },
+  {
+    id: "f1478f5a-70fa",
+    text: "MEN STYLE",
+  },
+];

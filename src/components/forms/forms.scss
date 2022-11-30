@@ -1,0 +1,82 @@
+@use "../../scss/mixins";
+@use "../../scss/variables";
+
+.form-titleH2 {
+  @include mixins.title-h2;
+  padding-top: 90px;
+  color: variables.$dark-purple;
+}
+
+.form-titleH3 {
+  font-size: 1.375rem;
+  color: variables.$grayish-color;
+  padding-bottom: 60px;
+}
+
+.form-container {
+  background-color: variables.$white-color;
+  width: 40%;
+  height: auto;
+  margin-bottom: 160px;
+  padding: 80px;
+  border-radius: 22px;
+
+  .form-inputEmail {
+    width: 100%;
+    height: 48px;
+    border: solid 1px variables.$light-purple;
+    border-radius: 8px;
+    margin-bottom: 30px;
+  }
+  input[type="email"] {
+    font-size: 1.125rem;
+    padding: 0 12px;
+  }
+
+  .config-H4 {
+    font-weight: bolder;
+    color: variables.$dark-purple;
+    padding-bottom: 15px;
+  }
+
+  .radio-group {
+    @include mixins.displayAlign-center;
+    gap: 18px;
+    padding-bottom: 15px;
+
+    .radio-options {
+      @include mixins.displayFlex;
+      gap: 5px;
+      cursor: pointer;
+
+      svg {
+        width: 14px;
+        height: 14px;
+      }
+    }
+    .style-checked {
+      color: variables.$light-purple;
+    }
+  }
+
+  .subscribe-btn {
+    border: none;
+    border-radius: 8px;
+    width: 100%;
+    height: 48px;
+    font-size: 1.375rem;
+    background-color: variables.$light-purple;
+    color: variables.$white-color;
+    cursor: pointer;
+    transition: all ease 0.8s;
+    margin-bottom: 12px;
+
+    &:hover {
+      background-color: variables.$dark-purple;
+    }
+  }
+
+  .small-text {
+    font-size: 9px;
+  }
+}
