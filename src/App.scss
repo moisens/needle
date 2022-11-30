@@ -1,17 +1,33 @@
+@use "./scss/variables";
 @font-face {
   font-family: "Oswald";
   src: url("../fonts/Oswald-SemiBold.ttf");
+  font-weight: semibold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Oswald";
   src: url("../fonts/Oswald-Bold.ttf");
+  font-weight: bold;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Oswald";
   src: url("../fonts/Oswald-Regular.ttf");
-  font-weight: normal;
+  font-weight: regular;
   font-style: normal;
 }
 
 @font-face {
   font-family: "Nunito";
   src: url("../fonts/Nunito-Regular.ttf");
-  //src: url("../fonts/Nunito-Bold.ttf");
-  font-weight: normal;
+  font-weight: regular;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Nunito";
+  src: url("../fonts/Nunito-Bold.ttf");
+  font-weight: bold;
   font-style: normal;
 }
 
@@ -30,6 +46,7 @@ body {
   }
   font-family: "Nunito";
   font-size: 1.125rem;
+  color: variables.$grayish-color;
 }
 
 h1 {
