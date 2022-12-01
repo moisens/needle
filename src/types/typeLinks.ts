@@ -14,3 +14,8 @@ export interface StyleProps {
   id: string;
   text: string;
 }[];
+
+
+export interface FooterLinkProps {
+  links: Navlinks[]
+}
