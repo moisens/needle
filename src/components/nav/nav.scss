@@ -82,6 +82,14 @@
         text-decoration: none;
         color: variables.$grayish-color;
         padding: 14.1px 10px;
+        position: relative;
+
+        &::after {
+          @include mixins.afterContent(variables.$red-color);
+        }
+        &:hover::after {
+          @include mixins.hoverAfterTransform;
+        }
 
         &.activeLink {
           background-color: variables.$red-color;
