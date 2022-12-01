@@ -1,0 +1,14 @@
+@use "../../scss/mixins";
+@use "../../scss/variables";
+
+
+footer {
+  max-width: 100vw;
+  background-color: variables.$light-purple;
+  color: variables.$white-color;
+
+  .footer-container {
+    max-width: 1440px;
+    margin: 0 auto;
+  }
+}

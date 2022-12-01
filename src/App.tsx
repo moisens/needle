@@ -7,6 +7,7 @@ import Men from "./pages/Men.page";
 import HomeWomen from "./pages/HomeWomen.page";
 import ClothesWomen from "./pages/ClothesWomen.page";
 import ShoesWomen from "./pages/ShoesWomen.page";
+import Footer from "./components/footer/Footer";
 
 
 
@@ -24,6 +25,7 @@ const App = () => {
       </Route>
       <Route path="/men" element={<Men />}></Route>
      </Routes>
+     <Footer />
     </BrowserRouter>
   )
 }
