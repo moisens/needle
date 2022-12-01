@@ -1,16 +1,19 @@
-import { womenLinks } from "../../utils/linksNav";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { LinkProps } from "../../types/typeLinks";
 
-type Props = {};
-
-const Navlist = (props: Props) => {
+const Navlist = ({ links }: LinkProps) => {
   return (
     <ul className="uls-list">
-      {womenLinks.map((link) => {
+      {links.map((link) => {
         const { id, url, text } = link;
         return (
           <li key={id}>
-            <NavLink to={url} className={({ isActive }) => isActive ? "li-a activeLink" : "li-a"}>
+            <NavLink
+              to={url}
+              className={({ isActive }) =>
+                isActive ? "li-a activeLink" : "li-a"
+              }
+            >
               {text}
             </NavLink>
           </li>

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import { FooterLinkProps } from "../../types/typeLinks";
+import { LinkProps } from "../../types/typeLinks";
 
-const Linksfooter = ({ links }: FooterLinkProps) => {
+const Linksfooter = ({ links }: LinkProps) => {
   return (
     <ul className="ul-links">
       {links.map((link) => {

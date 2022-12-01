@@ -16,6 +16,6 @@ export interface StyleProps {
 }[];
 
 
-export interface FooterLinkProps {
+export interface LinkProps {
   links: Navlinks[]
 }

@@ -3,6 +3,7 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import Listcategories from "./Listcategories";
+import { womenLinks } from "../../utils/linksNav";
 import Navlist from "./Navlist";
 
 type Props = {};
@@ -13,7 +14,7 @@ const Nav = (props: Props) => {
       <div className="logo">needle</div>
       <div className="nav-content">
         <Listcategories />
-        <Navlist />
+        <Navlist links={womenLinks} />
         <div className="fav-cart-user">
           <div className="favorites-container">
             <AiOutlineHeart size="1.875rem" />
