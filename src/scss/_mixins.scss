@@ -1,6 +1,5 @@
 @use "../scss/variables";
 
-
 /*==================================
   display flex
   ==================================*/
@@ -111,14 +110,12 @@
   color: variables.$super-darkpurple;
 }
 
-
 /*==================================
   Width and height page
   ==================================*/
 @mixin pageWidthHeight {
   max-width: 100vw;
   height: auto;
-  
 }
 
 /*==================================
@@ -126,7 +123,30 @@
   ==================================*/
 @mixin innerPageWidthHeigh {
   max-width: 1440px;
-  height: auto;//93vh;
+  height: auto; //93vh;
   margin: 0 auto;
   background-color: transparent;
+}
+
+/*==================================
+  li a after content
+  ==================================*/
+@mixin afterContent($color) {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background-color: $color;
+  left: 0;
+  bottom: 0;
+  transform: scale(0, 1);
+  transform-origin: 0% 100%;
+  transition: all ease 0.8s;
+}
+
+/*==================================
+  hover after
+  ==================================*/
+@mixin hoverAfterTransform {
+  transform: scale(1, 1);
 }

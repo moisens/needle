@@ -3,7 +3,7 @@
 
 footer {
   max-width: 100vw;
-  background-color:#762EDC; //#823FDE
+  background-color: variables.$blue-violet;
   color: variables.$white-color;
 
   .footer-container {
@@ -26,19 +26,10 @@ footer {
             position: relative;
 
             &::after {
-              content: "";
-              position: absolute;
-              width: 100%;
-              height: 2px;
-              background-color: variables.$white-color;
-              left: 0;
-              bottom: 0;
-              transform: scale(0, 1);
-              transform-origin: 0% 100%;
-              transition: all ease 0.8s;
+              @include mixins.afterContent(variables.$white-color);
             }
             &:hover::after {
-              transform: scale(1, 1);
+              @include mixins.hoverAfterTransform;
             }
           }
         }
