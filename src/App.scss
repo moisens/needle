@@ -44,21 +44,22 @@ body {
     background-color: #f55340;
     color: #fff;
   }
+
   font-family: "Nunito";
   font-size: 1.125rem;
   color: variables.$grayish-color;
-}
 
-h1 {
-  font-family: "Oswald";
-  font-size: 3.9rem;
-  font-weight: bolder;
-}
-h2 {
-  font-family: "Oswald";
-  font-weight: bolder;
-}
+  h1 {
+    font-family: "Oswald";
+    font-size: 3.9rem;
+    font-weight: bolder;
+  }
+  h2 {
+    font-family: "Oswald";
+    font-weight: bolder;
+  }
 
-a {
-  text-decoration: none;
+  a {
+    text-decoration: none;
+  }
 }
