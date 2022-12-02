@@ -1,0 +1,73 @@
+@use "../../scss/mixins";
+@use "../../scss/variables";
+
+.header-conainer {
+  @include mixins.pageWidthHeight;
+  background-color: variables.$bck-yellow;
+
+  .header-header {
+    @include mixins.innerPageWidthHeigh;
+  }
+}
+
+.sliders-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 95px 100px 0 100px;
+
+  .slide-text {
+    color: variables.$super-darkpurple;
+    .header-titleH1 {
+      line-height: 1.2;
+      font-size: 60px;
+    }
+    .header-titleH3 {
+      font-family: "Oswald";
+      font-size: 50px;
+      font-weight: 100;
+      padding-top: 15px;
+    }
+  }
+  .slide-images {
+    width: 500px;
+    height: 500px;
+    border-radius: 50px;
+    aspect-ratio: 1 / 1;
+    background: linear-gradient(
+      219deg,
+      rgba(250, 195, 59, 1) 0%,
+      rgba(238, 155, 37, 1) 100%
+    );
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      border-radius: 50px;
+      pointer-events: none;
+    }
+  }
+}
+
+.btns-container {
+  padding: 20px 100px 80px 0;
+  @include mixins.flexJustifyEnd;
+  gap: 10px;
+
+  .btns-btns {
+    border: none;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    background-color: variables.$light-purple;
+    cursor: pointer;
+    @include mixins.displayCenter-center;
+    transition: all ease .8s;
+
+    &:hover {
+      background-color: variables.$dark-purple;
+    }
+  }
+}

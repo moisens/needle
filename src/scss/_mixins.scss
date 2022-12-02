@@ -55,12 +55,19 @@
 }
 
 /*==================================
-  display flex end center
+  display flex-end center
   ==================================*/
 @mixin displayFlexEndCenter {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+}
+/*==================================
+  display flex-end
+  ==================================*/
+@mixin flexJustifyEnd {
+  display: flex;
+  justify-content: flex-end;
 }
 /*==================================
   display flex center column

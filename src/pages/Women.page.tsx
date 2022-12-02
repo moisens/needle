@@ -1,9 +1,13 @@
+import "./pages.scss";
+import HeaderSlide from "../components/sliderHeader/HeaderSlide";
 
 
 const Women = () => {
   return (
-    <div>Women</div>
+    <main className="pages-container">
+     <HeaderSlide />
+    </main>
   )
 }
 
-export default Women
+export default Women;
