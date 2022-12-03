@@ -4,7 +4,7 @@
 .quotes-cotainer {
   width: 100vw;
   background-color: variables.$red-color;
-  opacity: 0.9;
+  opacity: 1;
 
   .quotes-content {
     @include mixins.innerPageWidthHeigh;
