@@ -1,18 +1,22 @@
-import "./headerslide.scss"
-import { MdOutlineKeyboardArrowLeft, MdOutlineKeyboardArrowRight } from "react-icons/md";
-import WomanInBlue from "../../assets/woman-in-blue.png"
+import "./headerslide.scss";
+import {
+  MdOutlineKeyboardArrowLeft,
+  MdOutlineKeyboardArrowRight,
+} from "react-icons/md";
+import WomanInBlue from "../../assets/woman-in-blue.png";
 import Button from "../button/Button";
 
-
-type Props = {}
+type Props = {};
 
 const HeaderSlide = (props: Props) => {
   return (
-    <header className="header-conainer">
+    <header className="header-container">
       <section className="header-header">
         <section className="sliders-content">
           <section className="slide-text">
-            <h1 className="header-titleH1">Feel and look glamorous this spring.</h1>
+            <h1 className="header-titleH1">
+              Feel and look glamorous this spring.
+            </h1>
             <h3 className="header-titleH3">New look, simply you.</h3>
           </section>
           <section className="slide-images">
@@ -29,7 +33,7 @@ const HeaderSlide = (props: Props) => {
         </section>
       </section>
     </header>
-  )
-}
+  );
+};
 
 export default HeaderSlide;
