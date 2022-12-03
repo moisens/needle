@@ -1,0 +1,55 @@
+@use "../../scss/mixins";
+@use "../../scss/variables";
+
+.quotes-cotainer {
+  width: 100vw;
+  background-color: variables.$red-color;
+  opacity: 0.9;
+
+  .quotes-content {
+    @include mixins.innerPageWidthHeigh;
+    @include mixins.displayAlign-center;
+    padding: 0 150px 0 320px;
+    position: relative;
+
+    .quotes-content-img {
+      background-image: url("../../assets/outdoor.jpg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      filter: opacity(0.1);
+    }
+
+    .quotes-big-image {
+      width: 380px;
+      height: 400px;
+      @include mixins.displayJustify-center;
+      background-color: transparent;
+      aspect-ratio: 1;
+      z-index: 1;
+
+      img {
+        width: 170%;
+        height: 160%;
+        object-fit: contain;
+        background-size: contain;
+        margin-top: -240px;
+        pointer-events: none;
+      }
+    }
+    .quotes-quote {
+      color: variables.$white-color;
+      font-family: "Oswald";
+      font-size: 25px;
+      font-weight: 400;
+      text-align: center;
+      width: 70%;
+      z-index: 1;
+    }
+  }
+}
