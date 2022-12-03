@@ -1,7 +1,7 @@
 @use "../../scss/mixins";
 @use "../../scss/variables";
 
-.header-conainer {
+.header-container {
   @include mixins.pageWidthHeight;
   background-color: variables.$bck-yellow;
 
@@ -59,12 +59,12 @@
   .btns-btns {
     border: none;
     border-radius: 50%;
-    width: 80px;
-    height: 80px;
+    width: 60px;
+    height: 60px;
     background-color: variables.$light-purple;
     cursor: pointer;
     @include mixins.displayCenter-center;
-    transition: all ease .8s;
+    transition: all ease 0.8s;
 
     &:hover {
       background-color: variables.$dark-purple;
