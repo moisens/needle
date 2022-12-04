@@ -157,3 +157,18 @@
 @mixin hoverAfterTransform {
   transform: scale(1, 1);
 }
+/*==================================
+  quotes background
+  ==================================*/
+@mixin quotesBck-image($background-image) {
+  background-image: $background-image;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: opacity(0.1);
+}
