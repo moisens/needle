@@ -20,8 +20,8 @@
     height: 300px;
     background: linear-gradient(
       219deg,
-      rgba(250, 195, 59, 1) 0%,
-      rgba(238, 155, 37, 1) 100%
+      variables.$gradient-yellow,
+      variables.$gradient-gold
     );
     aspect-ratio: 2;
     border-radius: 50px;

@@ -1,0 +1,91 @@
+@use "../../scss/mixins";
+@use "../../scss/variables";
+
+.featured-container {
+  @include mixins.pageWidthHeight;
+  background-color: variables.$bck-yellow;
+}
+
+.featured-content {
+  @include mixins.innerPageWidthHeigh;
+  padding: 120px 0 260px 95px;
+  position: relative;
+
+  .featured-titleH2 {
+    @include mixins.title-h2;
+    padding-bottom: 100px;
+  }
+
+  .slide-container {
+    min-width: 100%;
+    height: auto;
+    @include mixins.displayFlex;
+    gap: 30px;
+    overflow: scroll;
+
+    &::-webkit-scrollbar {
+      width: 0;
+    }
+  }
+
+  .slide-content {
+    min-width: 380px;
+    height: auto;
+    border: none;
+
+    .slide-image {
+      width: 380px;
+      height: 380px;
+      background: linear-gradient(
+        219deg,
+        variables.$gradient-light-yellow,
+        variables.$gradient-gold-yellow
+      );
+      aspect-ratio: 1 / 1;
+      border-radius: 25px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        object-fit: cover;
+        object-position: top;
+        pointer-events: none;
+      }
+    }
+    .slide-titleH3 {
+      padding: 20px 0 8px;
+      font-family: "Oswald";
+      font-size: 1.375rem;
+      font-weight: 400;
+      color: variables.$grayish-color;
+    }
+    .color {
+      font-size: 1.375rem;
+      line-height: 1.6;
+      color: variables.$grayish-color;
+    }
+    .price {
+      font-size: 1.375rem;
+      font-weight: 900;
+      color: variables.$super-darkpurple;
+    }
+  }
+
+  .slide-btn {
+    border: none;
+    position: absolute;
+    top: 45%;
+    transform: translate(-50%, -50%);
+    background-color: variables.$light-purple;
+    cursor: pointer;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    @include mixins.displayCenter-center;
+
+    &:hover {
+      background-color: variables.$dark-purple;
+    }
+  }
+}
