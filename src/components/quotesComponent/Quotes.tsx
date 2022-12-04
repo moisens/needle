@@ -2,7 +2,7 @@ import "./quotes.scss";
 import Images from "../imageComponent/Images";
 import { QuotesProps } from "../../types/typesQuotes";
 
-const differentBackgroung = (color: string) => {
+const getDifferentBackgroung = (color: string) => {
   if (color === "red") {
     return <section className="quotes-content-img"></section>
   } else if (color === "transparent") {
@@ -25,7 +25,7 @@ const Quotes = ({ quotes }: QuotesProps) => {
               <Images src={image} alt="lady" title="lady" />
             </section>
             <q className="quotes-quote">{quote}</q>
-            {differentBackgroung(color)}
+            {getDifferentBackgroung(color)}
           </section>
           
         );

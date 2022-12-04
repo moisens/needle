@@ -12,17 +12,17 @@
     padding: 0 150px 0 320px;
     position: relative;
 
-    .quotes-content-img { 
-      background-image: url("../../assets/outdoor.jpg");
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      filter: opacity(0.1);
+    .quotes-content-img {
+      @include mixins.quotesBck-image(url("../../assets/outdoor.jpg"));
+    }
+    .quotes-content-img2 {
+      @include mixins.quotesBck-image(url("../../assets/shopping.jpg"));
+    }
+    .quotes-content-img3 {
+      @include mixins.quotesBck-image(url("../../assets/outdoor.jpg"));
+    }
+    .quotes-content-img4 {
+      @include mixins.quotesBck-image(url("../../assets/outdoor.jpg"));
     }
 
     .quotes-big-image {
