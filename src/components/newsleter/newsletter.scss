@@ -1,0 +1,13 @@
+@use "../../scss/mixins";
+@use "../../scss/variables";
+
+
+.newletter-container {
+  @include mixins.pageWidthHeight;
+  background-color: variables.$light-yellow;
+
+  .newsletter-content {
+    @include mixins.innerPageWidthHeigh;
+  @include mixins.FlexAlignColumn;
+  }
+}
