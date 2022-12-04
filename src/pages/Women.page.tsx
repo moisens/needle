@@ -3,6 +3,7 @@ import HeaderSlide from "../components/sliderHeader/HeaderSlide";
 import About from "../components/about/About";
 import Quotes from "../components/quotesComponent/Quotes";
 import Featured from "../components/featured/Featured"
+import { quoteOne, quoteTwo } from "../utils/quotes";
 
 
 const Women = () => {
@@ -10,8 +11,9 @@ const Women = () => {
     <main className="pages-container">
      <HeaderSlide />
      <About />
-     <Quotes />
+     <Quotes quotes={quoteOne} />
      <Featured />
+     <Quotes quotes={quoteTwo} />
     </main>
   )
 }
