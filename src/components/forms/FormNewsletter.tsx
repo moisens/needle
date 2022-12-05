@@ -16,6 +16,7 @@ const FormNewsletter = (props: Props) => {
         <label htmlFor="email" />
         <input
           type="email"
+          name="email"
           placeholder="Enter your email"
           className="form-inputEmail"
           aria-label="Input email"
@@ -47,7 +48,7 @@ const FormNewsletter = (props: Props) => {
             </RadioGroup.Option>
           ))}
         </RadioGroup>
-        <button className="subscribe-btn" aria-label="Subscribe button">
+        <button type="submit" className="subscribe-btn" aria-label="Subscribe button">
           SUBSCRIBE
         </button>
         <p className="small-text">
