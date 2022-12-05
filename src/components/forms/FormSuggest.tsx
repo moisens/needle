@@ -42,7 +42,7 @@ const FormSuggest = (props: Props) => {
         className="suggest-btn"
         aria-label="Submit button with text send!"
       >
-        SEND
+        Send
       </button>
     </form>
   );

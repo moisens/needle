@@ -18,22 +18,10 @@
       line-height: 1.6;
     }
     .suggests-titleH3 {
-      font-family: "Oswald";
-      font-size: 1.375rem;
-      font-weight: 100;
-      letter-spacing: 0.0625rem;
-      padding-bottom: 60px;
-      color: variables.$white-color;
+      @include mixins.form-title-h3(variables.$white-color);
     }
     .form-suggest-contenair {
-      background-color: variables.$white-color;
-      width: 40%;
-      height: auto;
-      margin-bottom: 160px;
-      padding: 80px;
-      border-radius: 22px;
-      display: flex;
-      flex-direction: column;
+      @include mixins.form-container;
 
       .suggest-input-names {
         .suggest-names {
@@ -49,37 +37,26 @@
         }
       }
       .suggest-email {
-        width: 100%;
-        height: 48px;
-        border: solid 1px variables.$light-purple;
-        border-radius: 8px;
-        margin-bottom: 20px;
+        @include mixins.input-email;
       }
       textarea {
-        border: solid 1px variables.$light-purple;
-        border-radius: 8px;
-        margin-bottom: 20px;
-        font-family: "Nunito";
-        font-size: 1.125rem;
-        padding: 15px 0 0 12px;
-        resize: none;
+        @include mixins.text-areas;
+
+        &:focus {
+          @include mixins.input-focus;
+        }
       }
-      input[type="text"],[type="email"] {
-        font-family: "Nunito";
-        font-size: 1.125rem;
-        padding: 0 12px;
+
+      input[type="text"],
+      [type="email"] {
+        @include mixins.input-type;
+
+        &:focus {
+          @include mixins.input-focus;
+        }
       }
       .suggest-btn {
-        border: none;
-        border-radius: 8px;
-        width: 100%;
-        height: 48px;
-        font-size: 1.375rem;
-        background-color: variables.$light-purple;
-        color: variables.$white-color;
-        cursor: pointer;
-        transition: all ease 0.8s;
-        margin-bottom: 12px;
+        @include mixins.form-btn-btns;
 
         &:hover {
           background-color: variables.$dark-purple;

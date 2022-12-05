@@ -8,29 +8,21 @@
 }
 
 .form-titleH3 {
-  font-size: 1.375rem;
-  color: variables.$grayish-color;
-  padding-bottom: 60px;
+  @include mixins.form-title-h3(variables.$grayish-color);
 }
 
 .form-container {
-  background-color: variables.$white-color;
-  width: 40%;
-  height: auto;
-  margin-bottom: 160px;
-  padding: 80px;
-  border-radius: 22px;
+  @include mixins.form-container;
 
   .form-inputEmail {
-    width: 100%;
-    height: 48px;
-    border: solid 1px variables.$light-purple;
-    border-radius: 8px;
-    margin-bottom: 30px;
+    @include mixins.input-email;
   }
   input[type="email"] {
-    font-size: 1.125rem;
-    padding: 0 12px;
+    @include mixins.input-type;
+
+    &:focus {
+      @include mixins.input-focus;
+    }
   }
 
   .config-H4 {
@@ -42,7 +34,7 @@
   .radio-group {
     @include mixins.displayAlign-center;
     gap: 18px;
-    padding-bottom: 15px;
+    padding-bottom: 30px;
 
     .radio-options {
       @include mixins.displayFlex;
@@ -50,8 +42,8 @@
       cursor: pointer;
 
       svg {
-        width: 14px;
-        height: 14px;
+        width: 18px;
+        height: 18px;
       }
     }
     .style-checked {
@@ -60,16 +52,7 @@
   }
 
   .subscribe-btn {
-    border: none;
-    border-radius: 8px;
-    width: 100%;
-    height: 48px;
-    font-size: 1.375rem;
-    background-color: variables.$light-purple;
-    color: variables.$white-color;
-    cursor: pointer;
-    transition: all ease 0.8s;
-    margin-bottom: 12px;
+    @include mixins.form-btn-btns;
 
     &:hover {
       background-color: variables.$dark-purple;

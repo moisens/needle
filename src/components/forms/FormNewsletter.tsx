@@ -48,8 +48,12 @@ const FormNewsletter = (props: Props) => {
             </RadioGroup.Option>
           ))}
         </RadioGroup>
-        <button type="submit" className="subscribe-btn" aria-label="Subscribe button">
-          SUBSCRIBE
+        <button
+          type="submit"
+          className="subscribe-btn"
+          aria-label="Subscribe button"
+        >
+          Subscribe
         </button>
         <p className="small-text">
           *Reinvent the wheel locked and loaded, so time vampire cross sabers

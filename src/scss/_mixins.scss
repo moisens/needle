@@ -172,3 +172,87 @@
   height: 100%;
   filter: opacity(0.1);
 }
+
+/*==================================
+  form container
+  ==================================*/
+@mixin form-container {
+  background-color: variables.$white-color;
+  width: 480px;
+  height: auto;
+  margin-bottom: 200px;
+  padding: 55px;
+  border-radius: 22px;
+  @include displayFlex;
+  flex-direction: column;
+}
+
+/*==================================
+  input email
+  ==================================*/
+@mixin input-email {
+  width: 100%;
+  height: 48px;
+  border: solid 1px variables.$light-purple;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/*==================================
+  text area
+  ==================================*/
+@mixin text-areas {
+  border: solid 1px variables.$light-purple;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-family: "Nunito";
+  font-size: 1.125rem;
+  padding: 15px 0 0 12px;
+  resize: none;
+}
+
+/*==================================
+  input focus
+  ==================================*/
+@mixin input-focus {
+  outline: solid 2px variables.$faded-purple;
+  border: none;
+}
+
+/*==================================
+  input type
+  ==================================*/
+@mixin input-type {
+  font-family: "Nunito";
+  font-size: 1.125rem;
+  padding: 0 12px;
+}
+
+/*==================================
+  form btns
+  ==================================*/
+@mixin form-btn-btns {
+  border: none;
+  border-radius: 35px;
+  width: 100%;
+  height: 70px;
+  font-size: 1.375rem;
+  background-color: variables.$light-purple;
+  color: variables.$white-color;
+  cursor: pointer;
+  transition: all ease 0.8s;
+  margin-bottom: 12px;
+  @include displayCenter-center;
+}
+
+/*==================================
+  form title h3
+  ==================================*/
+@mixin form-title-h3($color) {
+  font-family: "Oswald";
+  font-size: 1.375rem;
+  font-weight: 100;
+  letter-spacing: 0.0625rem;
+  padding-bottom: 60px;
+  color: $color;
+}
