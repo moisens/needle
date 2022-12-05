@@ -27,10 +27,23 @@ const FormSuggest = (props: Props) => {
         name="email"
         className="suggest-email"
         aria-label="Input email"
+        placeholder="Email"
       />
       <label htmlFor="text-area" />
-      <textarea name="" id="" cols={30} rows={10} aria-label="textarea field" />
-      <button type="submit">SEND</button>
+      <textarea
+        name="text-area"
+        cols={3}
+        rows={5}
+        placeholder="Subject"
+        aria-label="textarea field"
+      />
+      <button
+        type="submit"
+        className="suggest-btn"
+        aria-label="Submit button with text send!"
+      >
+        SEND
+      </button>
     </form>
   );
 };
