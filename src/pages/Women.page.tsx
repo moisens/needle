@@ -5,6 +5,7 @@ import Quotes from "../components/quotesComponent/Quotes";
 import Featured from "../components/featured/Featured";
 import Newsletter from "../components/newsleter/Newsletter";
 import FixedbckImg from "../components/fixedBackground/FixedbckImg";
+import Suggests from "../components/suggestions/Suggestions";
 import { quoteOne, quoteTwo } from "../utils/quotes";
 
 
@@ -18,6 +19,7 @@ const Women = () => {
      <Quotes quotes={quoteTwo} />
      <Newsletter />
      <FixedbckImg />
+     <Suggests />
     </main>
   )
 }

@@ -1,0 +1,29 @@
+@use "../../scss/mixins";
+@use "../../scss/variables";
+
+.suggests-container {
+  @include mixins.pageWidthHeight;
+  background-color: variables.$red-color;
+
+  .suggests-content {
+    @include mixins.innerPageWidthHeigh;
+    @include mixins.FlexAlignColumn;
+
+    .suggests-titleH2 {
+      width: 60%;
+      font-size: 2.625rem;
+      padding: 90px 0 20px;
+      color: variables.$white-color;
+      text-align: center;
+      line-height: 1.6;
+    }
+    .suggests-titleH3 {
+      font-family: "Oswald";
+      font-size: 1.375rem;
+      font-weight: 100;
+      letter-spacing: 0.0625rem;
+      padding-bottom: 60px;
+      color: variables.$white-color;
+    }
+  }
+}
