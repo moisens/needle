@@ -15,8 +15,7 @@
     .links-links {
       font-weight: 100;
       letter-spacing: 1.1px;
-      display: flex;
-      align-items: center;
+      @include mixins.displayAlign-center;
       cursor: pointer;
 
       a {
@@ -27,6 +26,60 @@
         font-weight: bold;
         color: variables.$faded-darkpurple;
       }
+    }
+  }
+
+  .settingsAndPage-container {
+    width: 100%;
+    height: auto;
+    background-color: lightgreen;
+    display: grid;
+    grid-template-columns: .5fr 2fr;
+    gap: 20px;
+    padding: 20px 0 160px 20px;
+
+    .settings-container {
+      background-color: variables.$white-color;
+      width: 280px;
+      height: auto;
+      border-radius: 18px;
+      
+
+      .sidebar-clothes-page {
+        padding: 25px 0 80px 30px;
+
+        .clothes-ul {
+          .clothes-li {
+            list-style-type: none;
+            line-height: 1.9;
+            letter-spacing: 1.1px;
+
+            &:nth-child(n+2) {
+              margin-left: 20px;
+            }
+
+            a {
+              color: variables.$grayish-color;
+              position: relative;
+
+              &::after {
+                @include mixins.afterContent(variables.$red-color);
+              }
+              &:hover::after {
+                @include mixins.hoverAfterTransform;
+              }
+              &.activeLink {
+                background-color: variables.$red-color;
+                color: variables.$white-color;
+              }
+            }
+          }
+        }
+      }
+
+    }
+    .page-pagination-container {
+      background-color: lightgrey;
     }
   }
 }
