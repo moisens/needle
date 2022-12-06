@@ -22,6 +22,23 @@ const Clothescontainer = (props: Props) => {
             </span>
           </p>
         </section>
+        <section className="settingsAndPage-container">
+          <section className="settings-container">
+          <nav className="sidebar-clothes-page">
+            <ul className="clothes-ul">
+              <li className="clothes-li"><Link to="/women/clothes">Clothes</Link></li>
+              <li className="clothes-li"><Link to="/women/clothes/jacket">Jackets</Link></li>
+              <li className="clothes-li"><Link to="/women/clothes/shirt">Shirts</Link></li>
+              <li className="clothes-li"><Link to="/women/clothes/pants">Pants/Trousers</Link></li>
+              <li className="clothes-li"><Link to="/women/clothes/suit">Suits</Link></li>
+              <li className="clothes-li"><Link to="/women/clothes/dress">Dress</Link></li>
+            </ul>
+          </nav>
+          </section>
+          <section className="page-pagination-container">
+            Pages
+          </section>
+        </section>
       </section>
     </section>
   );
