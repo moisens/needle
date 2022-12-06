@@ -1,0 +1,16 @@
+@use "../../scss/mixins";
+@use "../../scss/variables";
+
+.clothes-header-container {
+  background-color: variables.$bck-yellow;
+
+  .clothes-header-content {
+    width: 1440px;
+    height: 300px;
+    margin: 0 auto;
+    background-image: url("../../assets/header-shopping.jpg");
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+  }
+}
