@@ -1,8 +1,11 @@
-
+import "../pages/pages.scss";
+import Headerclothes from "../components/headers/Headerclothes";
 
 const ClothesWomen = () => {
   return (
-    <div>ClothesWomen</div>
+    <main className="pages-container">
+      <Headerclothes />
+    </main>
   )
 }
 
