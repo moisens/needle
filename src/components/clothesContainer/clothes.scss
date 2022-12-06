@@ -1,0 +1,32 @@
+@use "../../scss/mixins";
+@use "../../scss/variables";
+
+.clothes-container {
+  @include mixins.pageWidthHeight;
+  background-color: variables.$bck-yellow;
+}
+
+.clothes-content {
+  @include mixins.innerPageWidthHeigh;
+
+  .clothes-links {
+    padding: 20px 0 20px 40px;
+
+    .links-links {
+      font-weight: 100;
+      letter-spacing: 1.1px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+
+      a {
+        color: variables.$grayish-color;
+      }
+
+      & .active > * {
+        font-weight: bold;
+        color: variables.$faded-darkpurple;
+      }
+    }
+  }
+}
