@@ -34,7 +34,7 @@
     height: auto;
     background-color: lightgreen;
     display: grid;
-    grid-template-columns: .5fr 2fr;
+    grid-template-columns: 0.5fr 2fr;
     gap: 20px;
     padding: 20px 0 160px 20px;
 
@@ -43,10 +43,10 @@
       width: 280px;
       height: auto;
       border-radius: 18px;
-      
 
       .sidebar-clothes-page {
         padding: 25px 0 80px 30px;
+        //background-color: blue;
 
         .clothes-ul {
           .clothes-li {
@@ -54,7 +54,7 @@
             line-height: 1.9;
             letter-spacing: 1.1px;
 
-            &:nth-child(n+2) {
+            &:nth-child(n + 2) {
               margin-left: 20px;
             }
 
@@ -77,6 +77,105 @@
         }
       }
 
+      .filter-container {
+        //background-color: red;
+        padding: 0 20px 80px;
+
+        .filter-btn-btn {
+          border: none;
+          width: 100%;
+          height: 50px;
+          border-top-left-radius: 12px;
+          border-top-right-radius: 12px;
+          background-color: variables.$light-yellow;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 0 20px;
+          font-family: "Nunito";
+          font-size: 1.125rem;
+          cursor: pointer;
+          margin-bottom: 20px;
+
+          &.closed {
+            border-radius: 12px;
+          }
+        }
+        .filter-panel-content {
+          background-color: variables.$lighter-light-yellow;
+          border-bottom-left-radius: 12px;
+          border-bottom-right-radius: 12px;
+          padding: 20px;
+          margin-bottom: 20px;
+
+          .price-prices {
+            //background-color: lightgreen;
+            padding: 15px 0 20px;
+
+            .price-input {
+              width: 80px;
+              height: 45px;
+              border: solid 0.8px variables.$faded-purple;
+              border-radius: 8px;
+              font-family: "Nunito";
+              font-size: 1.125rem;
+              padding: 8px;
+            }
+            .to-price {
+              padding: 0 10px;
+            }
+          }
+          .filter-slider {
+            padding-bottom: 20px;
+
+            .filter-price-slider {
+              width: 100%;
+              height: 15px;
+              appearance: none;
+              background-color: variables.$bck-hover1;
+              outline: none;
+              opacity: 0.7;
+              -webkit-transition: 0.7s;
+              transition: opacity 0.7s;
+              border-radius: 22px;
+
+              &::-webkit-slider-thumb {
+                appearance: none;
+                width: 20px;
+                height: 20px;
+                border-radius: 50%;
+                background: variables.$dark-purple;
+                cursor: pointer;
+                transition: all ease 0.8s ;
+                
+              }
+
+              &:hover {
+                opacity: 1;
+              }
+            }
+          }
+          .filter-btns {
+            display: flex;
+            gap: 20px;
+
+            .add-remove-btn {
+              width: 100px;
+              height: 45px;
+              background-color: variables.$faded-purple;
+              border: none;
+              border-radius: 8px;
+              color: variables.$white-color;
+              font-size: 18px;
+              cursor: pointer;
+            }
+          }
+        }
+        .icon-rotate {
+          transform: rotate(180deg);
+          transition: all ease 0.5s;
+        }
+      }
     }
     .page-pagination-container {
       background-color: lightgrey;
