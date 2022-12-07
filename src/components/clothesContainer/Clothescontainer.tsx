@@ -117,6 +117,29 @@ const Clothescontainer = (props: Props) => {
                 )}
               </Disclosure>
               {/*filter by tailor end*/}
+              {/*filter by size*/}
+              <Disclosure>
+                {({ open }) => (
+                  <>
+                    <Disclosure.Button className={`${!open ? "filter-btn-btn closed" : "filter-btn-btn"}`}>
+                      Filter by size <RiArrowDownSFill className={`${open ? "icon-rotate" : ""}`} />
+                    </Disclosure.Button>
+                    <Disclosure.Panel className="filter-panel-content">
+                      <section className="panel-filter-size">
+                        <button className="size-btns" aria-label="button select a size">Small</button>
+                        <button className="size-btns" aria-label="button select a size">Medium</button>
+                        <button className="size-btns" aria-label="button select a size">Large</button>
+                        <button className="size-btns" aria-label="button select a size">Extra Large</button>
+                      </section>
+                      <section className="filter-btns">
+                        <button className="add-remove-btn" aria-label="Apply filter button">Apply</button>
+                        <button className="add-remove-btn" aria-label="Remove filter button">Remove</button>
+                      </section>
+                    </Disclosure.Panel>
+                  </>
+                )}
+              </Disclosure>
+              {/*filter by size end*/}
             </section>
           </section>
           <section className="page-pagination-container">Pages</section>
