@@ -99,7 +99,7 @@ const Clothescontainer = (props: Props) => {
                     <Disclosure.Panel className="filter-panel-content">
                       <section className="panel-search">
                         <label htmlFor="search" />
-                        <input type="text" name="search" placeholder="Search a tailor..." />
+                        <input type="text" name="search" placeholder="Search a tailor..." className="panel-search-input" />
                         <ul className="panel-list-results">
                           <li className="panel-list">Tailor 1</li>
                           <li className="panel-list">Tailor 2</li>
