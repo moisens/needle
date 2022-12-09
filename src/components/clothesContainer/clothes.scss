@@ -32,17 +32,16 @@
   .settingsAndPage-container {
     width: 100%;
     height: auto;
-    background-color: lightgreen;
+    //background-color: lightgreen;
     display: grid;
     grid-template-columns: 0.5fr 2fr;
     gap: 20px;
-    padding: 20px 0 160px 20px;
+    padding: 20px 0 260px 20px;
 
     .settings-container {
-      background-color: variables.$white-color;
+      //background-color: variables.$white-color;
       width: 280px;
       height: auto;
-      border-radius: 18px;
 
       .sidebar-clothes-page {
         padding: 25px 0 80px 30px;
@@ -85,9 +84,9 @@
           border: none;
           width: 100%;
           height: 50px;
-          border-top-left-radius: 12px;
-          border-top-right-radius: 12px;
-          background-color: variables.$light-yellow;
+          border-top-left-radius: 9px;
+          border-top-right-radius: 9px;
+          background-color: variables.$yellow-yellow;
           display: flex;
           justify-content: space-between;
           align-items: center;
@@ -98,7 +97,7 @@
           margin-bottom: 20px;
 
           &.closed {
-            border-radius: 12px;
+            border-radius: 9px;
           }
         }
         .filter-panel-content {
@@ -248,7 +247,117 @@
       }
     }
     .page-pagination-container {
-      background-color: lightgrey;
+      //background-color: lightgrey;
+
+      .page-pagination-content {
+        //background-color: lightcoral;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+        padding: 0 30px 60px;
+
+        .page-pagination-product {
+          //background-color: red;
+          
+          .page-pagination-image {
+            width: 100%;
+            height: 400px;
+            background-color: variables.$yellow-yellow;
+            border-radius: 25px;
+
+            img {
+              width: 100%;
+              height: 100%;
+              background-size: cover;
+              object-fit: cover;
+              object-position: 100%;
+              pointer-events: none;
+            }
+          }
+          .page-pagination-text {
+            height: 260px;
+            background-color: variables.$bck-yellow;
+            padding: 20px 22px 20px 22px;
+            line-height: 1.6;
+
+            .pagination-text-H6 {
+              font-family: "Oswald";
+              font-size: 22px;
+              font-weight: 100;
+              letter-spacing: .5px;
+            }
+            .pagination-text-price {
+              font-size: 22px;
+              font-weight: bold;
+            }
+            .pagination-text-size {
+              .pagination-text-span {
+                font-weight: 600;
+                color: variables.$light-grayish-color;
+              }
+              padding-bottom: 20px;
+            }
+            .pagination-product-btn {
+              width: 100%;
+              height: 50px;
+              border: none;
+              border-radius: 25px;
+              cursor: pointer;
+              margin-top: 10px;
+              background-color: variables.$faded-purple;
+              color: variables.$white-color;
+              transition: all ease .8s;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              gap: 15px;
+              display: none;
+              
+              &:hover {
+                background-color: variables.$faded-darkpurple;
+              }
+            }
+            
+          }
+          &:hover {
+            .pagination-product-btn {
+              display: block;
+            }
+          }
+        }
+      }
+      .page-pagination-btns {
+        //background-color: lightcoral;
+        padding: 60px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+
+        .pagination-btn-btn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 60px;
+          height: 60px;
+          border: none;
+          border-radius: 30px;
+          cursor: pointer;
+          background-color: variables.$faded-purple;
+          transition: all ease .8s;
+
+          &:hover {
+            background-color: variables.$faded-darkpurple;
+          }
+        }
+        .page-bnts-btns {
+          border: none;
+          font-size: 28px;
+          background-color: transparent;
+          cursor: pointer;
+
+        }
+      }
     }
   }
 }
