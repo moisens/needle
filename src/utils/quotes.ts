@@ -19,7 +19,7 @@ export const quoteThree = [
   {
     id: "9064ab48-7373",
     quote: "Being one step ahead of the fashion trend is not so important to me. What matters is always moving forward - Sonia Rykiel",
-    image: "https://res.cloudinary.com/dr7qigh2d/image/upload/v1645771930/e-commerce-daddy-will-pay/tmp-4-1645771929434_bjllop.png",
+    image: "https://res.cloudinary.com/dr7qigh2d/image/upload/v1646956754/e-commerce-daddy-will-pay/tmp-1-1646956753306_ejbrek.png",
     color: "lightpurple"
 
   }
