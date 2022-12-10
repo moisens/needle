@@ -107,7 +107,7 @@
           padding: 20px;
           margin-bottom: 20px;
 
-/*Filter by price*/
+          /*Filter by price*/
           .price-prices {
             //background-color: lightgreen;
             padding: 15px 0 20px;
@@ -146,8 +146,7 @@
                 border-radius: 50%;
                 background: variables.$dark-purple;
                 cursor: pointer;
-                transition: all ease 0.8s ;
-                
+                transition: all ease 0.8s;
               }
 
               &:hover {
@@ -156,7 +155,7 @@
             }
           }
 
-/* filter by tailor*/
+          /* filter by tailor*/
           .panel-search {
             //background-color: red;
             padding-bottom: 20px;
@@ -175,7 +174,7 @@
               //background-color: lightblue;
               height: 200px;
               line-height: 2.5;
-              border: solid .8px variables.$faded-purple;
+              border: solid 0.8px variables.$faded-purple;
               border-radius: 8px;
               overflow-y: scroll;
 
@@ -184,7 +183,6 @@
                 //border: solid .8px variables.$faded-purple;
                 background-color: variables.$white-color;
                 padding-left: 8px;
-                
 
                 //&:nth-child(1) {
                 //  border-top-left-radius: 8px;
@@ -200,7 +198,7 @@
               }
             }
           }
-/*filter by size*/
+          /*filter by size*/
           .panel-filter-size {
             display: flex;
             align-items: flex-start;
@@ -216,7 +214,7 @@
               margin-bottom: 8px;
               padding: 0 8px;
               background-color: variables.$white-color;
-              border: solid .8px variables.$faded-purple;
+              border: solid 0.8px variables.$faded-purple;
               border-radius: 8px;
               cursor: pointer;
               font-family: "Nunito";
@@ -257,12 +255,17 @@
         padding: 0 30px 60px;
 
         .page-pagination-product {
-          //background-color: red;
-          
           .page-pagination-image {
             width: 100%;
             height: 400px;
-            background-color: variables.$yellow-yellow;
+            background-image: linear-gradient(
+              to right top,
+              hsla(42, 94%, 80%, 0.1),
+              hsla(40, 93%, 76%, 0.2),
+              hsla(39, 94%, 72%, 0.152),
+              hsla(37, 95%, 69%, 0.152),
+              hsla(35, 96%, 65%, 0.152)
+            );
             border-radius: 25px;
 
             img {
@@ -284,7 +287,7 @@
               font-family: "Oswald";
               font-size: 22px;
               font-weight: 100;
-              letter-spacing: .5px;
+              letter-spacing: 0.5px;
             }
             .pagination-text-price {
               font-size: 22px;
@@ -306,18 +309,17 @@
               margin-top: 10px;
               background-color: variables.$faded-purple;
               color: variables.$white-color;
-              transition: all ease .8s;
+              transition: all ease 0.8s;
               display: flex;
               justify-content: center;
               align-items: center;
               gap: 15px;
               display: none;
-              
+
               &:hover {
                 background-color: variables.$faded-darkpurple;
               }
             }
-            
           }
           &:hover {
             .pagination-product-btn {
@@ -338,13 +340,13 @@
           display: flex;
           justify-content: center;
           align-items: center;
-          width: 60px;
-          height: 60px;
+          width: 80px;
+          height: 80px;
           border: none;
-          border-radius: 30px;
+          border-radius: 40px;
           cursor: pointer;
           background-color: variables.$faded-purple;
-          transition: all ease .8s;
+          transition: all ease 0.8s;
 
           &:hover {
             background-color: variables.$faded-darkpurple;
@@ -355,7 +357,6 @@
           font-size: 28px;
           background-color: transparent;
           cursor: pointer;
-
         }
       }
     }
