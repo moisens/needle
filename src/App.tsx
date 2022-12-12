@@ -6,6 +6,7 @@ import Women from "./pages/Women.page";
 import Men from "./pages/Men.page";
 import ClothesWomen from "./pages/ClothesWomen.page";
 import ShoesWomen from "./pages/ShoesWomen.page";
+import SingleproductPage from "./pages/Singleproduct.page";
 import Footer from "./components/footer/Footer";
 
 const App = () => {
@@ -20,7 +21,7 @@ const App = () => {
 
         <Route path="/men" element={<Men />}></Route>
 
-        
+        <Route path="/single-product/:id" element={<SingleproductPage />}/>
       </Routes>
       <Footer />
     </BrowserRouter>
