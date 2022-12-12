@@ -3,19 +3,22 @@ export interface Navlinks {
   url: string;
   text: string;
   arias?: string;
-}[];
+}
+[];
 
 export interface CategoriesPrime {
   id: string;
   category: string;
-}[];
+  url: string;
+}
+[];
 
 export interface StyleProps {
   id: string;
   text: string;
-}[];
-
+}
+[];
 
 export interface LinkProps {
-  links: Navlinks[]
+  links: Navlinks[];
 }
