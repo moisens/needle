@@ -19,6 +19,8 @@ const App = () => {
         <Route path="/women-shoes" element={<ShoesWomen />} />
 
         <Route path="/men" element={<Men />}></Route>
+
+        
       </Routes>
       <Footer />
     </BrowserRouter>
