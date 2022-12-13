@@ -18,7 +18,7 @@
 
   .category-container {
     background-color: transparent;
-    border: none;
+    
 
     .btn-btn {
       background-color: variables.$bck-hover1;
@@ -31,6 +31,7 @@
       cursor: pointer;
       border-radius: 29px;
       font-weight: bolder;
+      border: none;
 
       .selected-category {
         font-family: "Nunito";
@@ -52,9 +53,17 @@
     font-family: "Nunito";
     border: solid 0.5px variables.$dark-purple;
     border-radius: 5px;
+    display: flex;
+    flex-direction: column;
 
     .category-option {
       padding: 10px;
+      color: variables.$grayish-color;
+
+      &.activeCategory {
+        background-color: red;
+        color: white;
+      }
 
       &:nth-child(1) {
         border-top-left-radius: 5px;

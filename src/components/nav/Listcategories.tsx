@@ -1,5 +1,4 @@
-import { Listbox } from "@headlessui/react";
-import { useState } from "react";
+import { Menu } from '@headlessui/react';
 import { primaryCategories } from "../../utils/categories";
 import { IoMdArrowDropdown } from "react-icons/io";
 import useMaincategory from "../../hooks/useMaincategory";
@@ -9,29 +8,44 @@ const Listcategories = () => {
   const { selectedCategory, setSelectedCategory } = useMaincategory();
 
   return (
-    <Listbox value={selectedCategory} onChange={setSelectedCategory}>
-      <Listbox.Button className="category-container">
-        <div className="btn-btn">
-          <span className="selected-category">
-            {selectedCategory.category} {<IoMdArrowDropdown />}
-          </span>
-        </div>
-      </Listbox.Button>
-      <Listbox.Options className="listcategory-options">
-      <Link to={`${selectedCategory.url}`}>
-        {primaryCategories.map((category) => (
-          <Listbox.Option
-            key={category.id}
-            value={category}
-            className="category-option"
-          >
-              {category.category}
-          </Listbox.Option>
+    <section className="category-container">
+      <Menu>
+      <Menu.Button className="btn-btn">Gender <IoMdArrowDropdown /></Menu.Button>
+      <Menu.Items className="listcategory-options">
+        {primaryCategories.map(category => (
+          <Menu.Item key={category.id} >
+            {({ active }) => (
+              <Link to={category.url} className="category-option">{category.category}</Link>
+            )}
+          </Menu.Item>
         ))}
-      </Link>
-        
-      </Listbox.Options>
-    </Listbox>
+      </Menu.Items>
+    </Menu>
+    </section>
+    
+    //<Listbox value={selectedCategory} onChange={setSelectedCategory}>
+    //  <Listbox.Button className="category-container">
+    //    <div className="btn-btn">
+    //      <span className="selected-category">
+    //        {selectedCategory.category} {<IoMdArrowDropdown />}
+    //      </span>
+    //    </div>
+    //  </Listbox.Button>
+    //  <Listbox.Options className="listcategory-options">
+    //  <Link to={`${selectedCategory.url}`}>
+    //    {primaryCategories.map((category) => (
+    //      <Listbox.Option
+    //        key={category.id}
+    //        value={category}
+    //        className="category-option"
+    //      >
+    //          {category.category}
+    //      </Listbox.Option>
+    //    ))}
+    //  </Link>
+    //    
+    //  </Listbox.Options>
+    //</Listbox>
   );
 };
 
