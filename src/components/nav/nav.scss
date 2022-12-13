@@ -23,9 +23,9 @@
     .btn-btn {
       background-color: variables.$bck-hover1;
       color: variables.$grayish-color;
-      width: 100px;
+      width: 115px;
       height: 0px;
-      padding: 22px 0;
+      padding: 22px 10px;
       margin: 3px 0;
       @include mixins.displayCenter-center;
       cursor: pointer;
@@ -47,7 +47,7 @@
     @include mixins.listStyleType;
     position: absolute;
     top: 55px;
-    width: 100px;
+    width: 110px;
     line-height: 1.9;
     cursor: pointer;
     font-family: "Nunito";
@@ -61,8 +61,12 @@
       color: variables.$grayish-color;
 
       &.activeCategory {
-        background-color: red;
-        color: white;
+        background-color: variables.$red-color;
+        color: variables.$white-color;
+
+        &:hover {
+          background-color: variables.$red-color;
+        }
       }
 
       &:nth-child(1) {
