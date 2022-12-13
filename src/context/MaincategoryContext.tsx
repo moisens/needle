@@ -6,6 +6,7 @@ import { primaryCategories } from "../utils/categories";
 interface MainCategories {
   selectedCategory: CategoriesPrime,
   setSelectedCategory: React.Dispatch<React.SetStateAction<CategoriesPrime>>
+  
 }
 
 interface MaincategoriesProps {
@@ -16,9 +17,8 @@ interface MaincategoriesProps {
 const MaincategoryContext = createContext<MainCategories >({} as MainCategories);
 
 export const MaincategoryProvider = ({ children }:MaincategoriesProps) => {
-  const [selectedCategory, setSelectedCategory] = useState(
-    primaryCategories[0]
-  );
+  const [selectedCategory, setSelectedCategory] = useState<CategoriesPrime>(primaryCategories[0]);
+
   return (
     <MaincategoryContext.Provider value={{
       selectedCategory,
