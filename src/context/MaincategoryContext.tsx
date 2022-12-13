@@ -1,11 +1,11 @@
-import { createContext, useState } from "react";
+import { createContext, ReactHTMLElement, useState } from "react";
 import { CategoriesPrime } from "../types/typeLinks";
 import { primaryCategories } from "../utils/categories";
 
 
 interface MainCategories {
-  selectedCategory: CategoriesPrime,
-  setSelectedCategory: React.Dispatch<React.SetStateAction<CategoriesPrime>>
+  //selectedCategory: CategoriesPrime,
+  //setSelectedCategory: React.Dispatch<React.SetStateAction<CategoriesPrime>>
   
 }
 
@@ -14,16 +14,17 @@ interface MaincategoriesProps {
 }
 
 
-const MaincategoryContext = createContext<MainCategories >({} as MainCategories);
+const MaincategoryContext = createContext<MainCategories | null >(null);
 
 export const MaincategoryProvider = ({ children }:MaincategoriesProps) => {
   const [selectedCategory, setSelectedCategory] = useState<CategoriesPrime>(primaryCategories[0]);
 
+  const handleSelectedCategory = () => {
+    
+  }
+
   return (
-    <MaincategoryContext.Provider value={{
-      selectedCategory,
-      setSelectedCategory
-    }}>
+    <MaincategoryContext.Provider value={{}}>
       { children }
     </MaincategoryContext.Provider>
   )
