@@ -7,4 +7,4 @@ export type QuotesTypes = {
 
 export interface QuotesProps  {
   quotes: QuotesTypes[]
-};
+}
