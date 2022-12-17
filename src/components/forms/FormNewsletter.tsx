@@ -3,6 +3,7 @@ import { RadioGroup } from "@headlessui/react";
 import { useState } from "react";
 import { IoIosRadioButtonOn, IoMdRadioButtonOff } from "react-icons/io";
 import { chooseStyles } from "../../utils/categories";
+import toast, { Toaster } from 'react-hot-toast';
 
 const FormNewsletter = () => {
   const [selected, setSelected] = useState(chooseStyles[0]);
@@ -11,6 +12,8 @@ const FormNewsletter = () => {
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     console.log("Subscribing...", selected.text, email);
+    if (!email) return;
+    toast.success("You successfully subscribed")
   };
 
   return (
@@ -66,6 +69,7 @@ const FormNewsletter = () => {
           note for the previous submit.
         </p>
       </form>
+      <Toaster position="bottom-right" />
     </>
   );
 };
