@@ -14,12 +14,12 @@ const useSlidebtns = ({ sliders }: Sliderdata) => {
     }
   }, [index, sliders]);
 
-  useEffect(() => {
-    const slider = setInterval(() => {
-      setIndex(index + 1)
-    }, 12000)
-    return () => clearInterval(slider);
-  }, [index])
+  //useEffect(() => {
+  //  const slider = setInterval(() => {
+  //    setIndex(index + 1)
+  //  }, 15000)
+  //  return () => clearInterval(slider);
+  //}, [index])
 
   return {
     index,
