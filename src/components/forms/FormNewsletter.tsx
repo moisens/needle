@@ -4,15 +4,20 @@ import { useState } from "react";
 import { IoIosRadioButtonOn, IoMdRadioButtonOff } from "react-icons/io";
 import { chooseStyles } from "../../utils/categories";
 
-type Props = {};
-
-const FormNewsletter = (props: Props) => {
+const FormNewsletter = () => {
   const [selected, setSelected] = useState(chooseStyles[0]);
+  const [email, setEmail] = useState("");
+
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("Subscribing...", selected.text, email);
+  };
+
   return (
     <>
       <h2 className="form-titleH2">Your stylish email box</h2>
       <h3 className="form-titleH3">SUBSCRIBE TO OUR NEWS LETTER</h3>
-      <form className="form-container">
+      <form className="form-container" onSubmit={handleFormSubmit}>
         <label htmlFor="email" />
         <input
           type="email"
@@ -20,6 +25,7 @@ const FormNewsletter = (props: Props) => {
           placeholder="Enter your email"
           className="form-inputEmail"
           aria-label="Input email"
+          onChange={(e) => setEmail(e.target.value)}
         />
         <h4 className="config-H4">CONFIGURE YOUR PREFERENCE</h4>
         <RadioGroup
