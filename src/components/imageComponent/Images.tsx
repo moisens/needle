@@ -1,7 +1,7 @@
 interface ImageProps {
   src: string;
   alt: string;
-  title: string;
+  title?: string;
 }
 
 const Images = ({ src, alt, title }: ImageProps) => {
