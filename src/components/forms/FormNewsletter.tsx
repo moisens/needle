@@ -3,7 +3,8 @@ import { RadioGroup } from "@headlessui/react";
 import { useState } from "react";
 import { IoIosRadioButtonOn, IoMdRadioButtonOff } from "react-icons/io";
 import { chooseStyles } from "../../utils/categories";
-import toast, { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from "react-hot-toast";
+import Button from "../button/Button";
 
 const FormNewsletter = () => {
   const [selected, setSelected] = useState(chooseStyles[0]);
@@ -13,7 +14,7 @@ const FormNewsletter = () => {
     e.preventDefault();
     console.log("Subscribing...", selected.text, email);
     if (!email) return;
-    toast.success("You successfully subscribed")
+    toast.success("You successfully subscribed");
   };
 
   return (
@@ -57,13 +58,13 @@ const FormNewsletter = () => {
             </RadioGroup.Option>
           ))}
         </RadioGroup>
-        <button
-          type="submit"
+        <Button
+          as="submit"
           className="subscribe-btn"
           aria-label="Subscribe button"
         >
           Subscribe
-        </button>
+        </Button>
         <p className="small-text">
           *Reinvent the wheel locked and loaded, so time vampire cross sabers
           note for the previous submit.
