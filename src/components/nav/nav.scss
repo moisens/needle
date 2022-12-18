@@ -5,6 +5,8 @@
   background-color: variables.$bck-yellow;
   @include mixins.displaySpace-around;
   font-family: "Nunito";
+  z-index: 2000;
+  border: solid 1px red;
 }
 
 .logo {

@@ -5,12 +5,12 @@ export const primaryCategories: CategoriesPrime[] = [
   { 
     id: "e042c71c-6ec8", 
     category: 'Women',
-    url: "/women"
+    url: "women"
   },
   { 
     id: "e042ca3c-6ec8", 
     category: 'Men',
-    url: "/men"
+    url: "men"
   }
 ]
 

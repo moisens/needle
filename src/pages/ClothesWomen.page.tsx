@@ -4,6 +4,7 @@ import Clothescontainer from "../components/clothesContainer/Clothescontainer";
 import Stories from "../components/story/Stories";
 import Quotes from "../components/quotesComponent/Quotes";
 import { quoteThree, quoteFour } from "../utils/quotes";
+import { Outlet } from "react-router-dom";
 
 
 const ClothesWomen = () => {
@@ -14,6 +15,8 @@ const ClothesWomen = () => {
       <Quotes quotes={quoteThree} />
       <Stories />
       <Quotes quotes={quoteFour} />
+
+      <Outlet />
     </main>
   )
 }

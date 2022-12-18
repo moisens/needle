@@ -1,7 +1,7 @@
 import "./clothes.scss";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { RiArrowDownSFill, RiArrowLeftSLine, RiArrowRightSLine } from "react-icons/ri";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import { Disclosure } from "@headlessui/react";
 
 type Props = {};
@@ -16,11 +16,11 @@ const Clothescontainer = (props: Props) => {
             <span className="links-links active">
               {" "}
               <MdOutlineKeyboardArrowRight size="1.6rem" />
-              <Link to="/women-clothes">Clothes</Link>
+              <Link to="women-clothes">Clothes</Link>
             </span>
             <span className="links-links active">
               <MdOutlineKeyboardArrowRight size="1.6rem" />
-              <Link to="/women-clothes">Jackets</Link>
+              <Link to="jackets">Jackets</Link>
             </span>
           </p>
         </section>
@@ -29,24 +29,25 @@ const Clothescontainer = (props: Props) => {
             <nav className="sidebar-clothes-page">
               <ul className="clothes-ul">
                 <li className="clothes-li">
-                  <Link to="/women/clothes">Clothes</Link>
+                  <Link to="women-clothes">Clothes</Link>
                 </li>
                 <li className="clothes-li">
-                  <Link to="/women/clothes/jacket">Jackets</Link>
+                  <Link to="jackets">Jackets</Link>
                 </li>
                 <li className="clothes-li">
-                  <Link to="/women/clothes/shirt">Shirts</Link>
+                  <Link to="shirts">Shirts</Link>
                 </li>
                 <li className="clothes-li">
-                  <Link to="/women/clothes/pants">Pants/Trousers</Link>
+                  <Link to="pants">Pants/Trousers</Link>
                 </li>
                 <li className="clothes-li">
-                  <Link to="/women/clothes/suit">Suits</Link>
+                  <Link to="suits">Suits</Link>
                 </li>
                 <li className="clothes-li">
-                  <Link to="/women/clothes/dress">Dress</Link>
+                  <Link to="dress">Dress</Link>
                 </li>
               </ul>
+              
             </nav>
             <section className="filter-container">
               {/*filter by price */}
