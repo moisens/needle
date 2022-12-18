@@ -5,7 +5,7 @@ interface BaseProps {
 interface AsButtonProps extends BaseProps {
   as: "button" | "submit";
   className: string;
-  handleClick: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  handleClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 interface AsLinkProps extends BaseProps {
@@ -16,19 +16,10 @@ interface AsLinkProps extends BaseProps {
 
 type ButtonProps = AsButtonProps | AsLinkProps;
 
-const Button = ({
-  children,
-  as,
-  handleClick,
-  className = "",
-}: ButtonProps) => {
+const Button = ({ children, as, handleClick, className = "" }: ButtonProps) => {
   return (
     <>
-      {as === "a" && (
-        <a  className={className}>
-          {children}
-        </a>
-      )}
+      {as === "a" && <a className={className}>{children}</a>}
 
       {as === "button" && (
         <button className={className} onClick={handleClick}>
