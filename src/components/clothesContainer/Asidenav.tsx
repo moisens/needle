@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Asidenav = () => {
   return (
@@ -6,7 +6,7 @@ const Asidenav = () => {
       <nav className="sidebar-clothes-page">
       <ul className="clothes-ul">
         <li className="clothes-li">
-          <Link to="women-clothes">Clothes</Link>
+          <Link to="clothes">Clothes</Link>
         </li>
         <li className="clothes-li">
           <Link to="jackets">Jackets</Link>
@@ -25,9 +25,6 @@ const Asidenav = () => {
         </li>
       </ul>
     </nav>
-    {/* <div className="page-pagination-container">
-      <Outlet />
-    </div> */}
     </div>
   );
 };

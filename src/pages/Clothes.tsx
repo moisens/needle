@@ -1,10 +1,10 @@
-const Pants = () => {
+const Clothes = () => {
   return (
     <>
       <section className="page-pagination-product">
         <section className="page-pagination-image">
           <img
-            src="https://res.cloudinary.com/dr7qigh2d/image/upload/v1646875303/e-commerce-daddy-will-pay/tmp-1-1646875301927_ypv1kg.png"
+            src="https://res.cloudinary.com/dr7qigh2d/image/upload/v1646882533/e-commerce-daddy-will-pay/tmp-5-1646882532306_w63tjk.png"
             alt="img test"
           />
         </section>
@@ -22,7 +22,7 @@ const Pants = () => {
       <section className="page-pagination-product">
         <section className="page-pagination-image">
           <img
-            src="https://res.cloudinary.com/dr7qigh2d/image/upload/v1646875303/e-commerce-daddy-will-pay/tmp-1-1646875301927_ypv1kg.png"
+            src="https://res.cloudinary.com/dr7qigh2d/image/upload/v1646882533/e-commerce-daddy-will-pay/tmp-5-1646882532306_w63tjk.png"
             alt="img test"
           />
         </section>
@@ -40,7 +40,7 @@ const Pants = () => {
       <section className="page-pagination-product">
         <section className="page-pagination-image">
           <img
-            src="https://res.cloudinary.com/dr7qigh2d/image/upload/v1646875303/e-commerce-daddy-will-pay/tmp-1-1646875301927_ypv1kg.png"
+            src="https://res.cloudinary.com/dr7qigh2d/image/upload/v1646882533/e-commerce-daddy-will-pay/tmp-5-1646882532306_w63tjk.png"
             alt="img test"
           />
         </section>
@@ -59,4 +59,4 @@ const Pants = () => {
   );
 };
 
-export default Pants;
+export default Clothes;
