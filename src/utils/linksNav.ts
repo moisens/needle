@@ -1,53 +1,47 @@
 import { Navlinks } from "../types/typeLinks";
 
 export const womenLinks: Navlinks[] = [
-  
   {
     id: "853b40ca-6ed1",
-    url: "/women-clothes",
+    url: "women-clothes",
     text: "Clothes",
   },
   {
     id: "853b4232-6ed1",
-    url: "/women-shoes",
+    url: "women-shoes",
     text: "Shoes",
   },
 ];
 
 export const navWomenClothes: Navlinks[] = [
   {
-    id: "11b03d6a-7113",
-    url: "/women",
-    text: "Women",
-  },
-  {
     id: "11b04044-7113",
-    url: "/women-clothes",
+    url: "clothes",
     text: "Clothes",
   },
   {
     id: "11b0417a-7113",
-    url: "/women-jackets",
-    text: "Jacket",
+    url: "jackets",
+    text: "Jackets",
   },
   {
     id: "11b04292-7113",
-    url: "/women-shirt",
+    url: "shirts",
     text: "Shirt",
   },
   {
     id: "11b043a0-7113",
-    url: "/women-pants",
+    url: "pants",
     text: "Pants/Trousers",
   },
   {
     id: "11b044c2-7113",
-    url: "/women-suits",
+    url: "suits",
     text: "Suits",
   },
   {
     id: "11b048a0-7113",
-    url: "/women-dress",
+    url: "dress",
     text: "Dress",
   },
 ];

@@ -1,12 +1,8 @@
 import "./landingpage.scss";
-import Button from "../button/Button";
-import { Link } from "react-router-dom";
 import Images from "../imageComponent/Images";
 import LandingBtns from "./LandingBtns";
 
-type Props = {};
-
-const Discover = (props: Props) => {
+const Discover = () => {
   return (
     <div className="discover-container">
       <header className="discover-header">
