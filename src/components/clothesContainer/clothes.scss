@@ -71,6 +71,9 @@
                 background-color: variables.$red-color;
                 color: variables.$white-color;
               }
+              &.activeSideLink {
+                color: variables.$red-color;
+              }
             }
           }
         }
