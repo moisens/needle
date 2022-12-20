@@ -3,7 +3,7 @@ import { Navlinks } from "../types/typeLinks";
 export const womenLinks: Navlinks[] = [
   {
     id: "853b40ca-6ed1",
-    url: "women-clothes",
+    url: "women/women-clothes",
     text: "Clothes",
   },
   {
