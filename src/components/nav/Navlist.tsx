@@ -10,7 +10,7 @@ const Navlist = () => {
         <Menu.Button className="btn-btn-menu">
           <li>
             <NavLink
-              to="women/women-clothes"
+              to="women/women-clothes/clothes"
               className={({ isActive }) =>
                 isActive ? "li-a activeLink" : "li-a"
               }
