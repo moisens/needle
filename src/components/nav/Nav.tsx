@@ -16,7 +16,7 @@ const Nav = () => {
         <div className="logo">needle</div>
         <div className="nav-content">
           <Listcategories />
-          <Navlist links={womenLinks} />
+          <Navlist />
           <div className="fav-cart-user">
             <div className="favorites-container">
               <AiOutlineHeart size="1.875rem" />

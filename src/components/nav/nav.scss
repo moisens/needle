@@ -3,6 +3,7 @@
 
 .navbar-container {
   background-color: variables.$bck-yellow;
+  background-color: lightblue;
   @include mixins.displaySpace-around;
   font-family: "Nunito";
   z-index: 2000;
@@ -19,7 +20,6 @@
 
   .category-container {
     background-color: transparent;
-    
 
     .btn-btn {
       background-color: variables.$bck-hover1;
@@ -90,25 +90,62 @@
     flex-grow: 0.4;
     font-family: "Nunito";
     gap: 10px;
+    position: relative;
 
-    li {
-      @include mixins.listStyleType;
-      .li-a {
-        text-decoration: none;
-        color: variables.$grayish-color;
-        padding: 14.1px 10px;
-        position: relative;
+    .btn-btn-menu {
+      border: none;
+      background-color: transparent;
+      font-family: "Nunito";
+      font-size: 1.125rem;
+      @include mixins.displayAlign-center;
+      cursor: pointer;
 
-        &::after {
-          @include mixins.afterContent(variables.$red-color);
+      li {
+        @include mixins.listStyleType;
+        .li-a {
+          text-decoration: none;
+          color: variables.$grayish-color;
+          padding: 12.5px 10px;
+          position: relative;
+
+          &::after {
+            @include mixins.afterContent(variables.$red-color);
+          }
+          &:hover::after {
+            @include mixins.hoverAfterTransform;
+          }
+
+          &.activeLink {
+            background-color: variables.$red-color;
+            color: variables.$white-color;
+          }
         }
-        &:hover::after {
-          @include mixins.hoverAfterTransform;
-        }
+      }
+    }
+    .menu-items {
+      background-color: variables.$bck-yellow;
+      position: absolute;
+      top: 50px;
+      left: 309px;
+      display: flex;
+      line-height: 1.9;
+      padding: 15px;
+      box-shadow: 1px 1px 1px 1px;
 
-        &.activeLink {
-          background-color: variables.$red-color;
-          color: variables.$white-color;
+      .menu-item {
+        display: flex;
+        flex-direction: column;
+        
+
+        .nav-link-item {
+          color: variables.$grayish-color;
+          padding: 8px;
+          cursor: pointer;
+
+          &.active-item {
+            color: variables.$red-color;
+            background-color: variables.$white-color;
+          }
         }
       }
     }
