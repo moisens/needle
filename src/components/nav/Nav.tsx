@@ -3,7 +3,6 @@ import { AiOutlineHeart } from "react-icons/ai";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import Listcategories from "./Listcategories";
-import { womenLinks } from "../../utils/linksNav";
 import Navlist from "./Navlist";
 import { Outlet } from "react-router-dom";
 

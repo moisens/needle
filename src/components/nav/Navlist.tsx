@@ -30,7 +30,11 @@ const Navlist = () => {
             </Menu.Item>
           ))}
           </section>
-          <section>Image</section>
+          <section className="image-link-container">
+            <section className="image-link-content">
+              <img src="https://img.freepik.com/photos-gratuite/fille-blonde-insouciante-parler-au-telephone-danser-femme-francaise-mode-beret-tenant-smartphone-mur-rouge_197531-14450.jpg?w=1800&t=st=1671206781~exp=1671207381~hmac=1f34e394a5419d612e8a117a170918afd020e53b8b84a16b1563992cf6be313a" alt="image-link" />
+            </section>
+          </section>
         </Menu.Items>
       </Menu>
       <Menu>
