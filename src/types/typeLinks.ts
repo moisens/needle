@@ -6,6 +6,10 @@ export interface Navlinks {
 }
 [];
 
+export interface SubLinksWithImage extends Navlinks {
+  image: string;
+}
+
 export interface CategoriesPrime {
   id: string;
   category: string;
