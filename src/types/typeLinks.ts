@@ -10,6 +10,11 @@ export interface SubLinksWithImage extends Navlinks {
   image: string;
 }
 
+export interface SubLinkDropdown {
+  links: SubLinksWithImage[]
+  setImageUrl: (value: React.SetStateAction<string>) => void
+}
+
 export interface CategoriesPrime {
   id: string;
   category: string;

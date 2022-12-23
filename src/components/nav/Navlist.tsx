@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom";
+import DropdownList from "./DropdownList";
 import { navWomenClothes } from "../../utils/linksNav";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const Navlist = () => {
-  //const [imageUrl, setImageUrl] = useState<string>("");
+  const [imageUrl, setImageUrl] = useState<string>("https://img.freepik.com/photos-gratuite/boutique-vetements-boutique-vetements-cintre-boutique-moderne_1150-8886.jpg?w=1800&t=st=1671723298~exp=1671723898~hmac=d351c7a2a0482bb61ed88b35d33be2ad0346c71a6c6b39a45d2d1f04a85067d4");
   const [isHovered, setIsHovered] = useState(false);
 
   //useEffect(() => {
@@ -16,13 +17,13 @@ const Navlist = () => {
   const handleOnMouseOut = () => setIsHovered(false);
 
   return (
-    <section className="linknav-container">
+    <section
+      className="linknav-container"
+      onMouseOver={() => handleOnHoverLink()}
+      onMouseOut={() => handleOnMouseOut()}
+    >
       <ul className="uls-list">
-        <li
-          className="list-li"
-          onMouseOver={() => handleOnHoverLink()}
-          onMouseOut={() => handleOnMouseOut()}
-        >
+        <li className="list-li">
           <NavLink
             to="women/women-clothes/clothes"
             className={({ isActive }) =>
@@ -59,21 +60,10 @@ const Navlist = () => {
         }
       >
         <ul className="dropdown-ul-content">
-          {navWomenClothes.map((link) => (
-            <li className="dropdown-li" key={link.id}>
-              <NavLink
-                to={`/women/women-clothes/${link.url}`}
-                className={({ isActive }) =>
-                  isActive ? "dropdown-li-a activeLink" : "dropdown-li-a"
-                }
-              >
-                {link.text}
-              </NavLink>
-            </li>
-          ))}
+          <DropdownList links={navWomenClothes} setImageUrl={setImageUrl} />
         </ul>
         <section className="link-image-content">
-          <img src="" alt="image-link" />
+          <img src={imageUrl} alt="image-link" />
         </section>
       </section>
     </section>
@@ -81,45 +71,3 @@ const Navlist = () => {
 };
 
 export default Navlist;
-
-/*
-
-<Menu>
-        <Menu.Button className="btn-btn-menu">
-          <li>
-            <NavLink
-              to="women/women-clothes/clothes"
-              className={({ isActive }) =>
-                isActive ? "li-a activeLink" : "li-a"
-              }
-            >
-              Clothes
-            </NavLink>
-          </li>
-          <RiArrowDownSFill />
-        </Menu.Button>
-        <Menu.Items className="menu-items">
-          <section className="menu-item">
-            {navWomenClothes.map((link) => (
-              <Menu.Item key={link.id}>
-                <NavLink
-                  to={`women/women-clothes/${link.url}`}
-                  className={({ isActive }) =>
-                    isActive ? "nav-link-item active-item" : "nav-link-item"
-                  }
-                  onMouseOver={() => setImageUrl(link.image)}
-                >
-                  {link.text}
-                </NavLink>
-              </Menu.Item>
-            ))}
-          </section>
-          <section className="image-link-container">
-            <section className={`${imageUrl ? "image-link-content" : null}`}>
-              {imageUrl ? <img src={imageUrl} alt="image-link" /> : null}
-            </section>
-          </section>
-        </Menu.Items>
-      </Menu>
-
-*/
