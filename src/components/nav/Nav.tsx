@@ -12,24 +12,24 @@ const Nav = () => {
   return (
     <>
       <nav className="navbar-container">
-        <div className="logo">needle</div>
-        <div className="nav-content">
+        <section className="logo">needle</section>
+        <section className="nav-content">
           <Listcategories />
           <Navlist />
-          <div className="fav-cart-user">
-            <div className="favorites-container">
+          <section className="fav-cart-user">
+            <section className="favorites-container">
               <AiOutlineHeart size="1.875rem" />
-              <div className="favorites-count">8</div>
-            </div>
-            <div className="carts-container">
+              <section className="favorites-count">8</section>
+            </section>
+            <section className="carts-container">
               <MdOutlineShoppingBag size="1.875rem" />
-              <div className="cart-count">2</div>
-            </div>
-            <div className="user-container">
+              <section className="cart-count">2</section>
+            </section>
+            <section className="user-container">
               <CgProfile size="1.875rem" />
-            </div>
-          </div>
-        </div>
+            </section>
+          </section>
+        </section>
       </nav>
       <main className="pages-container">
         <Outlet />
