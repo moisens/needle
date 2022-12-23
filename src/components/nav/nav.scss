@@ -85,68 +85,25 @@
   }
 
   .linknav-container {
-    position: relative;
+    //position: relative;
     @include mixins.displayFlexEndCenter;
     flex-grow: 0.7;
   }
 
-  .uls-list {
+  .section-uls-list {
     @include mixins.displayFlexEndCenter;
-    gap: 10px;
+    gap: 12px;
+    position: relative;
 
-    .list-li {
-      @include mixins.listStyleType;
-
-      .list-a {
-        text-decoration: none;
-        color: variables.$grayish-color;
-        padding: 12.5px 10px;
-        position: relative;
-
-        &::after {
-          @include mixins.afterContent(variables.$red-color);
-        }
-        &:hover::after {
-          @include mixins.hoverAfterTransform;
-        }
-
-        &.activeLink {
-          background-color: variables.$red-color;
-          color: variables.$white-color;
-        }
-      }
-    }
-  }
-
-  .dropdown-container {
-    position: absolute;
-    top: 50px;
-    right: 0px;
-    background-color: variables.$bck-yellow;
-    width: 420px;
-    height: auto;
-    @include mixins.displayFlex;
-    gap: 30px;
-    padding: 12px;
-    display: none;
-    border: solid 0.5px hsl(265deg, 71%, 40%);
-    border-radius: 22px;
-    z-index: 800;
-
-    &.isHovered {
-      @include mixins.displayFlex;
-    }
-
-    .dropdown-ul-content {
-      .dropdown-li {
+    .uls-dropdown {
+      .list-li {
         @include mixins.listStyleType;
-        line-height: 1.9;
-        padding-left: 2px;
-        margin-bottom: 5px;
-        position: relative;
 
-        a {
+        .list-a {
+          text-decoration: none;
           color: variables.$grayish-color;
+          padding: 12.5px 10px;
+          position: relative;
 
           &::after {
             @include mixins.afterContent(variables.$red-color);
@@ -156,27 +113,162 @@
           }
 
           &.activeLink {
-            color: variables.$red-color;
+            background-color: variables.$red-color;
+            color: variables.$white-color;
+          }
+        }
+      }
+      .dropdown-container {
+        position: absolute;
+        top: 37px;
+        right: -40px;
+        background-color: variables.$bck-yellow;
+        width: 420px;
+        height: auto;
+        @include mixins.displayFlex;
+        gap: 30px;
+        padding: 12px;
+        display: none;
+        border-bottom-left-radius: 22px;
+        border-bottom-right-radius: 22px;
+        border-left: solid 0.5px hsl(265deg, 71%, 40%);
+        border-right: solid 0.5px hsl(265deg, 71%, 40%);
+        border-bottom: solid 0.5px hsl(265deg, 71%, 40%);
+        z-index: 800;
+
+        &.isHovered {
+          @include mixins.displayFlex;
+        }
+
+        .dropdown-ul-content {
+          .dropdown-li {
+            @include mixins.listStyleType;
+            line-height: 1.9;
+            padding-left: 2px;
+            margin-bottom: 5px;
+            position: relative;
+
+            a {
+              color: variables.$grayish-color;
+
+              &::after {
+                @include mixins.afterContent(variables.$red-color);
+              }
+              &:hover::after {
+                @include mixins.hoverAfterTransform;
+              }
+
+              &.activeLink {
+                color: variables.$red-color;
+              }
+            }
+          }
+        }
+        .link-image-content {
+          width: 100%;
+          border-radius: 22px;
+
+          img {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            object-fit: cover;
+            object-position: top;
+            border-radius: 22px;
+            pointer-events: none;
           }
         }
       }
     }
-    .link-image-content {
-      width: 100%;
-      border-radius: 22px;
-      background-color: lightgreen;
-
-      img {
-        width: 100%;
-        height: 100%;
-        background-size: cover;
-        object-fit: cover;
-        object-position: top;
-        border-radius: 22px;
-        pointer-events: none;
-      }
-    }
   }
+
+  //.uls-list {
+  //  @include mixins.displayFlexEndCenter;
+  //  gap: 10px;
+  //
+  //  .list-li {
+  //    @include mixins.listStyleType;
+  //
+  //    .list-a {
+  //      text-decoration: none;
+  //      color: variables.$grayish-color;
+  //      padding: 12.5px 10px;
+  //      position: relative;
+  //
+  //      &::after {
+  //        @include mixins.afterContent(variables.$red-color);
+  //      }
+  //      &:hover::after {
+  //        @include mixins.hoverAfterTransform;
+  //      }
+  //
+  //      &.activeLink {
+  //        background-color: variables.$red-color;
+  //        color: variables.$white-color;
+  //      }
+  //    }
+  //  }
+  //}
+
+  //.dropdown-container {
+  //  position: absolute;
+  //  top: 50px;
+  //  right: 0px;
+  //  background-color: variables.$bck-yellow;
+  //  width: 420px;
+  //  height: auto;
+  //  @include mixins.displayFlex;
+  //  gap: 30px;
+  //  padding: 12px;
+  //  display: none;
+  //  border: solid 0.5px hsl(265deg, 71%, 40%);
+  //  border-radius: 22px;
+  //  z-index: 800;
+  //
+  //  &.isHovered {
+  //    @include mixins.displayFlex;
+  //  }
+  //
+  //  .dropdown-ul-content {
+  //    .dropdown-li {
+  //      @include mixins.listStyleType;
+  //      line-height: 1.9;
+  //      padding-left: 2px;
+  //      margin-bottom: 5px;
+  //      position: relative;
+  //
+  //      a {
+  //        color: variables.$grayish-color;
+  //
+  //        &::after {
+  //          @include mixins.afterContent(variables.$red-color);
+  //        }
+  //        &:hover::after {
+  //          @include mixins.hoverAfterTransform;
+  //        }
+  //
+  //        &.activeLink {
+  //          color: variables.$red-color;
+  //        }
+  //      }
+  //    }
+  //  }
+  //  .link-image-content {
+  //    width: 100%;
+  //    border-radius: 22px;
+  //    background-color: lightgreen;
+  //
+  //    img {
+  //      width: 100%;
+  //      height: 100%;
+  //      background-size: cover;
+  //      object-fit: cover;
+  //      object-position: top;
+  //      border-radius: 22px;
+  //      pointer-events: none;
+  //    }
+  //  }
+  //}
 
   .fav-cart-user {
     @include mixins.displaySpace-around;
