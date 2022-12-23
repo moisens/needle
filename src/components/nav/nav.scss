@@ -141,6 +141,7 @@
       .dropdown-li {
         @include mixins.listStyleType;
         line-height: 1.9;
+        padding-left: 2px;
         margin-bottom: 5px;
         position: relative;
 
