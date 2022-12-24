@@ -19,6 +19,7 @@ import Dress from "./pages/Dress";
 import Men from "./pages/Men.page";
 import ClothesWomen from "./pages/ClothesWomen.page";
 import ShoesWomen from "./pages/ShoesWomen.page";
+import StoriesPage from "./pages/Stories.page";
 import SingleproductPage from "./pages/Singleproduct.page";
 import NotFound from "./pages/NotFound.page";
 //import Footer from "./components/footer/Footer";
@@ -37,6 +38,7 @@ const router = createBrowserRouter(
         <Route path="dress" element={<Dress />} />
       </Route>
       <Route path="women/women-shoes" element={<ShoesWomen />} />
+      <Route path="women/women-stories" element={<StoriesPage />} />
 
       <Route path="men" element={<Men />}></Route>
 
