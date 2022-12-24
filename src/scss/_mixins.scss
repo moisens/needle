@@ -256,3 +256,27 @@
   padding-bottom: 60px;
   color: $color;
 }
+
+/*==================================
+  button
+  ==================================*/
+@mixin Button(
+  $width,
+  $height,
+  $border-radius,
+  $font-size,
+  $font-weight,
+  $background-color,
+  $color
+) {
+  width: $width;
+  height: $height;
+  border: none;
+  border-radius: $border-radius;
+  font-size: $font-size;
+  font-weight: $font-weight;
+  background-color: variables.$faded-purple;
+  color: variables.$white-color;
+  cursor: pointer;
+  transition: all ease 0.8s;
+}

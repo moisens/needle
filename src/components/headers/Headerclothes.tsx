@@ -1,13 +1,11 @@
-import "./head.scss"
+import "./head.scss";
 
-type Props = {}
-
-const Headerclothes = (props: Props) => {
+const Headerclothes = () => {
   return (
     <header className="clothes-header-container">
       <section className="clothes-header-content"></section>
     </header>
-  )
-}
+  );
+};
 
 export default Headerclothes;

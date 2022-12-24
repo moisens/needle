@@ -1,8 +1,7 @@
 import "./stories.scss";
+import Button from "../button/Button";
 
-type Props = {};
-
-const Stories = (props: Props) => {
+const Stories = () => {
   return (
     <section className="stories-container">
       <section className="stories-content">
@@ -66,6 +65,9 @@ const Stories = (props: Props) => {
           </section>
         </section>
         {/*End Story 3*/}
+        <section className="story-btn-btn">
+          <Button as="button" className="btns-story-btns">Load more</Button>
+        </section>
       </section>
     </section>
   );

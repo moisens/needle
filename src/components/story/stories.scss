@@ -7,7 +7,7 @@
 
   .stories-content {
     @include mixins.innerPageWidthHeigh;
-    padding: 260px 80px;
+    padding: 260px 80px 0;
   }
 }
 
@@ -50,16 +50,18 @@
       padding: 0 100px 40px 0;
     }
     .stories-button {
-      width: 200px;
-      height: 65px;
+      @include mixins.Button(
+        200px,
+        65px,
+        50px,
+        1.125rem,
+        bold,
+        variables.$faded-purple,
+        variables.$white-color
+      );
       border: none;
-      border-radius: 50px;
-      font-size: 1.125rem;
-      font-weight: bold;
-      background-color: variables.$faded-purple;
-      color: variables.$white-color;
       cursor: pointer;
-      transition:  all ease .8s;
+      transition: all ease 0.8s;
 
       &:hover {
         background-color: variables.$faded-darkpurple;
@@ -72,6 +74,30 @@
     }
     .story-text-container {
       padding: 0 0 0 100px;
+    }
+  }
+}
+
+.story-btn-btn {
+  @include mixins.displayJustify-center;
+  padding-bottom: 180px;
+
+  .btns-story-btns {
+    @include mixins.Button(
+      200px,
+      65px,
+      50px,
+      1.125rem,
+      bold,
+      variables.$faded-purple,
+      variables.$white-color
+    );
+    border: none;
+    cursor: pointer;
+    transition: all ease 0.8s;
+
+    &:hover {
+      background-color: variables.$faded-darkpurple;
     }
   }
 }
