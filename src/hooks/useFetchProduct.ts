@@ -7,7 +7,7 @@ const fetchProduct = async (): Promise<IProducts> => {
 };
 
 const useFetchproducts = () => {
-  return useQuery(["products"], fetchProduct);
+  return useQuery<IProducts, Error>(["products"], fetchProduct);
 };
 
 export default useFetchproducts;

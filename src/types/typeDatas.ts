@@ -1,5 +1,5 @@
 export interface IProducts {
-  id: string;
+  readonly id: string;
   tailorname: string;
   color: string;
   price: string;
@@ -13,4 +13,14 @@ export interface IProducts {
   inventory: number;
   averageRating: number;
   numOfReviews: number;
+}
+
+export type ProductsType = {
+  products: IProducts[] | undefined
+}
+
+export type IDatas = {
+  data: {
+    products: ProductsType
+  }
 }
