@@ -15,12 +15,13 @@ export interface IProducts {
   numOfReviews: number;
 }
 
-export type ProductsType = {
-  products: IProducts[] | undefined
+
+export type ProductsDataType = {
+  products: IProducts | undefined;
 }
 
-export type IDatas = {
-  data: {
-    products: ProductsType
-  }
+export interface IProductData {
+  productData: ProductsDataType[] | undefined
 }
+
+
