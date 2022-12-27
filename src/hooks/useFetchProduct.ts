@@ -1,13 +1,13 @@
 import { useQuery } from "react-query";
 import axios from "axios";
-import { IProducts } from "../types/typeDatas";
+import { IProducts, ProductsDataType } from "../types/typeDatas";
 
-const fetchProduct = async (): Promise<IProducts> => {
-  return await axios.get("/api/v1/products");
+const fetchProduct = async (): Promise<ProductsDataType[]> => {
+  return await axios.get("/api/v1/products").then((response => response.data));
 };
 
 const useFetchproducts = () => {
-  return useQuery<IProducts, Error>(["products"], fetchProduct);
+  return useQuery<ProductsDataType[], Error>(["products"], fetchProduct);
 };
 
 export default useFetchproducts;

@@ -1,12 +1,33 @@
-import { IDatas } from "../../types/typeDatas";
+import { ProductsDataType } from "../../types/typeDatas"
 
 
 
-const Cardpages = ({data} : IDatas) => {
+const Cardpages = ({ products }: ProductsDataType) => {
   
+  console.log("PROD",products);
   
   return (
-    <div>Cardpages</div>
+    <>
+    {products?.products?.map(product => (
+      <section className="page-pagination-product" key={product.id}>
+      <section className="page-pagination-image">
+        <img
+          src={product.image[0]}
+          alt={product.tailorname}
+        />
+      </section>
+      <section className="page-pagination-text">
+        <h6 className="pagination-text-H6">{product.tailorname}</h6>
+        <p className="pagination-text-price">&euro;{product.price}</p>
+        <p className="pagination-text-color">{product.color}</p>
+        <p className="pagination-text-size">
+          <span className="pagination-text-span">Avalable sizes</span>: {product.size}
+        </p>
+        <button className="pagination-product-btn">Add to cart</button>
+      </section>
+    </section>
+    ))}
+    </>
   )
 }
 
