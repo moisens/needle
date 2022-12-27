@@ -1,5 +1,5 @@
 export interface IProducts {
-  readonly id: string;
+  readonly _id: string;
   tailorname: string;
   color: string;
   price: string;
@@ -15,13 +15,12 @@ export interface IProducts {
   numOfReviews: number;
 }
 
-
-export type ProductsDataType = {
-  products: IProducts | undefined;
+export interface ResponseIProducts {
+  data: {
+    products: IProducts[] | undefined;
+  },
 }
 
-export interface IProductData {
-  productData: ProductsDataType[] | undefined
+export interface ICardproducts {
+  product: IProducts | undefined
 }
-
-
