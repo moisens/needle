@@ -12,7 +12,7 @@ const Breadcrumbs = () => {
     .map((crumb) => {
       currentLink = `/${crumb}`;
       return (
-        <div className="crumb">
+        <div className="crumb" key={crumb}>
           <NavLink className="crumb-link" to={currentLink}>{crumb}</NavLink>
           <SlArrowRight className="arrow-crumb" size="1.3rem" />
         </div>
@@ -21,7 +21,7 @@ const Breadcrumbs = () => {
 
   return (
     <section className="clothes-links">
-      <p className="links-links">{crumbs}</p>
+      <div className="links-links">{crumbs}</div>
     </section>
   );
 };
