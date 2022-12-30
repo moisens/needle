@@ -1,32 +1,29 @@
-import { Link, useLocation } from "react-router-dom";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
-import useMaincategory  from "../../hooks/useMaincategory";
+import { NavLink, useLocation } from "react-router-dom";
+import { SlArrowRight } from "react-icons/sl";
 
-
-
-const DynamicLinks = () => {
-  const { selectedCategory } = useMaincategory();
+const Breadcrumbs = () => {
   const location = useLocation();
-  //console.log(location.pathname.replace(/\/+$/, ""));
-  
-  
+
+  let currentLink = "";
+
+  const crumbs = location.pathname
+    .split("/")
+    .filter((crumb) => crumb !== "")
+    .map((crumb) => {
+      currentLink = `/${crumb}`;
+      return (
+        <div className="crumb">
+          <NavLink className="crumb-link" to={currentLink}>{crumb}</NavLink>
+          <SlArrowRight className="arrow-crumb" size="1.3rem" />
+        </div>
+      );
+    });
 
   return (
     <section className="clothes-links">
-      <p className="links-links">
-        <Link to={`/${selectedCategory}`}>Women</Link>
-        <span className="links-links active">
-          {" "}
-          <MdOutlineKeyboardArrowRight size="1.6rem" />
-          <Link to="clothes">Clothes</Link>
-        </span>
-        <span className="links-links active">
-          <MdOutlineKeyboardArrowRight size="1.6rem" />
-          <Link to="#">{location.pathname.slice(-7).replace(/\/$/, "")}</Link>
-        </span>
-      </p>
+      <p className="links-links">{crumbs}</p>
     </section>
   );
 };
 
-export default DynamicLinks;
+export default Breadcrumbs;
