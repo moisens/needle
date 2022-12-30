@@ -7,7 +7,7 @@ const DropdownList = ({ links, setImageUrl }: SubLinkDropdown) => {
       {links.map((link) => (
         <li className="dropdown-li" key={link.id}>
           <NavLink
-            to={`/women/women-clothes/${link.url}`}
+            to={`women-clothes/${link.url}`}
             className={({ isActive }) =>
               isActive ? "dropdown-li-a activeLink" : "dropdown-li-a"
             }

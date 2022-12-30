@@ -29,7 +29,7 @@ const router = createBrowserRouter(
     <Route path="/" element={<Nav />}>
       <Route index element={<LandingPage />} />
       <Route path="women" element={<Women />} />
-      <Route path="women/women-clothes" element={<ClothesWomen />}>
+      <Route path="women-clothes" element={<ClothesWomen />}>
         <Route path="clothes" element={<Clothes />} />
         <Route path="jackets" element={<Jackets />} />
         <Route path="shirts" element={<Shirts />} />
