@@ -10,21 +10,35 @@
   @include mixins.innerPageWidthHeigh;
 
   .clothes-links {
+    max-width: auto;
     padding: 20px 0 20px 40px;
 
     .links-links {
       font-weight: 100;
       letter-spacing: 1.1px;
       @include mixins.displayAlign-center;
-      cursor: pointer;
 
-      a {
-        color: variables.$grayish-color;
-      }
+      .crumb {
+        display: flex;
+        align-items: center;
 
-      & .active > * {
-        font-weight: bold;
-        color: variables.$faded-darkpurple;
+        .arrow-crumb {
+          margin: 0 5px;
+        }
+
+        &:last-child {
+          .arrow-crumb {
+            display: none;
+          }
+          .crumb-link {
+            color: variables.$faded-darkpurple;
+            font-weight: bold;
+          }
+        }
+
+        .crumb-link {
+          color: variables.$grayish-color;
+        }
       }
     }
   }
