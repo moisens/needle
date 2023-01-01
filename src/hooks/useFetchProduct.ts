@@ -32,6 +32,12 @@ const fetchSuits = async (): Promise<ResponseIProducts> => {
   );
 };
 
+const fetchDress = async () => {
+  return await axios.get(
+    `/api/v1/products?maincategories=women&categories=clothes&subcategories=dress`
+  );
+};
+
 export const useFetchClothes = () => {
   return useQuery<ResponseIProducts, Error>(["clothes"], fetchClothes);
 };
@@ -50,4 +56,8 @@ export const useFetchPants = () => {
 
 export const useFetchSuits = () => {
   return useQuery<ResponseIProducts, Error>(["suits"], fetchSuits);
+};
+
+export const useFetchDress = () => {
+  return useQuery<ResponseIProducts, Error>(["dress"], fetchDress);
 };
