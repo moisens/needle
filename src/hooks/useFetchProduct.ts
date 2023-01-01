@@ -13,9 +13,11 @@ const fetchJackets = async (): Promise<ResponseIProducts> => {
     `/api/v1/products?maincategories=women&categories=clothes&subcategories=jackets`
   );
 };
-//const fetchShirts = async (): Promise<ResponseIProducts> => {
-//  return await axios.get(`/api/v1/products?maincategories="women"&subcategories="shirt"`)
-//}
+
+const fetchShirts = async (): Promise<ResponseIProducts> => {
+  return await axios.get(`/api/v1/products?maincategories=women&categories=clothes&subcategories=shirt`)
+}
+
 //const fetchPants = async (): Promise<ResponseIProducts> => {
 //  return await axios.get(`/api/v1/products?maincategories="women"&subcategories="pants"`)
 //}
@@ -30,3 +32,7 @@ export const useFetchClothes = () => {
 export const useFetchJackets = () => {
   return useQuery<ResponseIProducts, Error>(["jackets"], fetchJackets);
 };
+
+export const useFetchShirts = () => {
+  return useQuery<ResponseIProducts, Error>(["shirt"], fetchShirts)
+}
