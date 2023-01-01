@@ -1,60 +1,18 @@
+import { useFetchDress } from "../hooks/useFetchProduct";
+import Cardpages from "../components/cardpages/Cardpages";
+
 const Dress = () => {
+  const { data, status, isLoading, isError, error } = useFetchDress();
+
+  if (isLoading) return <h2>Loading...</h2>;
+  if (isError) return <p>{error?.message}</p>;
+
   return (
     <>
-      <section className="page-pagination-product">
-        <section className="page-pagination-image">
-          <img
-            src="https://res.cloudinary.com/dr7qigh2d/image/upload/v1671475936/needle-1/napat-saeng-8zLG5tGOGxk-unsplash-PhotoRoom.png-PhotoRoom_uhxrgd.png"
-            alt="img test"
-          />
-        </section>
-        <section className="page-pagination-text">
-          <h6 className="pagination-text-H6">Product's name</h6>
-          <p className="pagination-text-price">&euro;500</p>
-          <p className="pagination-text-color">color</p>
-          <p className="pagination-text-size">
-            <span className="pagination-text-span">Avalable sizes</span>: M, L,
-            XL
-          </p>
-          <button className="pagination-product-btn">Add to cart</button>
-        </section>
-      </section>
-      <section className="page-pagination-product">
-        <section className="page-pagination-image">
-          <img
-            src="https://res.cloudinary.com/dr7qigh2d/image/upload/v1671475936/needle-1/napat-saeng-8zLG5tGOGxk-unsplash-PhotoRoom.png-PhotoRoom_uhxrgd.png"
-            alt="img test"
-          />
-        </section>
-        <section className="page-pagination-text">
-          <h6 className="pagination-text-H6">Product's name</h6>
-          <p className="pagination-text-price">&euro;500</p>
-          <p className="pagination-text-color">color</p>
-          <p className="pagination-text-size">
-            <span className="pagination-text-span">Avalable sizes</span>: M, L,
-            XL
-          </p>
-          <button className="pagination-product-btn">Add to cart</button>
-        </section>
-      </section>
-      <section className="page-pagination-product">
-        <section className="page-pagination-image">
-          <img
-            src="https://res.cloudinary.com/dr7qigh2d/image/upload/v1671475936/needle-1/napat-saeng-8zLG5tGOGxk-unsplash-PhotoRoom.png-PhotoRoom_uhxrgd.png"
-            alt="img test"
-          />
-        </section>
-        <section className="page-pagination-text">
-          <h6 className="pagination-text-H6">Product's name</h6>
-          <p className="pagination-text-price">&euro;500</p>
-          <p className="pagination-text-color">color</p>
-          <p className="pagination-text-size">
-            <span className="pagination-text-span">Avalable sizes</span>: M, L,
-            XL
-          </p>
-          <button className="pagination-product-btn">Add to cart</button>
-        </section>
-      </section>
+      {status === "success" &&
+        data?.data.products?.map((product) => (
+          <Cardpages product={product} key={product?._id} />
+        ))}
     </>
   );
 };
