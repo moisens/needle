@@ -15,12 +15,17 @@ const fetchJackets = async (): Promise<ResponseIProducts> => {
 };
 
 const fetchShirts = async (): Promise<ResponseIProducts> => {
-  return await axios.get(`/api/v1/products?maincategories=women&categories=clothes&subcategories=shirt`)
-}
+  return await axios.get(
+    `/api/v1/products?maincategories=women&categories=clothes&subcategories=shirt`
+  );
+};
 
-//const fetchPants = async (): Promise<ResponseIProducts> => {
-//  return await axios.get(`/api/v1/products?maincategories="women"&subcategories="pants"`)
-//}
+const fetchPants = async (): Promise<ResponseIProducts> => {
+  return await axios.get(
+    `/api/v1/products?maincategories=women&categories=clothes&subcategories=pants`
+  );
+};
+
 //const fetchSuits = async (): Promise<ResponseIProducts> => {
 //  return await axios.get(`/api/v1/products?maincategories="women"&subcategories="suit"`)
 //}
@@ -34,5 +39,9 @@ export const useFetchJackets = () => {
 };
 
 export const useFetchShirts = () => {
-  return useQuery<ResponseIProducts, Error>(["shirt"], fetchShirts)
-}
+  return useQuery<ResponseIProducts, Error>(["shirt"], fetchShirts);
+};
+
+export const useFetchPants = () => {
+  return useQuery<ResponseIProducts, Error>(["pants"], fetchPants);
+};
