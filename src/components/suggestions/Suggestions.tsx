@@ -1,10 +1,7 @@
 import "./suggest.scss";
 import FormSuggest from "../forms/FormSuggest";
 
-
-type Props = {};
-
-const Suggests = (props: Props) => {
+const Suggests = () => {
   return (
     <section className="suggests-container">
       <section className="suggests-content">

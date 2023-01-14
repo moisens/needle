@@ -12,7 +12,7 @@ interface MaincategoriesProps {
 }
 
 
-const MaincategoryContext = createContext<MainCategories | null >(null);
+const MaincategoryContext = createContext<MainCategories | null>(null);
 
 export const MaincategoryProvider = ({ children }:MaincategoriesProps) => {
   const [selectedCategory, setSelectedCategory] = useState<string>("Gender");

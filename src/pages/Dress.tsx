@@ -11,7 +11,7 @@ const Dress = () => {
     <>
       {status === "success" &&
         data?.data.products?.map((product) => (
-          <Cardpages product={product} key={product?._id} />
+          <Cardpages product={product} key={product._id} />
         ))}
     </>
   );
