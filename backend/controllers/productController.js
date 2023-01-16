@@ -19,10 +19,10 @@ const getAllProducts = async (req, res) => {
     featured,
   } = req.query;
 
-  if (maincategories) {
+  if (maincategories && maincategories !== "all") {
     queryObject.maincategories = maincategories;
   }
-  if (categories) {
+  if (categories && categories !== "all") {
     queryObject.categories = categories;
   }
   if (subcategories && subcategories !== "all") {
