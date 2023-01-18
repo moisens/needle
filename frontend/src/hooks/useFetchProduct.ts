@@ -2,6 +2,12 @@ import { useQuery } from "react-query";
 import axios from "axios";
 import { ResponseIProducts } from "../types/typeDatas";
 
+
+//filtered fetch 
+const fetchClothesWomen = async (mainFilter: string, categoryFilter: string, subCategoryFilter: string): Promise<ResponseIProducts> => {
+  return await axios(`/api/v1/products?maincategories=${mainFilter}&categories=${categoryFilter}&subcategories=${subCategoryFilter}`)
+}
+
 const fetchClothes = async (): Promise<ResponseIProducts> => {
   return await axios.get(
     `/api/v1/products?maincategories=women&categories=clothes&subcategories=all`
@@ -37,6 +43,14 @@ const fetchDress = async () => {
     `/api/v1/products?maincategories=women&categories=clothes&subcategories=dress`
   );
 };
+
+//hook fetchClothesWomen
+export const useFetchClothesWomen = () => {
+  const mainCategories = "women";
+  const categories = "clothes";
+  const subCategories = "all"
+  return useQuery<ResponseIProducts, Error>(["women-clothes"], () => fetchClothesWomen(mainCategories, categories, subCategories))
+}
 
 export const useFetchClothes = () => {
   return useQuery<ResponseIProducts, Error>(["clothes"], fetchClothes);
