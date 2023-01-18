@@ -7,10 +7,10 @@ interface IGetdataprops {
 
 interface IGetdata {
   data: ResponseIProducts[];
-  status: "idle" | "success" | "error" | "loading";
-  isLoading: boolean;
-  isError: boolean;
-  error: Error | null
+  //status: "idle" | "success" | "error" | "loading";
+  //isLoading: boolean;
+  //isError: boolean;
+  //error: Error | null
 }
 
 
