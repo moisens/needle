@@ -1,8 +1,8 @@
-import { useFetchShirts } from "../hooks/useFetchProduct";
+import { useFetchWomenShirts } from "../hooks/useFetchProduct";
 import Cardpages from "../components/cardpages/Cardpages";
 
 const Shirts = () => {
-  const { data, status, isLoading, isError, error } = useFetchShirts();
+  const { data, status, isLoading, isError, error } = useFetchWomenShirts();
 
   if (isLoading) return <h2>Loading...</h2>;
   if (isError) return <p>{error?.message}</p>;
