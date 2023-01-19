@@ -1,4 +1,4 @@
-import { useFetchClothes, useFetchClothesWomen } from "../hooks/useFetchProduct";
+import { useFetchClothesWomen } from "../hooks/useFetchProduct";
 import Cardpages from "../components/cardpages/Cardpages";
 
 const Clothes = () => {
