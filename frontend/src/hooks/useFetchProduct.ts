@@ -10,20 +10,21 @@ import { ResponseIProducts } from "../types/typeDatas";
 const fetchClothesWomen = async (
   mainFilter: string,
   categoryFilter: string,
-  subCategoryFilter: string
+  subCategoryFilter: string,
+  page: number
 ): Promise<ResponseIProducts> => {
   return await axios(
-    `/api/v1/products?maincategories=${mainFilter}&categories=${categoryFilter}&subcategories=${subCategoryFilter}`
+    `/api/v1/products?maincategories=${mainFilter}&categories=${categoryFilter}&subcategories=${subCategoryFilter}&limit=9&page=${page}`
   );
 };
 
-export const useFetchClothesWomen = () => {
+export const useFetchClothesWomen = (page: number) => {
   const mainCategories = "women";
   const categories = "clothes";
   const subCategories = "all";
   return useQuery<ResponseIProducts, Error>(
-    ["women-clothes", mainCategories, categories, subCategories],
-    () => fetchClothesWomen(mainCategories, categories, subCategories)
+    ["women-clothes", mainCategories, categories, subCategories, page],
+    () => fetchClothesWomen(mainCategories, categories, subCategories, page)
   );
 };
 
