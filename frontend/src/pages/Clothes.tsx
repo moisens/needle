@@ -1,6 +1,7 @@
 import { useFetchClothesWomen } from "../hooks/useFetchProduct";
 import usePages from "../hooks/usePages";
 import Cardpages from "../components/cardpages/Cardpages";
+import Button from "../components/button/Button";
 
 const Clothes = () => {
   const { page, setPage } = usePages();
@@ -19,36 +20,39 @@ const Clothes = () => {
           ))}
       </section>
       <section className="page-pagination-btns">
-        <button
+        <Button
+          as="button"
           className="pagination-btn-btn prev-btn"
-          onClick={() => setPage((oldPage) => oldPage - 1)}
+          handleClick={() => setPage((oldPage) => oldPage - 1)}
         >
           PREVIOUS
-        </button>
+        </Button>
         <section className="page-btn-container">
           {Array.from(Array(data?.data.numOfPages).keys()).map((btn) => {
             const newPageNumber = btn + 1;
             return (
-              <button
+              <Button
+                as="button"
                 className={
                   page === newPageNumber
                     ? "page-bnts-btns activePage"
                     : "page-bnts-btns"
                 }
                 key={newPageNumber}
-                onClick={() => setPage(newPageNumber)}
+                handleClick={() => setPage(newPageNumber)}
               >
                 {newPageNumber}
-              </button>
+              </Button>
             );
           })}
         </section>
-        <button
+        <Button
+          as="button"
           className="pagination-btn-btn next-btn"
-          onClick={() => setPage((oldPage) => oldPage + 1)}
+          handleClick={() => setPage((oldPage) => oldPage + 1)}
         >
           NEXT
-        </button>
+        </Button>
       </section>
     </>
   );
