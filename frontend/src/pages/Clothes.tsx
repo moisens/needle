@@ -5,7 +5,7 @@ import Button from "../components/button/Button";
 
 const Clothes = () => {
   const { page, setPage } = usePages();
-  const { data, status, isLoading, isError, error } =
+  const { data, status, isLoading, isError, error, isFetching } =
     useFetchClothesWomen(page);
 
   if (isLoading) return <h2>Loading...</h2>;
@@ -22,10 +22,12 @@ const Clothes = () => {
       <section className="page-pagination-btns">
         <Button
           as="button"
-          className="pagination-btn-btn prev-btn"
+          className={
+            page === 1 ? "pagination-btn-btn prev" : "pagination-btn-btn"
+          }
           handleClick={() => setPage((oldPage) => oldPage - 1)}
         >
-          PREVIOUS
+          {isFetching ? "Loading..." : "PREVIOUS"}
         </Button>
         <section className="page-btn-container">
           {Array.from(Array(data?.data.numOfPages).keys()).map((btn) => {
@@ -48,10 +50,10 @@ const Clothes = () => {
         </section>
         <Button
           as="button"
-          className="pagination-btn-btn next-btn"
+          className="pagination-btn-btn"
           handleClick={() => setPage((oldPage) => oldPage + 1)}
         >
-          NEXT
+          {isFetching ? "Loading..." : "NEXT"}
         </Button>
       </section>
     </>

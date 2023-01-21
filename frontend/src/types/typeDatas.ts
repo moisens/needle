@@ -18,10 +18,10 @@ export interface IProducts {
 export interface ResponseIProducts {
   data: {
     products: IProducts[] | undefined;
-    numOfPages: number
-  },
+    numOfPages: number;
+  };
 }
 
 export interface ICardproducts {
-  product: IProducts | undefined
+  product: IProducts | undefined;
 }

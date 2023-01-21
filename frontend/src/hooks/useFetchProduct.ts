@@ -24,7 +24,10 @@ export const useFetchClothesWomen = (page: number) => {
   const subCategories = "all";
   return useQuery<ResponseIProducts, Error>(
     ["women-clothes", mainCategories, categories, subCategories, page],
-    () => fetchClothesWomen(mainCategories, categories, subCategories, page)
+    () => fetchClothesWomen(mainCategories, categories, subCategories, page),
+    {
+      keepPreviousData: true,
+    }
   );
 };
 

@@ -6,6 +6,7 @@ interface AsButtonProps extends BaseProps {
   as: "button" | "submit";
   className: string;
   handleClick?: (e: React.MouseEvent<HTMLButtonElement>) => void;
+  disabled?: boolean;
 }
 
 interface AsLinkProps extends BaseProps {
