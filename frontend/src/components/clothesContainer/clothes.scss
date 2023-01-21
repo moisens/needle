@@ -338,6 +338,7 @@
         @include mixins.displayCenter-center;
         gap: 15px;
         margin-bottom: 160px;
+        
 
         .pagination-btn-btn {
           width: 15%;
@@ -353,6 +354,9 @@
 
           &:hover {
             background-color: variables.$faded-darkpurple;
+          }
+          &.prev {
+            display: none
           }
         }
         .page-btn-container {
