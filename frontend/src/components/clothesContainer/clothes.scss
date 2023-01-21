@@ -200,18 +200,6 @@
                 //border: solid .8px variables.$faded-purple;
                 background-color: variables.$white-color;
                 padding-left: 8px;
-
-                //&:nth-child(1) {
-                //  border-top-left-radius: 8px;
-                //  border-top-right-radius: 8px;
-                //}
-                //&:nth-child(n+2) {
-                //  border-top: none;
-                //}
-                //&:nth-child(4) {
-                //  border-bottom-left-radius: 8px;
-                //  border-bottom-right-radius: 8px;
-                //}
               }
             }
           }
@@ -262,14 +250,16 @@
       }
     }
     .page-pagination-container {
-      //background-color: lightgrey;
+      display: flex;
+      flex-direction: column;
 
       .page-pagination-content {
-        //background-color: lightcoral;
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
-        padding: 0 30px 60px;
+        .page-pagination-one-page {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 20px;
+          padding: 0 30px 60px;
+        }
 
         .page-pagination-product {
           .page-pagination-image {
@@ -327,9 +317,7 @@
               background-color: variables.$faded-purple;
               color: variables.$white-color;
               transition: all ease 0.8s;
-              display: flex;
-              justify-content: center;
-              align-items: center;
+              @include mixins.displayCenter-center;
               gap: 15px;
               display: none;
 
@@ -346,34 +334,54 @@
         }
       }
       .page-pagination-btns {
-        //background-color: lightcoral;
-        padding: 60px 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        width: 100%;
+        @include mixins.displayCenter-center;
         gap: 15px;
+        margin-bottom: 160px;
 
         .pagination-btn-btn {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 80px;
-          height: 80px;
+          width: 15%;
+          height: 66px;
           border: none;
-          border-radius: 40px;
+          border-radius: 15px;
           cursor: pointer;
           background-color: variables.$faded-purple;
+          color: variables.$white-color;
+          font-size: 1.25rem;
+          font-weight: 600;
           transition: all ease 0.8s;
 
           &:hover {
             background-color: variables.$faded-darkpurple;
           }
         }
-        .page-bnts-btns {
-          border: none;
-          font-size: 28px;
-          background-color: transparent;
-          cursor: pointer;
+        .page-btn-container {
+          @include mixins.displayAlign-center;
+          gap: 12px;
+          .page-bnts-btns {
+            border: none;
+            font-size: 28px;
+            background-color: transparent;
+            cursor: pointer;
+            background-color: variables.$ultra-light-purple;
+            color: variables.$grayish-color;
+            width: 44px;
+            height: 44px;
+            border-radius: 10px;
+            transition: all ease 0.8s;
+
+            &:hover {
+              background-color: variables.$faded-purple;
+              color: variables.$white-color;
+            }
+
+            &.activePage {
+              background-color: variables.$red-color;
+              color: variables.$white-color;
+              width: 54px;
+              height: 54px;
+            }
+          }
         }
       }
     }
