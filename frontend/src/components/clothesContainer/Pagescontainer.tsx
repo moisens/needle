@@ -1,6 +1,6 @@
 import { Outlet } from "react-router-dom";
 
-const Pagescontainer = () => {
+const Pagescontainer = () => {  
   return (
     <section className="page-pagination-container">
       <section className="page-pagination-content">

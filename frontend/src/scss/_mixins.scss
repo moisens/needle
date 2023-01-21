@@ -77,6 +77,10 @@
   justify-content: center;
   flex-direction: column;
 }
+
+/*==================================
+  display flex Align center column
+  ==================================*/
 @mixin FlexAlignColumn {
   display: flex;
   align-items: center;
