@@ -26,6 +26,7 @@ const Clothes = () => {
             page === 1 ? "pagination-btn-btn prev" : "pagination-btn-btn"
           }
           handleClick={() => setPage((oldPage) => oldPage - 1)}
+          disabled={page === 0}
         >
           {isFetching ? "Loading..." : "PREVIOUS"}
         </Button>

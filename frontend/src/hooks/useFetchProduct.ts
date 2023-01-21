@@ -35,13 +35,16 @@ export const useFetchClothesWomen = (page: number) => {
  * Custom hook that return the fetched jackets func.
  * Return a UseQueryResult<ResponseIProducts, Error> Promise
  */
-export const useFetchWomenJackets = () => {
+export const useFetchWomenJackets = (page: number) => {
   const mainCategories = "women";
   const categories = "clothes";
   const subCategories = "jackets";
   return useQuery<ResponseIProducts, Error>(
-    ["women-jackets", mainCategories, categories, subCategories],
-    () => fetchClothesWomen(mainCategories, categories, subCategories)
+    ["women-jackets", mainCategories, categories, subCategories, page],
+    () => fetchClothesWomen(mainCategories, categories, subCategories, page),
+    {
+      keepPreviousData: true,
+    }
   );
 };
 
@@ -49,13 +52,16 @@ export const useFetchWomenJackets = () => {
  * Custom hook that return the fetched shirts func.
  * Return a UseQueryResult<ResponseIProducts, Error> Promise
  */
-export const useFetchWomenShirts = () => {
+export const useFetchWomenShirts = (page: number) => {
   const mainCategories = "women";
   const categories = "clothes";
   const subCategories = "shirt";
   return useQuery<ResponseIProducts, Error>(
-    ["women-shirts", mainCategories, categories, subCategories],
-    () => fetchClothesWomen(mainCategories, categories, subCategories)
+    ["women-shirts", mainCategories, categories, subCategories, page],
+    () => fetchClothesWomen(mainCategories, categories, subCategories, page),
+    {
+      keepPreviousData: true,
+    }
   );
 };
 
@@ -63,13 +69,16 @@ export const useFetchWomenShirts = () => {
  * Custom hook that return the fetched pants func.
  * Return a UseQueryResult<ResponseIProducts, Error> Promise
  */
-export const useFetchWomenPants = () => {
+export const useFetchWomenPants = (page: number) => {
   const mainCategories = "women";
   const categories = "clothes";
   const subCategories = "pants";
   return useQuery<ResponseIProducts, Error>(
-    ["women-pants", mainCategories, categories, subCategories],
-    () => fetchClothesWomen(mainCategories, categories, subCategories)
+    ["women-pants", mainCategories, categories, subCategories, page],
+    () => fetchClothesWomen(mainCategories, categories, subCategories, page),
+    {
+      keepPreviousData: true,
+    }
   );
 };
 
@@ -77,13 +86,16 @@ export const useFetchWomenPants = () => {
  * Custom hook that return the fetched suits func.
  * Return a UseQueryResult<ResponseIProducts, Error> Promise
  */
-export const useFetchWomenSuits = () => {
+export const useFetchWomenSuits = (page: number) => {
   const mainCategories = "women";
   const categories = "clothes";
   const subCategories = "suits";
   return useQuery<ResponseIProducts, Error>(
-    ["women-suits", mainCategories, categories, subCategories],
-    () => fetchClothesWomen(mainCategories, categories, subCategories)
+    ["women-suits", mainCategories, categories, subCategories, page],
+    () => fetchClothesWomen(mainCategories, categories, subCategories, page),
+    {
+      keepPreviousData: true,
+    }
   );
 };
 
@@ -91,12 +103,15 @@ export const useFetchWomenSuits = () => {
  * Custom hook that return the fetched dress func.
  * Return a UseQueryResult<ResponseIProducts, Error> Promise
  */
-export const useFetchWomenDress = () => {
+export const useFetchWomenDress = (page: number) => {
   const mainCategories = "women";
   const categories = "clothes";
   const subCategories = "suits";
   return useQuery<ResponseIProducts, Error>(
-    ["women-dress", mainCategories, categories, subCategories],
-    () => fetchClothesWomen(mainCategories, categories, subCategories)
+    ["women-dress", mainCategories, categories, subCategories, page],
+    () => fetchClothesWomen(mainCategories, categories, subCategories, page),
+    {
+      keepPreviousData: true,
+    }
   );
 };
