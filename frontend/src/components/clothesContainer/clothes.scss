@@ -262,6 +262,9 @@
         }
 
         .page-pagination-product {
+          //background-color: lightslategray;
+          margin-bottom: 140px;
+          position: relative;
           .page-pagination-image {
             width: 100%;
             height: 400px;
@@ -274,6 +277,7 @@
               hsla(35, 96%, 65%, 0.152)
             );
             border-radius: 25px;
+            transition: all ease 0.8s;
 
             img {
               width: 100%;
@@ -285,10 +289,18 @@
             }
           }
           .page-pagination-text {
-            height: 260px;
+            height: 220px;
+            height: auto;
             background-color: variables.$bck-yellow;
-            padding: 20px 22px 20px 22px;
+            //background-color: lightgreen;
+            padding: 20px 22px;
             line-height: 1.6;
+            position: absolute;
+            top: 400px;
+            left: 0;
+            width: 100%;
+            transition: all ease .8s;
+            z-index: 1;
 
             .pagination-text-H6 {
               font-family: "Oswald";
@@ -300,34 +312,48 @@
               font-size: 22px;
               font-weight: bold;
             }
-            .pagination-text-size {
-              .pagination-text-span {
-                font-weight: 600;
-                color: variables.$light-grayish-color;
-              }
-              padding-bottom: 20px;
-            }
-            .pagination-product-btn {
-              width: 100%;
-              height: 50px;
-              border: none;
-              border-radius: 25px;
-              cursor: pointer;
-              margin-top: 10px;
-              background-color: variables.$faded-purple;
-              color: variables.$white-color;
-              transition: all ease 0.8s;
-              @include mixins.displayCenter-center;
-              gap: 15px;
-              display: none;
 
-              &:hover {
-                background-color: variables.$faded-darkpurple;
+            .pagination-hidden-info {
+              display: none;
+              transition: all ease 0.8s;
+
+              .pagination-text-size {
+                .pagination-text-span {
+                  font-weight: 600;
+                  color: variables.$light-grayish-color;
+                }
+                padding-bottom: 20px;
+              }
+              .pagination-product-btn {
+                width: 100%;
+                height: 50px;
+                border: none;
+                border-radius: 15px;
+                cursor: pointer;
+                margin-top: 10px;
+                background-color: variables.$faded-purple;
+                color: variables.$white-color;
+                transition: all ease 0.8s;
+                @include mixins.displayCenter-center;
+                gap: 15px;
+                transition: all ease 0.8s;
+
+                &:hover {
+                  background-color: variables.$faded-darkpurple;
+                }
               }
             }
           }
           &:hover {
-            .pagination-product-btn {
+            .page-pagination-text {
+              top: 292px;
+            }
+            .page-pagination-image {
+              height: 292px;
+              border-bottom-left-radius: 0;
+              border-bottom-right-radius: 0;
+            }
+            .pagination-hidden-info {
               display: block;
             }
           }
@@ -338,7 +364,6 @@
         @include mixins.displayCenter-center;
         gap: 15px;
         margin-bottom: 160px;
-        
 
         .pagination-btn-btn {
           width: 10%;
@@ -355,7 +380,8 @@
           &:hover {
             background-color: variables.$faded-darkpurple;
           }
-          &.prev, &.next {
+          &.prev,
+          &.next {
             cursor: not-allowed;
             background-color: variables.$ultra-light-purple;
           }
