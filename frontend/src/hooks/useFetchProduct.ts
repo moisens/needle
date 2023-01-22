@@ -106,7 +106,7 @@ export const useFetchWomenSuits = (page: number) => {
 export const useFetchWomenDress = (page: number) => {
   const mainCategories = "women";
   const categories = "clothes";
-  const subCategories = "suits";
+  const subCategories = "dress";
   return useQuery<ResponseIProducts, Error>(
     ["women-dress", mainCategories, categories, subCategories, page],
     () => fetchClothesWomen(mainCategories, categories, subCategories, page),
