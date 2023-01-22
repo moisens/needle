@@ -24,10 +24,12 @@ const Suits = () => {
           className={
             page === 1 ? "pagination-btn-btn prev" : "pagination-btn-btn"
           }
-          handleClick={() => setPage((oldPage) => oldPage - 1)}
-          disabled={page === 0}
+          handleClick={() =>
+            setPage((oldPage) => (page > 1 ? oldPage - 1 : oldPage))
+          }
+
         >
-          {isFetching ? "Loading..." : "PREVIOUS"}
+          PREV
         </Button>
         <section className="page-btn-container">
           {Array.from(Array(data?.data.numOfPages).keys()).map((btn) => {
@@ -50,10 +52,10 @@ const Suits = () => {
         </section>
         <Button
           as="button"
-          className="pagination-btn-btn"
-          handleClick={() => setPage((oldPage) => oldPage + 1)}
+          className={page === 1 ? "pagination-btn-btn next" : "pagination-btn-btn"}
+          handleClick={() => setPage((oldPage) => (page < 1 ? oldPage + 1 : oldPage))}
         >
-          {isFetching ? "Loading..." : "NEXT"}
+          {isFetching ? "NEXT..." : "NEXT"}
         </Button>
       </section>
     </>
