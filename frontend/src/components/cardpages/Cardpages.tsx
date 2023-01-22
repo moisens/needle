@@ -11,10 +11,13 @@ const Cardpages = ({ product }: ICardproducts) => {
         <h6 className="pagination-text-H6">{product?.tailorname}</h6>
         <p className="pagination-text-price">&euro;{product?.price}</p>
         <p className="pagination-text-color">{product?.color}</p>
+        <section className="pagination-hidden-info">
         <p className="pagination-text-size">
           <span className="pagination-text-span">Avalable sizes</span>: M, L, XL
         </p>
         <button className="pagination-product-btn">Add to cart</button>
+        </section>
+        
       </section>
     </section>
   );
