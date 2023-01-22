@@ -6,6 +6,7 @@ const Breadcrumbs = () => {
 
   let currentLink = "";
 
+
   const crumbs = location.pathname
     .split("/")
     .filter((crumb) => crumb !== "")
@@ -13,12 +14,12 @@ const Breadcrumbs = () => {
       currentLink = `/${crumb}`;
       return (
         <div className="crumb" key={crumb}>
-          <NavLink className="crumb-link" to={currentLink}>{crumb}</NavLink>
+          <NavLink className="crumb-link" to="#">{crumb}</NavLink>
           <SlArrowRight className="arrow-crumb" size="1.3rem" />
         </div>
       );
     });
-
+    
   return (
     <section className="clothes-links">
       <div className="links-links">{crumbs}</div>
