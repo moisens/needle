@@ -32,7 +32,7 @@ const Navlist = () => {
         >
           <li className="list-li">
             <NavLink
-              to={`women-clothes/${currentLink}`}
+              to={`women-clothes/${currentLink ? currentLink : "clothes"}`}
               className={({ isActive }) =>
                 isActive ? "list-a activeLink" : "list-a"
               }
