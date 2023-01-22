@@ -150,6 +150,7 @@
 
             a {
               color: variables.$grayish-color;
+              position: relative;
 
               &::after {
                 @include mixins.afterContent(variables.$red-color);
