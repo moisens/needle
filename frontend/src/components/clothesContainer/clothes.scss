@@ -341,7 +341,7 @@
         
 
         .pagination-btn-btn {
-          width: 15%;
+          width: 10%;
           height: 66px;
           border: none;
           border-radius: 15px;
@@ -355,8 +355,9 @@
           &:hover {
             background-color: variables.$faded-darkpurple;
           }
-          &.prev {
-            display: none
+          &.prev, &.next {
+            cursor: not-allowed;
+            background-color: variables.$ultra-light-purple;
           }
         }
         .page-btn-container {
