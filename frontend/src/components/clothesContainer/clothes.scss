@@ -263,18 +263,35 @@
 
         .page-pagination-product {
           //background-color: lightslategray;
+          position: relative;
           margin-bottom: 140px;
           position: relative;
+          cursor: pointer;
+
+          .page-like {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            @include mixins.displayCenter-center;
+
+            .page-like-icon {
+              color: variables.$white-color;
+
+              &.active-icon {
+                color: variables.$red-color;
+              }
+            }
+          }
           .page-pagination-image {
             width: 100%;
             height: 400px;
             background-image: linear-gradient(
-              to right top,
-              hsla(42, 94%, 80%, 0.1),
-              hsla(40, 93%, 76%, 0.2),
-              hsla(39, 94%, 72%, 0.152),
-              hsla(37, 95%, 69%, 0.152),
-              hsla(35, 96%, 65%, 0.152)
+              25deg,
+              hsla(312, 46%, 89%, 0.37) 0%,
+              hsla(6, 100%, 88%, 0.335) 50%,
+              hsla(40, 94%, 74%, 0.259) 100%
             );
             border-radius: 25px;
             //transition: all ease 0.8s;
@@ -284,7 +301,6 @@
               height: 100%;
               background-size: cover;
               object-fit: cover;
-              //object-position: 100%;
               border-radius: 25px;
               pointer-events: none;
             }
@@ -350,9 +366,7 @@
               top: 292px;
             }
             .page-pagination-image {
-              height: 292px;
-              border-bottom-left-radius: 0;
-              border-bottom-right-radius: 0;
+              border-radius: 0;
             }
             .pagination-hidden-info {
               display: block;
