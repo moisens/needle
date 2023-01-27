@@ -287,12 +287,13 @@
           .page-pagination-image {
             width: 100%;
             height: 400px;
-            background-image: linear-gradient(
-              25deg,
-              hsla(312, 46%, 89%, 0.37) 0%,
-              hsla(6, 100%, 88%, 0.335) 50%,
-              hsla(40, 94%, 74%, 0.259) 100%
-            );
+            //background-image: linear-gradient(
+            //  25deg,
+            //  hsla(312, 46%, 89%, 0.37) 0%,
+            //  hsla(6, 100%, 88%, 0.335) 50%,
+            //  hsla(40, 94%, 74%, 0.259) 100%
+            //);
+            background-color: hsl(0, 0%, 96%);
             border-radius: 25px;
             //transition: all ease 0.8s;
 
