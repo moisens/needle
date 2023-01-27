@@ -57,7 +57,7 @@
           scrollbar-width: none;  /* Firefox */
           -ms-overflow-style: none;  /* IE and Edge */
 
-          &::-webkit-scrollbar {/*Chrome, Safari and Opera*/
+          &::-webkit-scrollbar {  /*Chrome, Safari and Opera*/
             display: none;
           }
 
@@ -78,6 +78,47 @@
             }
           }
         }
+      }
+      .single-product-infos {
+        //background-color: lightblue;
+        padding: 20px;
+        padding-left: 40px;
+
+        .single-product-H2 {
+          @include mixins.title-h2;
+          padding-bottom: 0px;//i'm disabling the padding-bottom from mixins.title-h2
+        }
+        .single-product-H4 {
+          font-size: 2.5625rem;
+          color: variables.$dark-purple;
+          padding-bottom: 50px;
+        }
+        .single-product-disclosure-btn {
+          background-color: transparent;
+          border: none;
+          width: 100%;
+          height: auto;
+          font-size: 1.375rem;
+          @include mixins.displaySpace-between;
+          padding: 15px;
+          border-top: solid 1px variables.$super-darkpurple;
+          cursor: pointer;
+
+          &:hover {
+            background-color: #F5F5F5;
+          }
+        }
+        .notOpenIcon {
+          transition: all ease .8s;
+
+          &.open {
+            transform: rotate(180deg);
+          }
+        }
+        .single-product-disclosure-panel {
+          padding: 15px;
+        }
+
       }
     }
   }
