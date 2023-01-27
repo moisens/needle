@@ -1,6 +1,6 @@
 import { ICardproducts } from "../../types/typeDatas";
 import Images from "../imageComponent/Images";
-import { BsHeart, BsHeartFill } from "react-icons/bs"
+import { BsHeartFill } from "react-icons/bs"
 
 const Cardpages = ({ product }: ICardproducts) => {
   return (

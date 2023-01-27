@@ -1,0 +1,35 @@
+@use "../../scss/mixins";
+@use "../../scss/variables";
+
+.singlepage-container {
+  @include mixins.pageWidthHeight;
+}
+
+
+.singlepage-content {
+  @include mixins.innerPageWidthHeigh;
+  height: 80vh;
+  background-color: variables.$bck-yellow;
+
+  .singlepage-header {
+    background-color: variables.$yellow-yellow;
+    height: 200px;
+
+    .singlepage-backhome {
+      padding: 30px 0 20px 105px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .singlepage-product {
+      width: 80%;
+      height: 600px;
+      background-color: hsl(0, 0%, 100%);
+      margin: 0 auto;
+      border-radius: 20px;
+      box-shadow: hsla(0, 0%, 0%, 0.16) 0px 1px 4px;
+    }
+  }
+}
+
+

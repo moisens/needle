@@ -1,11 +1,12 @@
 import "./pages.scss";
+import Singleproduct from "../components/singleProduct/Singleproduct";
 
-type Props = {}
 
-const SingleproductPage = (props: Props) => {
+
+const SingleproductPage = () => {
   return (
     <main className="pages-container">
-      
+      <Singleproduct />
     </main>
   )
 }
