@@ -3,8 +3,9 @@ import { TiArrowLeftThick } from "react-icons/ti";
 import Images from "../imageComponent/Images";
 import { Disclosure } from '@headlessui/react';
 import { RiArrowDownSFill } from "react-icons/ri";
-import { AiFillStar } from "react-icons/ai";
+import { FaStar } from "react-icons/fa";
 import { FaStarHalf } from "react-icons/fa";
+import { BsHeartFill } from "react-icons/bs"
 
 
 
@@ -35,7 +36,7 @@ const Singleproduct = () => {
               </section>
             </section>
             <section className="single-product-infos">
-              <h2 className="single-product-H2">Product name</h2>
+              <h3 className="single-product-H3">Product name</h3>
               <h4 className="single-product-H4">€ 500</h4>
               {/*Description*/}
               <Disclosure>
@@ -84,13 +85,21 @@ const Singleproduct = () => {
                 )}
               </Disclosure>
               {/*End Clothes's components*/}
-              <h5 className="single-product-reviews">Reviews (4.5)</h5>
+              <section className="single-product-reviews">
+              <h5 className="single-product-revieww-H5">Reviews (4.5)</h5>
               <section className="single-product-stars">
-                <AiFillStar />
-                <AiFillStar />
-                <AiFillStar />
-                <AiFillStar />
-                <FaStarHalf />
+                <FaStar size="1.2rem"/>
+                <FaStar size="1.2rem" />
+                <FaStar size="1.2rem" />
+                <FaStar size="1.2rem" />
+                <FaStarHalf size="1.2rem" />
+              </section>
+              </section>
+              <section className="single-product-btns">
+                <button className="single-product-add-btn">Add to cart</button>
+                <button className="single-product-like-btn">
+                  <BsHeartFill size="2rem" />
+                </button>
               </section>
             </section>
           </section>
