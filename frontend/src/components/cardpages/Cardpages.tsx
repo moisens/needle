@@ -1,12 +1,13 @@
 import { ICardproducts } from "../../types/typeDatas";
 import Images from "../imageComponent/Images";
-import { BsHeartFill } from "react-icons/bs"
+//import { BsHeartFill } from "react-icons/bs";
+import { CiHeart } from "react-icons/ci";
 
 const Cardpages = ({ product }: ICardproducts) => {
   return (
     <section className="page-pagination-product">
       <section className="page-like">
-        <BsHeartFill size="2.2rem" className="page-like-icon" />
+        <CiHeart size="2.2rem" className="page-like-icon" />
       </section>
       <section className="page-pagination-image">
         <Images src={product?.image[0]} alt={product?.tailorname} />

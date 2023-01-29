@@ -5,7 +5,8 @@ import { Disclosure } from '@headlessui/react';
 import { RiArrowDownSFill } from "react-icons/ri";
 import { FaStar } from "react-icons/fa";
 import { FaStarHalf } from "react-icons/fa";
-import { BsHeartFill } from "react-icons/bs"
+//import { BsHeartFill } from "react-icons/bs"
+import { CiHeart } from "react-icons/ci";
 
 
 
@@ -98,7 +99,7 @@ const Singleproduct = () => {
               <section className="single-product-btns">
                 <button className="single-product-add-btn">Add to cart</button>
                 <button className="single-product-like-btn">
-                  <BsHeartFill size="2rem" />
+                  <CiHeart size="2.8rem" />
                 </button>
               </section>
             </section>
