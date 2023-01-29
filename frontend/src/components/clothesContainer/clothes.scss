@@ -295,7 +295,7 @@
           }
           .page-pagination-image {
             width: 100%;
-            height: 400px;
+            height: 360px;
             //background-image: linear-gradient(
             //  25deg,
             //  hsla(312, 46%, 89%, 0.37) 0%,
@@ -323,42 +323,42 @@
             padding: 20px 22px;
             line-height: 1.6;
             position: absolute;
-            top: 400px;
+            top: 360px;
             left: 0;
             width: 100%;
             //transition: all ease .8s;
-            z-index: 1;
 
             .pagination-text-H6 {
               font-family: "Oswald";
-              font-size: 22px;
+              font-size: 1.125rem;
               font-weight: 100;
               letter-spacing: 0.5px;
             }
             .pagination-text-price {
-              font-size: 22px;
+              font-size: 1.125rem;
               font-weight: bold;
+              color: variables.$dark-purple;
             }
-
+            .pagination-text-size {
+              display: none;
+              transition: all ease 0.8s;
+              .pagination-text-span {
+                font-weight: 600;
+                color: variables.$light-grayish-color;
+              }
+              padding-bottom: 20px;
+            }
             .pagination-hidden-info {
               display: none;
               transition: all ease 0.8s;
 
-              .pagination-text-size {
-                .pagination-text-span {
-                  font-weight: 600;
-                  color: variables.$light-grayish-color;
-                }
-                padding-bottom: 20px;
-              }
               .pagination-product-btn {
                 width: 100%;
-                height: 50px;
+                height: 66px;
                 border: none;
                 border-radius: 15px;
                 cursor: pointer;
-                margin-top: 10px;
-                background-color: variables.$faded-purple;
+                background-color: variables.$super-darkpurple;
                 color: variables.$white-color;
                 transition: all ease 0.8s;
                 @include mixins.displayCenter-center;
@@ -366,18 +366,22 @@
                 transition: all ease 0.8s;
 
                 &:hover {
-                  background-color: variables.$faded-darkpurple;
+                  background-color: variables.$dark-purple;
                 }
               }
+            }
+            a {
+              color: variables.$grayish-color;
             }
           }
           &:hover {
             .page-pagination-text {
-              top: 292px;
+              top: 276px;
             }
             .page-pagination-image {
               border-radius: 0;
             }
+            .pagination-text-size,
             .pagination-hidden-info {
               display: block;
             }
