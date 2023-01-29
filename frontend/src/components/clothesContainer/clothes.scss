@@ -277,7 +277,16 @@
             @include mixins.displayCenter-center;
 
             .page-like-icon {
-              color: variables.$white-color;
+              color: variables.$dark-purple;
+
+              &:hover {
+                animation: bounce 0.3s infinite alternate;
+              }
+              @keyframes bounce {
+                to {
+                  transform: scale(1.2);
+                }
+              }
 
               &.active-icon {
                 color: variables.$red-color;

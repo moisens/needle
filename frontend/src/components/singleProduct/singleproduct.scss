@@ -29,7 +29,6 @@
       box-shadow: hsla(0, 0%, 0%, 0.16) 0px 1px 4px;
       display: grid;
       grid-template-columns: 1fr 1fr;
-      
 
       .image-container {
         padding: 20px;
@@ -56,10 +55,11 @@
           width: 150px;
           height: 560px;
           overflow-y: scroll;
-          scrollbar-width: none;  /* Firefox */
-          -ms-overflow-style: none;  /* IE and Edge */
+          scrollbar-width: none; /* Firefox */
+          -ms-overflow-style: none; /* IE and Edge */
 
-          &::-webkit-scrollbar {  /*Chrome, Safari and Opera*/
+          &::-webkit-scrollbar {
+            /*Chrome, Safari and Opera*/
             display: none;
           }
 
@@ -88,7 +88,6 @@
 
         .single-product-H3 {
           font-size: 1.75rem;
-          
         }
         .single-product-H4 {
           font-family: "Nunito";
@@ -109,11 +108,11 @@
           cursor: pointer;
 
           &:hover {
-            background-color: #F5F5F5;
+            background-color: #f5f5f5;
           }
         }
         .notOpenIcon {
-          transition: all ease .8s;
+          transition: all ease 0.8s;
 
           &.open {
             transform: rotate(180deg);
@@ -127,7 +126,7 @@
           @include mixins.displaySpace-between;
           align-items: center;
           padding-top: 20px;
-          
+
           .single-product-revieww-H5 {
             font-size: 1.125rem;
           }
@@ -166,12 +165,17 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            transition: all ease .8s;
 
-            & svg:hover{
-              animation: bounce .3s infinite alternate;
+            &:hover {
+              svg {
+                animation: bounce 0.3s infinite alternate;
+              }
             }
             @keyframes bounce {
-              to { transform: scale(1.2); }
+              to {
+                transform: scale(1.2);
+              }
             }
 
             &.liked {
