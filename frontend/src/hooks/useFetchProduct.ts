@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
 import axios from "axios";
-import { ResponseIProducts } from "../types/typeDatas";
+import { ResponseIProducts, ICardproducts } from "../types/typeDatas";
 
 /**
  * Fetch women clothes all subcategories functionality
@@ -17,6 +17,18 @@ const fetchClothesWomen = async (
     `/api/v1/products?maincategories=${mainFilter}&categories=${categoryFilter}&subcategories=${subCategoryFilter}&limit=9&page=${page}`
   );
 };
+
+/**
+ * Fetch single product
+*/
+
+export type QueryKeyProduct = Pick<ICardproducts, "queryKey">
+
+const fetchSingleProduct = async ({ queryKey }: QueryKeyProduct): Promise<ICardproducts> => {
+  const productId = queryKey[2]
+  return await axios(`/api/v1/products/${productId}`)
+}
+
 
 export const useFetchClothesWomen = (page: number) => {
   const mainCategories = "women";
@@ -115,3 +127,11 @@ export const useFetchWomenDress = (page: number) => {
     }
   );
 };
+
+/**
+ * Custom hook that return the fetched Single product func.
+ * Return a UseQueryResult<ICardproducts, Error> Promise
+ */
+export const useFetchSingleProduct = (productId: QueryKeyProduct) => {
+  return useQuery<ICardproducts, Error>(["single-product"], () => fetchSingleProduct(productId))
+}
