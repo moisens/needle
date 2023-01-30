@@ -24,4 +24,5 @@ export interface ResponseIProducts {
 
 export interface ICardproducts {
   product: IProducts | undefined;
+  queryKey: string
 }
