@@ -7,10 +7,17 @@ import { FaStar } from "react-icons/fa";
 import { FaStarHalf } from "react-icons/fa";
 //import { BsHeartFill } from "react-icons/bs"
 import { CiHeart } from "react-icons/ci";
+import { useFetchSingleProduct } from "../../hooks/useFetchProduct";
+import { useParams } from "react-router-dom";
 
 
 
 const Singleproduct = () => {
+  const { _id } = useParams()
+  const { data, status, isLoading, isError, error, isFetching  } = useFetchSingleProduct(_id)
+  console.log("data", data?.data.product);
+  
+  
   return (
     <section className="singlepage-container">
       <section className="singlepage-content">

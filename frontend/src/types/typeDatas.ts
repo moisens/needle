@@ -19,10 +19,10 @@ export interface ResponseIProducts {
   data: {
     products: IProducts[] | undefined;
     numOfPages: number;
+    product: IProducts
   };
 }
 
 export interface ICardproducts {
   product: IProducts | undefined;
-  queryKey: string
 }

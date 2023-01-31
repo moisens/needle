@@ -22,11 +22,15 @@ const fetchClothesWomen = async (
  * Fetch single product
 */
 
-export type QueryKeyProduct = Pick<ICardproducts, "queryKey">
+type QuerykeyProps = {
+  queryKey: string | undefined;
+  _id: string | undefined
+}
 
-const fetchSingleProduct = async ({ queryKey }: QueryKeyProduct): Promise<ICardproducts> => {
-  const productId = queryKey[2]
-  return await axios(`/api/v1/products/${productId}`)
+const fetchSingleProduct = async (_id: QuerykeyProps): Promise<ResponseIProducts> => {
+  //const productId = queryKey === "string" ? queryKey : undefined ;
+  
+  return await axios(`/api/v1/products/${_id}`)
 }
 
 
@@ -132,6 +136,7 @@ export const useFetchWomenDress = (page: number) => {
  * Custom hook that return the fetched Single product func.
  * Return a UseQueryResult<ICardproducts, Error> Promise
  */
-export const useFetchSingleProduct = (productId: QueryKeyProduct) => {
-  return useQuery<ICardproducts, Error>(["single-product"], () => fetchSingleProduct(productId))
+
+export const useFetchSingleProduct = (_id: QuerykeyProps) => {
+  return useQuery<ResponseIProducts, Error>(["women-clothes", _id], () => fetchSingleProduct(_id))
 }

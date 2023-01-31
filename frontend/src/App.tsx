@@ -42,7 +42,7 @@ const router = createBrowserRouter(
 
       <Route path="men" element={<Men />}></Route>
 
-      <Route path="single-product/:id" element={<SingleproductPage />} />
+      <Route path="single-product/:_id" element={<SingleproductPage />} />
       <Route path="*" element={<NotFound />} />
     </Route>
   )
