@@ -142,5 +142,7 @@ export const useFetchWomenDress = (page: number) => {
  */
 
 export const useFetchSingleProduct = (_id: QuerykeyProps) => {
-  return useQuery<ResponseIProducts, Error>(["women-clothes", _id], () => fetchSingleProduct(_id))
+  return useQuery<ResponseIProducts, Error>(["women-clothes", _id], () => fetchSingleProduct(_id), {
+    staleTime: 120000,
+  })
 }
