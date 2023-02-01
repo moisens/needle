@@ -1,6 +1,6 @@
 import { useQuery } from "react-query";
 import axios from "axios";
-import { ResponseIProducts, ICardproducts } from "../types/typeDatas";
+import { ResponseIProducts } from "../types/typeDatas";
 
 /**
  * Fetch women clothes all subcategories functionality
@@ -28,8 +28,6 @@ type QuerykeyProps = {
 }
 
 const fetchSingleProduct = async (_id: QuerykeyProps): Promise<ResponseIProducts> => {
-  //const productId = queryKey === "string" ? queryKey : undefined ;
-  
   return await axios(`/api/v1/products/${_id}`)
 }
 
@@ -42,6 +40,7 @@ export const useFetchClothesWomen = (page: number) => {
     ["women-clothes", mainCategories, categories, subCategories, page],
     () => fetchClothesWomen(mainCategories, categories, subCategories, page),
     {
+      staleTime: 120000,
       keepPreviousData: true,
     }
   );
@@ -59,6 +58,7 @@ export const useFetchWomenJackets = (page: number) => {
     ["women-jackets", mainCategories, categories, subCategories, page],
     () => fetchClothesWomen(mainCategories, categories, subCategories, page),
     {
+      staleTime: 120000,
       keepPreviousData: true,
     }
   );
@@ -76,6 +76,7 @@ export const useFetchWomenShirts = (page: number) => {
     ["women-shirts", mainCategories, categories, subCategories, page],
     () => fetchClothesWomen(mainCategories, categories, subCategories, page),
     {
+      staleTime: 120000,
       keepPreviousData: true,
     }
   );
@@ -93,6 +94,7 @@ export const useFetchWomenPants = (page: number) => {
     ["women-pants", mainCategories, categories, subCategories, page],
     () => fetchClothesWomen(mainCategories, categories, subCategories, page),
     {
+      staleTime: 120000,
       keepPreviousData: true,
     }
   );
@@ -110,6 +112,7 @@ export const useFetchWomenSuits = (page: number) => {
     ["women-suits", mainCategories, categories, subCategories, page],
     () => fetchClothesWomen(mainCategories, categories, subCategories, page),
     {
+      staleTime: 120000,
       keepPreviousData: true,
     }
   );
@@ -127,6 +130,7 @@ export const useFetchWomenDress = (page: number) => {
     ["women-dress", mainCategories, categories, subCategories, page],
     () => fetchClothesWomen(mainCategories, categories, subCategories, page),
     {
+      staleTime: 120000,
       keepPreviousData: true,
     }
   );
