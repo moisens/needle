@@ -12,13 +12,16 @@
 
 .discover-header {
   @include mixins.innerPageWidthHeigh;
+  background-color: lightgray;
   padding: 93px 200px 160px;
+
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 50px;
 
   .discover-text {
     @include mixins.FlexCenterColumn;
+    background-color: lightblue;
 
     .discover-title {
       @include mixins.title-h2;
@@ -27,6 +30,7 @@
     .discover-paragraph {
       line-height: 1.6;
       padding-bottom: 60px;
+      //width: 495px;
     }
 
     .discover-btns {
@@ -35,8 +39,8 @@
 
       .btn-btndiscover {
         border: none;
-        border-radius: 18px;
-        background-color: variables.$faded-purple;
+        border-radius: 15px;
+        background-color: variables.$super-darkpurple;
         cursor: pointer;
         transition: all ease 0.8s;
 
@@ -49,19 +53,21 @@
         }
 
         &:hover {
-          background-color: variables.$faded-darkpurple;
+          background-color: variables.$dark-purple;
         }
       }
     }
   }
   .discover-image {
-    background-color: lightgray;
+    background-color: rgb(215, 83, 83);
     border-radius: 50px;
+    //width: 495px;
+    height: 495px;
+    //aspect-ratio: 1;
 
     img {
       width: 100%;
       height: 100%;
-      aspect-ratio: 1 / 1;
       object-fit: cover;
       border-radius: 50px;
       pointer-events: none;
@@ -82,4 +88,43 @@
   @include mixins.innerPageWidthHeigh;
   @include mixins.FlexAlignColumn;
 }
+
+
+
+
+/*================================
+  Media queries
+  ================================*/
+  @media screen and (max-width: 1300px) {
+    .discover-header {
+      padding: 93px 100px 160px;
+    }
+}
+  @media screen and (max-width: 1110px) {
+    .discover-header {
+      padding: 93px 80px 160px;
+    }
+}
+  @media screen and (max-width: 1030px) {
+    .discover-header {
+      padding: 93px 20px 160px;
+      gap: 20px;
+    }
+}
+  @media screen and (max-width: 900px) {
+    .discover-header {
+      grid-template-columns: 1fr;
+
+      .discover-image {
+        order: -1;
+        width: 495px;
+        margin: 0 auto;
+      }
+    }
+}
+
+
+
+
+
 
