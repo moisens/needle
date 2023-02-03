@@ -114,10 +114,14 @@
   @media screen and (max-width: 900px) {
     .discover-header {
       grid-template-columns: 1fr;
+      padding: 20px 20px 160px;
 
+      .discover-text {
+        padding-left: 70px;
+      }
       .discover-image {
         order: -1;
-        width: 495px;
+        width: 80%;
         margin: 0 auto;
       }
     }
