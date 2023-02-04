@@ -12,7 +12,7 @@
 
 .discover-header {
   @include mixins.innerPageWidthHeigh;
-  background-color: lightgray;
+  //background-color: lightgray;
   padding: 93px 200px 160px;
 
   display: grid;
@@ -21,7 +21,7 @@
 
   .discover-text {
     @include mixins.FlexCenterColumn;
-    background-color: lightblue;
+    //background-color: lightblue;
 
     .discover-title {
       @include mixins.title-h2;
@@ -126,8 +126,32 @@
       }
     }
 }
+@media screen and (max-width: 650px) {
+  .discover-header {
+    padding: 20px 20px 160px;
 
+    .discover-text {
+      padding-left: 0px;
+    }
+    .discover-image {
+      width: 100%;
+    }
+  }
+}
 
+@media screen and (max-width: 450px) {
+  .discover-btns {
+    display: flex;
+    flex-direction: column;
+    
+    .btn-btndiscover {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
 
 
 
