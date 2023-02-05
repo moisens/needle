@@ -1,7 +1,6 @@
 @use "../../scss/mixins";
 @use "../../scss/variables";
 
-
 /*================================
   Discover section
   ================================*/
@@ -75,7 +74,6 @@
   }
 }
 
-
 /*================================
   Stylish Eamil section
   ================================*/
@@ -89,42 +87,39 @@
   @include mixins.FlexAlignColumn;
 }
 
-
-
-
 /*================================
   Media queries
   ================================*/
-  @media screen and (max-width: 1300px) {
-    .discover-header {
-      padding: 93px 100px 160px;
-    }
+@media screen and (max-width: 1300px) {
+  .discover-header {
+    padding: 93px 100px 160px;
+  }
 }
-  @media screen and (max-width: 1110px) {
-    .discover-header {
-      padding: 93px 80px 160px;
-    }
+@media screen and (max-width: 1110px) {
+  .discover-header {
+    padding: 93px 80px 160px;
+  }
 }
-  @media screen and (max-width: 1030px) {
-    .discover-header {
-      padding: 93px 20px 160px;
-      gap: 20px;
-    }
+@media screen and (max-width: 1030px) {
+  .discover-header {
+    padding: 93px 20px 160px;
+    gap: 20px;
+  }
 }
-  @media screen and (max-width: 900px) {
-    .discover-header {
-      grid-template-columns: 1fr;
-      padding: 20px 20px 160px;
+@media screen and (max-width: 900px) {
+  .discover-header {
+    grid-template-columns: 1fr;
+    padding: 20px 20px 160px;
 
-      .discover-text {
-        padding-left: 70px;
-      }
-      .discover-image {
-        order: -1;
-        width: 80%;
-        margin: 0 auto;
-      }
+    .discover-text {
+      padding-left: 70px;
     }
+    .discover-image {
+      order: -1;
+      width: 80%;
+      margin: 0 auto;
+    }
+  }
 }
 @media screen and (max-width: 650px) {
   .discover-header {
@@ -139,11 +134,17 @@
   }
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 461px) {
+  .discover-header {
+    .discover-image {
+      height: 380px;
+    }
+  }
+
   .discover-btns {
     display: flex;
     flex-direction: column;
-    
+
     .btn-btndiscover {
       width: 100%;
       display: flex;
@@ -151,8 +152,13 @@
       align-items: center;
     }
   }
+  .stylish-container {
+    padding: 0 20px;
+
+    .stylish-content {
+      .form-container {
+        width: 100%;
+      }
+    }
+  }
 }
-
-
-
-

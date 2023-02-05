@@ -1,9 +1,8 @@
 import FormNewsletter from "../forms/FormNewsletter";
 
 
-type Props = {}
 
-const StylishEmail = (props: Props) => {
+const StylishEmail = () => {
   return (
     <section className="stylish-container">
       <div className="stylish-content">
