@@ -17,7 +17,7 @@ export const navWomenClothes: SubLinksWithImage[] = [
   {
     id: "11b04044-7113",
     url: "clothes",
-    text: "Clothes",
+    text: "All",
     image: "https://img.freepik.com/photos-gratuite/boutique-vetements-boutique-vetements-cintre-boutique-moderne_1150-8886.jpg?w=1800&t=st=1671723298~exp=1671723898~hmac=d351c7a2a0482bb61ed88b35d33be2ad0346c71a6c6b39a45d2d1f04a85067d4"
   },
   {
