@@ -89,6 +89,11 @@
                 color: variables.$red-color;
               }
             }
+            &.without-link {
+              color: variables.$red-color;
+              
+              font-weight: bold;
+            }
           }
         }
       }
