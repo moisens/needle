@@ -37,8 +37,9 @@ const router = createBrowserRouter(
         <Route path="suits" element={<Suits />} />
         <Route path="dress" element={<Dress />} />
       </Route>
-      <Route path="women/women-shoes" element={<ShoesWomen />} />
-      <Route path="women/women-stories" element={<StoriesPage />} />
+
+      <Route path="women-shoes" element={<ShoesWomen />}></Route>
+      <Route path="women-stories" element={<StoriesPage />} />
 
       <Route path="men" element={<Men />}></Route>
 
