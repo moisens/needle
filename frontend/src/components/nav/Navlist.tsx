@@ -64,7 +64,7 @@ const Navlist = () => {
         >
           <li className="list-li">
             <NavLink
-              to="women/women-shoes"
+              to="women-shoes"
               className={({ isActive }) =>
                 isActive ? "list-a activeLink" : "list-a"
               }
@@ -90,7 +90,7 @@ const Navlist = () => {
         <section className="uls-dropdown">
           <li className="list-li">
             <NavLink
-              to="women/women-stories"
+              to="women-stories"
               className={({ isActive }) =>
                 isActive ? "list-a activeLink" : "list-a"
               }
