@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import DropdownList from "./DropdownList";
 import { navWomenClothes } from "../../utils/linksNav";
 import { useState } from "react";
@@ -10,8 +10,8 @@ const Navlist = () => {
     "https://img.freepik.com/photos-gratuite/boutique-vetements-boutique-vetements-cintre-boutique-moderne_1150-8886.jpg?w=1800&t=st=1671723298~exp=1671723898~hmac=d351c7a2a0482bb61ed88b35d33be2ad0346c71a6c6b39a45d2d1f04a85067d4"
   );
   const [isHovered, setIsHovered] = useState(false);
-  const location = useLocation();
-  const currentLink = location.pathname.split("/")[2];
+  //const location = useLocation();
+  //const currentLink = location.pathname.split("/")[2];
 
   //useEffect(() => {
   //  document.body.addEventListener('click', closeDropdown);
@@ -33,8 +33,7 @@ const Navlist = () => {
         >
           <li className="list-li">
             <NavLink
-              //FIXME: must be dynamic
-              to={`women-clothes/${"clothes"}`}
+              to={`women-clothes`}
               className={({ isActive }) =>
                 isActive ? "list-a activeLink" : "list-a"
               }
