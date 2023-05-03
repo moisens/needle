@@ -1,21 +1,29 @@
-import { createContext, useState } from "react";
+import { createContext, useState, ReactNode } from "react";
 
 
-interface MainCategories {
-  selectedCategory: string,
-  setSelectedCategory: React.Dispatch<React.SetStateAction<string>>
+export type InitStateType = "Gender" | "Men" | "Women"
+
+let initialState: InitStateType;
+interface MainContextProp  {
+  selectedCategory: typeof initialState,
+  setSelectedCategory: React.Dispatch<React.SetStateAction<"Gender" | "Men" | "Women">>
   
 }
 
-interface MaincategoriesProps {
+const initialStateContext: MainContextProp = {
+  selectedCategory: "Gender",
+  setSelectedCategory: () => {}
+}
+
+interface ChildrenProps {
   children: React.ReactNode;
 }
 
 
-const MaincategoryContext = createContext<MainCategories | null>(null);
+const MaincategoryContext = createContext<MainContextProp>(initialStateContext);
 
-export const MaincategoryProvider = ({ children }:MaincategoriesProps) => {
-  const [selectedCategory, setSelectedCategory] = useState<string>("Gender");
+export const MaincategoryProvider = ({ children }:ChildrenProps): ReactNode => {
+  const [selectedCategory, setSelectedCategory] = useState(initialState);
 
 
   return (
