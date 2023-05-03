@@ -19,7 +19,6 @@ const Breadcrumbs = () => {
         </div>
       );
     });
-    
   return (
     <section className="clothes-links">
       <div className="links-links">{crumbs}</div>

@@ -18,7 +18,7 @@ export interface IProducts {
 export interface ResponseIProducts {
   data: {
     products: IProducts[] | undefined;
-    numOfPages: number;
+    numOfPages: number | undefined;
     product: IProducts
   };
 }

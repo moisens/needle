@@ -7,6 +7,7 @@ const Shirts = () => {
   const { page, setPage } = usePages();
   const { data, status, isLoading, isError, error, isFetching } =
     useFetchWomenShirts(page);
+  const numberOfPages = data?.data.numOfPages;
 
   if (isLoading) return <h2>Loading...</h2>;
   if (isError) return <p>{error?.message}</p>;
@@ -28,7 +29,6 @@ const Shirts = () => {
           handleClick={() =>
             setPage((oldPage) => (page > 1 ? oldPage - 1 : oldPage))
           }
-
         >
           PREV
         </Button>
@@ -54,10 +54,16 @@ const Shirts = () => {
         <Button
           as="button"
           className={
-            page === 1 ? "pagination-btn-btn next" : "pagination-btn-btn"
+            page === numberOfPages
+              ? "pagination-btn-btn next"
+              : "pagination-btn-btn"
           }
           handleClick={() =>
-            setPage((oldPage) => (page < 1 ? oldPage + 1 : oldPage))
+            setPage((oldPage) =>
+              numberOfPages !== undefined && page < numberOfPages
+                ? oldPage + 1
+                : oldPage
+            )
           }
         >
           {isFetching ? "Loading..." : "NEXT"}
