@@ -12,7 +12,7 @@ const Listcategories = () => {
     <section className="category-container">
       <Menu>
         <Menu.Button className="btn-btn">
-          {selectedCategory} <IoMdArrowDropdown />
+          {selectedCategory ? selectedCategory : "Gender"} <IoMdArrowDropdown />
         </Menu.Button>
         <Menu.Items className="listcategory-options">
           {primaryCategories.map((category) => (
