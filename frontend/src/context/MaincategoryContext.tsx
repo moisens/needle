@@ -1,39 +1,47 @@
-import { createContext, useState, ReactNode } from "react";
+import { createContext, useState, useEffect, ReactNode } from "react";
 
-
-export type InitStateType = "Gender" | "Men" | "Women"
+export type InitStateType = "Men" | "Women";
 
 let initialState: InitStateType;
-interface MainContextProp  {
-  selectedCategory: typeof initialState,
-  setSelectedCategory: React.Dispatch<React.SetStateAction<"Gender" | "Men" | "Women">>
-  
+interface MainContextProp {
+  selectedCategory: typeof initialState;
+  setSelectedCategory: React.Dispatch<React.SetStateAction<"Men" | "Women">>;
 }
 
 const initialStateContext: MainContextProp = {
-  selectedCategory: "Gender",
-  setSelectedCategory: () => {}
-}
+  selectedCategory: "Women",
+  setSelectedCategory: () => {},
+};
 
 interface ChildrenProps {
   children: React.ReactNode;
 }
 
-
 const MaincategoryContext = createContext<MainContextProp>(initialStateContext);
 
-export const MaincategoryProvider = ({ children }:ChildrenProps): ReactNode => {
-  const [selectedCategory, setSelectedCategory] = useState(initialState);
+export const MaincategoryProvider = ({
+  children,
+}: ChildrenProps): ReactNode => {
+  const [selectedCategory, setSelectedCategory] = useState(() =>
+    JSON.parse(
+      localStorage.getItem("main-category") || JSON.stringify(initialState)
+    )
+  );
 
+  useEffect(() => {
+    localStorage.setItem("main-category", JSON.stringify(selectedCategory));
+  }, [selectedCategory]);
 
   return (
-    <MaincategoryContext.Provider value={{
-      selectedCategory, 
-      setSelectedCategory 
-    }}>
-      { children }
+    <MaincategoryContext.Provider
+      value={{
+        selectedCategory,
+        setSelectedCategory,
+      }}
+    >
+      {children}
     </MaincategoryContext.Provider>
-  )
-}
+  );
+};
 
 export default MaincategoryContext;

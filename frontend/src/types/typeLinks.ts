@@ -17,7 +17,7 @@ export interface SubLinkDropdown {
 
 export interface CategoriesPrime {
   id: string;
-  category: "Gender" | "Men" | "Women";
+  category: "Men" | "Women";
   url: string;
 }
 
