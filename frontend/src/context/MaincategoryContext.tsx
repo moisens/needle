@@ -1,15 +1,15 @@
 import { createContext, useState, useEffect, ReactNode } from "react";
 
-export type InitStateType = "Men" | "Women";
+export type InitStateType = "Gender" | "Men" | "Women";
 
-let initialState: InitStateType;
+const initialState: InitStateType = "Gender";
 interface MainContextProp {
   selectedCategory: typeof initialState;
   setSelectedCategory: React.Dispatch<React.SetStateAction<"Men" | "Women">>;
 }
 
 const initialStateContext: MainContextProp = {
-  selectedCategory: "Women",
+  selectedCategory: "Gender",
   setSelectedCategory: () => {},
 };
 
