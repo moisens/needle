@@ -13,6 +13,7 @@ export interface IProducts {
   inventory: number;
   averageRating: number;
   numOfReviews: number;
+  qty?: number;
 }
 
 export interface ResponseIProducts {
