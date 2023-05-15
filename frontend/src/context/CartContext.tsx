@@ -42,16 +42,68 @@ const REDUCER_ACTION_TYPE = {
 };
 
 const reducer = (state: ICartState, action: ReducerAction): ICartState => {
-  // Add to cart functionality
+  // Add Item to cart functionality
   if (action.type === REDUCER_ACTION_TYPE.ADD) {
-    if (!action.payload) throw new Error("action.payload is missing in ADD functionality");
+    if (!action.payload)
+      throw new Error("action.payload is missing in ADD functionality");
 
-    const { _id } = action.payload;
-    const filteredCart: IProducts[] = state.cart.filter(item => item._id !== _id);
-    const itemExists: IProducts | undefined = state.cart.find(item => item._id === _id);
+    const {
+      _id,
+      tailorname,
+      color,
+      price,
+      description,
+      clothesmaterials,
+      image,
+      maincategories,
+      subcategories,
+      size,
+      featured,
+      inventory,
+      averageRating,
+      numOfReviews,
+    } = action.payload;
+    const filteredCart: IProducts[] = state.cart.filter(
+      (item) => item._id !== _id
+    );
+    const itemExists: IProducts | undefined = state.cart.find(
+      (item) => item._id === _id
+    );
     const qty = itemExists ? itemExists.qty + 1 : 1;
-    return { ...state, cart: [...filteredCart, action.payload] }
-    
+    return {
+      ...state,
+      cart: [
+        ...filteredCart,
+        {
+          _id,
+          tailorname,
+          color,
+          price,
+          description,
+          clothesmaterials,
+          image,
+          maincategories,
+          subcategories,
+          size,
+          featured,
+          inventory,
+          averageRating,
+          numOfReviews,
+          qty,
+        },
+      ],
+    };
+  }
+
+  //Remove Item from cart functionality
+  if (action.type === REDUCER_ACTION_TYPE.REMOVE) {
+    if (!action.payload)
+      throw new Error("action.payload is missing in REMOVE functionality");
+    const { _id } = action.payload;
+    const filteredCart: IProducts[] = state.cart.filter(
+      (item) => item._id !== _id
+    );
+    return { ...state, cart: [...filteredCart] };
   }
 
   throw new Error("Unidentified reducer action type!");
