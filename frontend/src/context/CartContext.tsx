@@ -31,6 +31,15 @@ export interface ReducerAction {
   payload?: IProducts;
 }
 
+
+export interface CartContextType {
+  //state: ICartState;
+  cart: IProducts[],
+  REDUCER_ACTIONS: typeof REDUCER_ACTION_TYPE
+}
+
+
+
 const intialCartState: ICartState = {
   cart: [],
 };
@@ -40,6 +49,11 @@ const REDUCER_ACTION_TYPE = {
   REMOVE: "REMOVE",
   QUANTITY: "QUANTITY",
 };
+
+const initialStateContext: CartContextType = {
+  cart: [],
+  REDUCER_ACTIONS: REDUCER_ACTION_TYPE
+}
 
 const reducer = (state: ICartState, action: ReducerAction): ICartState => {
   // Add Item to cart functionality
@@ -109,12 +123,15 @@ const reducer = (state: ICartState, action: ReducerAction): ICartState => {
   throw new Error("Unidentified reducer action type!");
 };
 
-const ProductCartcontext = createContext();
+const ProductCartcontext = createContext<CartContextType>(initialStateContext);
 
 export const ProductCartProvider = ({
   children,
-}: ChildrenCardType): ReactNode => {
+}: ChildrenCardType) => {
   const [state, dispatch] = useReducer(reducer, intialCartState);
+  
+  console.log(state.cart);
+  
 
   return (
     <ProductCartcontext.Provider value={{}}>
@@ -122,3 +139,6 @@ export const ProductCartProvider = ({
     </ProductCartcontext.Provider>
   );
 };
+
+
+export default ProductCartcontext;
