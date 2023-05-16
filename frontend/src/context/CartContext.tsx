@@ -1,10 +1,11 @@
-import { createContext, ReactNode, useReducer } from "react";
+import { createContext, ReactNode } from "react";
+import useCartContext from "../hooks/useCartContext";
 
 export interface IProducts {
   readonly _id: string;
   tailorname: string;
   color: string;
-  price: string;
+  price: number;
   description: string;
   clothesmaterials: string[];
   image: string[];
@@ -31,27 +32,31 @@ export interface ReducerAction {
   payload?: IProducts;
 }
 
-export interface CartContextType {
-  cart: IProducts[];
-  REDUCER_ACTIONS: typeof REDUCER_ACTION_TYPE;
-}
-
 const intialCartState: ICartState = {
   cart: [],
 };
 
-const REDUCER_ACTION_TYPE = {
+export const REDUCER_ACTION_TYPE = {
   ADD: "ADD",
   REMOVE: "REMOVE",
   QUANTITY: "QUANTITY",
 };
 
-const initialStateContext: CartContextType = {
+export type UseCartContextType = ReturnType<typeof useCartContext>;
+
+const initialStateContext: UseCartContextType = {
   cart: [],
   REDUCER_ACTIONS: REDUCER_ACTION_TYPE,
+  dispatch: () => {},
+  totalItems: 0,
+  totalPrice: "",
 };
 
-const reducer = (state: ICartState, action: ReducerAction): ICartState => {
+
+export const reducer = (
+  state: ICartState,
+  action: ReducerAction
+): ICartState => {
   // Add Item to cart functionality
   if (action.type === REDUCER_ACTION_TYPE.ADD) {
     if (!action.payload)
@@ -138,15 +143,12 @@ const reducer = (state: ICartState, action: ReducerAction): ICartState => {
   throw new Error("Unidentified reducer action type!");
 };
 
-const ProductCartcontext = createContext<CartContextType>(initialStateContext);
+const ProductCartcontext =
+  createContext<UseCartContextType>(initialStateContext);
 
 export const ProductCartProvider = ({ children }: ChildrenCardType) => {
-  const [state, dispatch] = useReducer(reducer, intialCartState);
-
-  console.log(state.cart);
-
   return (
-    <ProductCartcontext.Provider value={{}}>
+    <ProductCartcontext.Provider value={useCartContext(intialCartState)}>
       {children}
     </ProductCartcontext.Provider>
   );
