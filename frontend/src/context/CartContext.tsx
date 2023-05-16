@@ -31,14 +31,10 @@ export interface ReducerAction {
   payload?: IProducts;
 }
 
-
 export interface CartContextType {
-  //state: ICartState;
-  cart: IProducts[],
-  REDUCER_ACTIONS: typeof REDUCER_ACTION_TYPE
+  cart: IProducts[];
+  REDUCER_ACTIONS: typeof REDUCER_ACTION_TYPE;
 }
-
-
 
 const intialCartState: ICartState = {
   cart: [],
@@ -52,8 +48,8 @@ const REDUCER_ACTION_TYPE = {
 
 const initialStateContext: CartContextType = {
   cart: [],
-  REDUCER_ACTIONS: REDUCER_ACTION_TYPE
-}
+  REDUCER_ACTIONS: REDUCER_ACTION_TYPE,
+};
 
 const reducer = (state: ICartState, action: ReducerAction): ICartState => {
   // Add Item to cart functionality
@@ -89,6 +85,7 @@ const reducer = (state: ICartState, action: ReducerAction): ICartState => {
       cart: [
         ...filteredCart,
         {
+          //TODO - Try using action.payload instead of passing all the element in the {}
           _id,
           tailorname,
           color,
@@ -120,18 +117,33 @@ const reducer = (state: ICartState, action: ReducerAction): ICartState => {
     return { ...state, cart: [...filteredCart] };
   }
 
+  if (action.type === REDUCER_ACTION_TYPE.QUANTITY) {
+    if (!action.payload)
+      throw new Error("action.payload is missing in QUANTITY functionality");
+
+    const { _id, qty } = action.payload;
+    const itemExists: IProducts | undefined = state.cart.find(
+      (item) => item._id === _id
+    );
+
+    if (!itemExists) throw new Error("To update quantity, item must exist!");
+    const updateItem: IProducts = { ...itemExists, qty };
+    const filterdeCart: IProducts[] = state.cart.filter(
+      (item) => item._id !== _id
+    );
+
+    return { ...state, cart: [...filterdeCart, updateItem] };
+  }
+
   throw new Error("Unidentified reducer action type!");
 };
 
 const ProductCartcontext = createContext<CartContextType>(initialStateContext);
 
-export const ProductCartProvider = ({
-  children,
-}: ChildrenCardType) => {
+export const ProductCartProvider = ({ children }: ChildrenCardType) => {
   const [state, dispatch] = useReducer(reducer, intialCartState);
-  
+
   console.log(state.cart);
-  
 
   return (
     <ProductCartcontext.Provider value={{}}>
@@ -139,6 +151,5 @@ export const ProductCartProvider = ({
     </ProductCartcontext.Provider>
   );
 };
-
 
 export default ProductCartcontext;
