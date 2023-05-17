@@ -2,7 +2,7 @@ export interface IProducts {
   readonly _id: string;
   tailorname: string;
   color: string;
-  price: string;
+  price: number;
   description: string;
   clothesmaterials: string[];
   image: string[];
@@ -13,7 +13,7 @@ export interface IProducts {
   inventory: number;
   averageRating: number;
   numOfReviews: number;
-  qty?: number;
+  qty: number;
 }
 
 export interface ResponseIProducts {
@@ -25,5 +25,5 @@ export interface ResponseIProducts {
 }
 
 export interface ICardproducts {
-  product: IProducts | undefined;
+  product: IProducts;
 }
