@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, ReactNode } from "react";
+import { createContext, useState, useEffect } from "react";
 
 export type InitStateType = "Gender" | "Men" | "Women";
 
@@ -21,7 +21,7 @@ const MaincategoryContext = createContext<MainContextProp>(initialStateContext);
 
 export const MaincategoryProvider = ({
   children,
-}: ChildrenProps): ReactNode => {
+}: ChildrenProps) => {
   const [selectedCategory, setSelectedCategory] = useState(() =>
     JSON.parse(
       localStorage.getItem("main-category") || JSON.stringify(initialState)

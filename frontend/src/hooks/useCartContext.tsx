@@ -30,7 +30,8 @@ const useCartContext = (intialCartState: ICartState) => {
     const itemB = Number(b._id);
     return itemA - itemB;
   });
-
+  console.log("T-Items CartContext: ", totalItems);
+  
   return {
     REDUCER_ACTIONS,
     totalItems,
