@@ -1,7 +1,7 @@
 import { createContext, ReactNode } from "react";
 import useCartContext from "../hooks/useCartContext";
 
-export interface IProducts {
+export type IProducts = {
   readonly _id: string;
   tailorname: string;
   color: string;
@@ -42,6 +42,7 @@ export const REDUCER_ACTION_TYPE = {
   QUANTITY: "QUANTITY",
 };
 
+export type ReducerActionType = typeof REDUCER_ACTION_TYPE;
 export type UseCartContextType = ReturnType<typeof useCartContext>;
 
 const initialStateContext: UseCartContextType = {

@@ -1,10 +1,16 @@
+import useCart from "../../hooks/useCart";
 import { ICardproducts } from "../../types/typeDatas";
+import Button from "../button/Button";
 import Images from "../imageComponent/Images";
 //import { BsHeartFill } from "react-icons/bs";
 import { CiHeart } from "react-icons/ci";
 import { Link } from "react-router-dom";
 
 const Cardpages = ({ product }: ICardproducts) => {
+  const { dispatch, REDUCER_ACTIONS } = useCart();
+  const onAddToCart = () =>
+    dispatch({ type: REDUCER_ACTIONS.ADD, payload: { ...product, qty: 1 } });
+
   return (
     <section className="page-pagination-product">
       <section className="page-like">
@@ -26,7 +32,13 @@ const Cardpages = ({ product }: ICardproducts) => {
           </p>
         </Link>
         <section className="pagination-hidden-info">
-          <button className="pagination-product-btn">Add to cart</button>
+          <Button
+            as="button"
+            className="pagination-product-btn"
+            handleClick={onAddToCart}
+          >
+            Add to cart
+          </Button>
         </section>
       </section>
     </section>
