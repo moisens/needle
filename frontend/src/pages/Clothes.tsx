@@ -2,7 +2,7 @@ import { useFetchClothesWomen } from "../hooks/useFetchProduct";
 import usePages from "../hooks/usePages";
 import Cardpages from "../components/cardpages/Cardpages";
 import Button from "../components/button/Button";
-import { ProductCartProvider } from "../context/CartContext";
+//import { ProductCartProvider } from "../context/CartContext";
 
 const Clothes = () => {
   const { page, setPage } = usePages();
@@ -15,7 +15,7 @@ const Clothes = () => {
 
   return (
     <>
-      <ProductCartProvider>
+      
         <section className="page-pagination-one-page">
           {status === "success" &&
             data?.data.products?.map((product) => (
@@ -71,7 +71,7 @@ const Clothes = () => {
             {isFetching ? "NEXT..." : "NEXT"}
           </Button>
         </section>
-      </ProductCartProvider>
+      
     </>
   );
 };
