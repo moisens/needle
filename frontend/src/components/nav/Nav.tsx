@@ -15,7 +15,6 @@ const Nav = () => {
         <section className="nav-content">
           <Listcategories />
           <Navlist />
-          
             <section className="fav-cart-user">
               <section className="favorites-container">
                 <AiOutlineHeart size="1.875rem" />
@@ -26,7 +25,6 @@ const Nav = () => {
                 <CgProfile size="1.875rem" />
               </section>
             </section>
-          
         </section>
       </nav>
       <main className="pages-container">

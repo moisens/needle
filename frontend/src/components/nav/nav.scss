@@ -298,6 +298,7 @@
     .carts-container {
       @include mixins.displayFlex;
       position: relative;
+      cursor: pointer;
 
       .cart-count {
         @include mixins.countProduct(
