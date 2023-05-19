@@ -2,15 +2,28 @@ import { MdOutlineShoppingBag } from "react-icons/md";
 import useCart from "../../hooks/useCart";
 import Button from "../button/Button";
 import ArticleNavCart from "./ArticleNavCart";
+import { useState } from "react";
 
 const NavCart = () => {
   const { totalItems, cart, totalPrice } = useCart();
+  const [toggleCart, setToggleCart] = useState(false);
+
+  const handleOnMouseOver = () => {
+    setToggleCart(true);
+  };
+  const handleOnMouseOut = () => {
+    setToggleCart(false);
+  };
 
   return (
-    <section className="carts-container">
+    <section
+      className={toggleCart ? "carts-container isActive" : "carts-container"}
+      onMouseOver={handleOnMouseOver}
+      onMouseOut={handleOnMouseOut}
+    >
       <MdOutlineShoppingBag size="1.8rem" className="cart-cart-shopping-icon" />
       <div className="cart-count">{totalItems}</div>
-      <div className="cart-content">
+      <div className={toggleCart ? "cart-content isVisible" : "cart-content"}>
         <h4 className="cart-heading-4">My Shopping Cart</h4>
         <section className="cart-articles-container">
           <div className="cart-cart-articles">

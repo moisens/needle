@@ -99,7 +99,8 @@
   $top,
   $left,
   $font-size,
-  $padding
+  $padding,
+  $z-index: 3,
 ) {
   background-color: $background-color;
   width: $width;
@@ -110,6 +111,7 @@
   left: $left;
   font-size: $font-size;
   padding: $padding;
+  z-index: $z-index;
 }
 
 /*==================================
