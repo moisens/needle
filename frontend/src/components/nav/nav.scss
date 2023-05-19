@@ -185,7 +185,7 @@
 
   .fav-cart-user {
     @include mixins.displaySpace-around;
-    gap: 18px;
+    gap: 22px;
 
     .favorites-container {
       @include mixins.displayFlex;
@@ -211,7 +211,19 @@
       @include mixins.displayFlex;
       position: relative;
 
+      &.isActive {
+        //border-top: solid 0.4px hsl(265, 71%, 40%);
+        //border-right: solid 0.4px hsl(265, 71%, 40%);
+        //border-left: solid 0.4px hsl(265, 71%, 40%);
+      }
+
       .cart-cart-shopping-icon {
+        height: 49.5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: hsl(0, 0%, 100%);
+        z-index: 3;
         cursor: pointer;
       }
 
@@ -222,7 +234,7 @@
           12px,
           50%,
           absolute,
-          -2px,
+          6.8px,
           18px,
           0.75rem,
           11px
@@ -231,19 +243,24 @@
       }
       .cart-content {
         position: absolute;
-        top: 40px;
-        left: -310px;
+        top: 49px;
+        left: -299.5px;
         background-color: hsl(0, 0%, 100%);
         width: 340px;
         height: auto;
         z-index: 1;
-        border-left: solid .4px hsl(265, 71%, 40%);
-        border-right: solid .4px hsl(265, 71%, 40%);
-        border-bottom: solid .4px hsl(265, 71%, 40%);
+        border-top: solid 0.4px hsl(265, 71%, 40%);
+        border-left: solid 0.4px hsl(265, 71%, 40%);
+        border-right: solid 0.4px hsl(265, 71%, 40%);
+        border-bottom: solid 0.4px hsl(265, 71%, 40%);
         border-bottom-left-radius: 22px;
         border-bottom-right-radius: 22px;
         padding-bottom: 10px;
-        
+        display: none;
+
+        &.isVisible {
+          display: block;
+        }
 
         .cart-heading-4 {
           padding: 20px;
@@ -266,20 +283,25 @@
           padding: 8px;
 
           .cart-cart-articles {
+            height: 180px;
             overflow-y: scroll;
+            scrollbar-width: none;
+            
+            &::-webkit-scrollbar {
+              display: none;
+          }
           }
           .cart-article-content {
-            //background-color: hsl(0, 0%, 89%);
+            background-color: hsl(0, 0%, 96%);
             display: flex;
             gap: 20px;
             padding: 10px;
-            border-top: solid 1px hsl(266, 82%, 15%);
-            //border-bottom: solid 1px hsl(266, 82%, 15%);
+            margin-bottom: 10px;
 
             .cart-image-content {
               min-width: 85px;
               height: 85px;
-              background-color: hsl(0, 1%, 42%);
+              background-color: hsl(0, 0%, 89%);
               border-radius: 9px;
 
               img {
