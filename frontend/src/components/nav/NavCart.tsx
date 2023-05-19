@@ -20,10 +20,13 @@ const NavCart = () => {
                 return <ArticleNavCart key={_id} {...productCart} />;
               })
             ) : (
-              <div>Cart empty</div>
+              <div className="cart-cart-empty">Your cart is empty</div>
             )}
           </div>
-          <div>{totalPrice}</div>
+          <div className="cart-total-cart is-cart-visible">
+            <h3>Total: </h3>
+            {totalPrice}
+          </div>
           <Button as="button" className="cart-btn-btn">
             Go To Cart
           </Button>
