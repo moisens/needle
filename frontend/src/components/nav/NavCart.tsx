@@ -23,7 +23,13 @@ const NavCart = () => {
               <div className="cart-cart-empty">Your cart is empty</div>
             )}
           </div>
-          <div className="cart-total-cart is-cart-visible">
+          <div
+            className={
+              cart.length > 0
+                ? "cart-total-cart is-cart-visible"
+                : "cart-total-cart"
+            }
+          >
             <h3>Total: </h3>
             {totalPrice}
           </div>
