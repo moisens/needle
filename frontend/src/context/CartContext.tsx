@@ -17,7 +17,7 @@ export type IProducts = {
   averageRating: number;
   numOfReviews: number;
   qty: number;
-}
+};
 
 export interface ChildrenCardType {
   children: ReactNode;
@@ -52,7 +52,6 @@ const initialStateContext: UseCartContextType = {
   totalItems: 0,
   totalPrice: "",
 };
-
 
 export const reducer = (
   state: ICartState,
@@ -91,7 +90,6 @@ export const reducer = (
       cart: [
         ...filteredCart,
         {
-          //TODO - Try using action.payload instead of passing all the element in the {}
           _id,
           tailorname,
           color,
