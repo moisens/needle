@@ -20,6 +20,7 @@ import Men from "./pages/Men.page";
 import ClothesWomen from "./pages/ClothesWomen.page";
 import ShoesWomen from "./pages/ShoesWomen.page";
 import StoriesPage from "./pages/Stories.page";
+import Cartpage from "./pages/Cart.page";
 import SingleproductPage from "./pages/Singleproduct.page";
 import NotFound from "./pages/NotFound.page";
 //import Footer from "./components/footer/Footer";
@@ -42,6 +43,8 @@ const router = createBrowserRouter(
       <Route path="women-stories" element={<StoriesPage />} />
 
       <Route path="men" element={<Men />}></Route>
+      <Route path="cart" element={<Cartpage />} />
+
 
       <Route path="single-product/:_id" element={<SingleproductPage />} />
       <Route path="*" element={<NotFound />} />
