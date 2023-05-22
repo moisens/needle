@@ -3,6 +3,7 @@ import useCart from "../../hooks/useCart";
 import Button from "../button/Button";
 import ArticleNavCart from "./ArticleNavCart";
 import { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 
 const NavCart = () => {
   const { totalItems, cart, totalPrice } = useCart();
@@ -66,7 +67,7 @@ const NavCart = () => {
             {totalPrice}
           </div>
           <Button as="button" className="cart-btn-btn">
-            Go To Cart
+           <Link to="/cart"> Go To Cart</Link>
           </Button>
         </section>
       </div>
