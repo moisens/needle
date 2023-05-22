@@ -361,8 +361,11 @@
             border: none;
             border-radius: 9px;
             background-color: hsl(266, 82%, 15%);
-            color: hsl(0, 0%, 100%);
             cursor: pointer;
+
+            a {
+              color: hsl(0, 0%, 100%);
+            }
           }
         }
       }
