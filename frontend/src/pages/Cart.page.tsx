@@ -23,15 +23,16 @@ const Cartpage = () => {
                     <p>color: red</p>
                     <p>size: L</p>
                   </div>
-                  <div className="article-infos-content">
-                    
+                  <div className="article-form-content">
+                    <label htmlFor="item-number" />
+                    <input type="number" />
                   </div>
                 </div>
                 <div className="article-infos-price">delete Move to Price</div>
               </div>
             </article>
           </section>
-          <section className="cartpage-total-container">2</section>
+          <section className="cartpage-total-container">checkout section</section>
         </header>
       </section>
     </main>
