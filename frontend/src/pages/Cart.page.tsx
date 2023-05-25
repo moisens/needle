@@ -15,7 +15,7 @@ const Cartpage = () => {
                 <Images src="" alt="Cart" title="cart" />
               </div>
               <div className="article-infos-container">
-                <div className="article-infos-infos">
+                <div className="article-articles">
                   <div className="article-infos-content">
                     <h3>Tailor name</h3>
                     <p>color: red</p>
