@@ -45,13 +45,13 @@
         }
       }
       .article-infos-container {
-        min-width: 76%;
-        //background-color: lightcoral;
+        width: 100%;
 
-        .article-infos-infos {
+        .article-articles {
           display: flex;
           justify-content: space-between;
         }
+
         .article-infos-price {
           display: flex;
           justify-content: space-between;
