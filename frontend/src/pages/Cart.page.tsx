@@ -1,8 +1,6 @@
 import "../components/cart/cart.scss";
 import Images from "../components/imageComponent/Images";
 
-
-
 const Cartpage = () => {
   return (
     <main className="pages-container">
@@ -28,15 +26,23 @@ const Cartpage = () => {
                     <input type="number" />
                   </div>
                 </div>
-                <div className="article-infos-price">delete Move to Price</div>
+                <div className="article-infos-price">
+                  <div className="article-delete-moveto">
+                    <p>delete</p>
+                    <p>Move to Price</p>
+                  </div>
+                  <p className="article-total-price">3800€</p>
+                </div>
               </div>
             </article>
           </section>
-          <section className="cartpage-total-container">checkout section</section>
+          <section className="cartpage-total-container">
+            checkout section
+          </section>
         </header>
       </section>
     </main>
-  )
-}
+  );
+};
 
 export default Cartpage;
