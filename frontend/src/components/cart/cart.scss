@@ -1,7 +1,6 @@
 @use "../../scss/variables";
 @use "../../scss/mixins";
 
-
 .cartpage-container {
   @include mixins.pageWidthHeight;
   background-color: variables.$bck-yellow;
@@ -32,8 +31,8 @@
       padding: 15px;
 
       .article-image-container {
-        min-width: 140px;
-        height: 140px;
+        min-width: 120px;
+        height: 120px;
         background-color: #efefef;
         border-radius: 22px;
 
@@ -44,23 +43,33 @@
           object-fit: cover;
           object-position: top;
         }
-
       }
       .article-infos-container {
         min-width: 76%;
         //background-color: lightcoral;
-        
+
         .article-infos-infos {
           display: flex;
           justify-content: space-between;
         }
-        
+        .article-infos-price {
+          display: flex;
+          justify-content: space-between;
+          margin-top: 18px;
+
+          .article-delete-moveto {
+            display: flex;
+            gap: 20px;
+
+            & > * {
+              cursor: pointer;
+            }
+          }
+          .article-total-price {
+            font-weight: 700;
+          }
+        }
       }
     }
-
-
   }
-
-
-
 }
