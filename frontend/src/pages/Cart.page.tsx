@@ -1,3 +1,4 @@
+import Button from "../components/button/Button";
 import "../components/cart/cart.scss";
 import Images from "../components/imageComponent/Images";
 
@@ -37,7 +38,27 @@ const Cartpage = () => {
             </article>
           </section>
           <section className="cartpage-total-container">
-            checkout section
+            <div className="checkout-product-content">
+              <h3 className="checkout-h3">Total</h3>
+              <div>
+                <p>Subtotal</p>
+                <p className="price-checkout">500€</p>
+              </div>
+              <div>
+                <p>Shipping</p>
+                <p className="price-checkout">0.00€</p>
+              </div>
+              <div>
+                <p>
+                  <span className="total-bold">Total</span>{" "}
+                  <span className="checkoout-tax">(including vta)</span>
+                </p>
+                <p className="price-checkout">5000€</p>
+              </div>
+              <Button as="button" className="checkout-btn">
+                Checkout
+              </Button>
+            </div>
           </section>
         </header>
       </section>
