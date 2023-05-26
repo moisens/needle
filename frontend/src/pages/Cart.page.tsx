@@ -26,6 +26,9 @@ const Cartpage = () => {
               {cart.map((item) => (
                 <CartArticleComponent key={item._id} {...item} />
               ))}
+              <div className="articles-items-infos">
+                <p>Items in the shopping cart are not reserved!</p>
+              </div>
             </section>
             <section className="cartpage-total-container">
               <div className="checkout-product-content">
@@ -77,6 +80,7 @@ const Cartpage = () => {
             </div>
           </section>
         )}
+        {/*Last viewed products section goes here!*/}
       </section>
     </main>
   );

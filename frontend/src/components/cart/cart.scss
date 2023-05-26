@@ -17,16 +17,16 @@
 
 .cart-header {
   @include mixins.innerPageWidthHeigh;
-  background-color: red;
   display: grid;
   grid-template-columns: 2fr 1fr;
   gap: 40px;
-  padding: 0 60px;
+  padding: 0 60px 160px;
 
   .cartpage-articles-container {
     background-color: hsl(0, 0%, 100%);
     border-radius: 22px;
     padding: 40px;
+    box-shadow: hsla(0, 0%, 39%, 0.2) 0px 2px 8px 0px;
 
     .articles-content {
       display: flex;
@@ -76,17 +76,28 @@
         }
       }
     }
+    .articles-items-infos {
+      border-top: solid 0.8px hsl(268, 73%, 43%);
+      padding: 20px 0 0;
+      margin-top: 50px;
+
+      & > * {
+        font-size: 0.95rem;
+      }
+    }
   }
   .cartpage-total-container {
     display: flex;
     justify-content: center;
 
     .checkout-product-content {
-      background-color: #fff;
+      background-color: hsl(0, 0%, 100%);
       width: 400px;
       height: 300px;
       border-radius: 22px;
       padding: 20px;
+      box-shadow: hsla(0, 0%, 39%, 0.2) 0px 2px 8px 0px;
+      
 
       .checkout-h3 {
         font-weight: bold;
@@ -135,7 +146,7 @@
 
   .cart-emty-template {
     width: 415px;
-    border: solid .8px hsl(266, 82%, 15%);
+    border: solid 0.8px hsl(266, 82%, 15%);
     border-radius: 22px;
     display: flex;
     gap: 20px;
@@ -147,7 +158,6 @@
       height: 160px;
       background-color: hsl(0, 0%, 96%);
       border-radius: 9px;
-
     }
     .fake-text-section {
       .fake-text-line {
@@ -182,7 +192,6 @@
         color: hsl(0, 0%, 32%);
       }
     }
-
   }
   .cart-emty-infos {
     .cart-emty-h4 {
@@ -200,9 +209,6 @@
       color: hsl(0, 0%, 100%);
       font-size: 1.2rem;
       cursor: pointer;
-
     }
   }
-
-
 }
