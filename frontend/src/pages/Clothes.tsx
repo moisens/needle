@@ -69,6 +69,8 @@ const Clothes = () => {
           {isFetching ? "NEXT..." : "NEXT"}
         </Button>
       </section>
+      {/*popup!*/}
+      
     </>
   );
 };
