@@ -2,6 +2,7 @@ import { useFetchClothesWomen } from "../hooks/useFetchProduct";
 import usePages from "../hooks/usePages";
 import Cardpages from "../components/cardpages/Cardpages";
 import Button from "../components/button/Button";
+import PopupdetailComponent from "../components/popupDetail/popupdetailComponent";
 
 const Clothes = () => {
   const { page, setPage } = usePages();
@@ -70,7 +71,7 @@ const Clothes = () => {
         </Button>
       </section>
       {/*popup!*/}
-      
+      <PopupdetailComponent />
     </>
   );
 };

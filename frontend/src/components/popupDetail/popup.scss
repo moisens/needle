@@ -1,0 +1,19 @@
+.popup-detail-container {
+  background-color: hsla(0, 0%, 13%, 0.697);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 50px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .popup-detail-content {
+    width: 800px;
+    height: 600px;
+    background-color: hsl(43, 100%, 99%);
+    border-radius: 22px;
+
+  }
+}
