@@ -36,7 +36,6 @@ const DetailComponent = () => {
             <div></div>
             <div></div>
             <div></div>
-            <div></div>
           </div>
           <div className="detail-size-container">
             <div className="detail-size-title">
