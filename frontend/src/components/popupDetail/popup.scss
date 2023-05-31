@@ -8,6 +8,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  display: none;
 
   .popup-detail-content {
     width: 800px;
@@ -15,5 +16,9 @@
     background-color: hsl(43, 100%, 99%);
     border-radius: 22px;
 
+  }
+
+  &.popup-isActive {
+    display: flex;
   }
 }
