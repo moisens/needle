@@ -2,8 +2,8 @@
   //background-color: lightgrey;
   display: flex;
   //grid-template-columns: 1.2fr 1fr;
-  gap: 40px;
-  //width: 100%;
+  gap: 60px;
+  width: 100%;
   height: auto;
   background-color: hsl(43, 100%, 99%);
 }
@@ -17,13 +17,13 @@
     //background-color: lightsalmon;
     height: auto;
     overflow-y: scroll;
-    padding: 20px 0  20px 20px;
+    padding: 0 0 20px 20px;
     min-width: 180px;
 
     & div {
       width: 140px;
       height: 160px;
-      background-color: hsl(0, 0%, 79%);
+      background-color: hsl(0, 0%, 96%);
       margin-bottom: 20px;
       border-radius: 22px;
 
@@ -37,7 +37,6 @@
     }
   }
   .detail-img {
-    padding: 20px 0;
     width: 600px;
     border-radius: 22px;
     //background-color: red;
@@ -48,7 +47,7 @@
       background-size: cover;
       object-fit: cover;
       border-radius: 22px;
-      background-color: hsl(0, 0%, 79%);
+      background-color: hsl(0, 0%, 96%);
     }
   }
 }
@@ -84,19 +83,85 @@
     //background-color: aqua;
     display: flex;
     gap: 20px;
-    width: 490px;
+    width: auto;
     height: auto;
-    overflow-x: scroll;
     margin-bottom: 30px;
 
-    
-
     & div {
-      min-width: 110px;
-      height: 110px;
+      min-width: 90px;
+      height: 90px;
       border-radius: 22px;
-      background-color: hsl(0, 0%, 79%);
+      background-color: hsl(0, 0%, 96%);
     }
   }
 
+  .detail-size-container {
+    //background-color: red;
+    margin-bottom: 30px;
+
+    .detail-size-title {
+      border: solid 1px hsl(266, 89%, 17%);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 14px;
+      border-radius: 9px;
+      cursor: pointer;
+
+      & svg {
+        color: hsl(266, 89%, 17%);
+      }
+    }
+    .detail-size-content {
+      border: solid 1px hsl(266, 89%, 17%);
+      border-bottom-left-radius: 9px;
+      border-bottom-right-radius: 9px;
+
+      .detail-size-size {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: hsl(0, 0%, 96%);
+        }
+
+        .detail-size {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+        }
+      }
+    }
+  }
+  .detail-add-like-btns {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    .detail-add-btn {
+      padding: 15px 58px;
+      border: none;
+      border-radius: 9px;
+      background-color: hsl(266, 89%, 17%);
+      color: hsl(0, 0%, 100%);
+      font-size: 1.125rem;
+      cursor: pointer;
+    }
+
+    & svg {
+      cursor: pointer;
+
+      &:hover {
+        animation: bounce 0.3s infinite alternate;
+      }
+      @keyframes bounce {
+        to {
+          transform: scale(1.2);
+        }
+      }
+    }
+  }
 }

@@ -35,7 +35,6 @@ const DetailComponent = () => {
             <div></div>
             <div></div>
             <div></div>
-            <div></div>
           </div>
           <div className="detail-size-container">
             <div className="detail-size-title">
@@ -45,10 +44,17 @@ const DetailComponent = () => {
             <div className="detail-size-content">
               <div className="detail-size-size">
                 <div className="detail-size">
-                  <CgRadioCheck />
+                  <CgRadioCheck size="1.8rem" />
                   <p>L</p>
-                  <p>Available</p>
                 </div>
+                <p>Available</p>
+              </div>
+              <div className="detail-size-size">
+                <div className="detail-size">
+                  <CgRadioCheck size="1.8rem" />
+                  <p>M</p>
+                </div>
+                <p>Available</p>
               </div>
             </div>
           </div>
@@ -56,7 +62,7 @@ const DetailComponent = () => {
             <Button as="button" className="detail-add-btn">
               Add to Cart
             </Button>
-            <CiHeart />
+            <CiHeart size="2.5rem"/>
           </div>
         </article>
       </div>
