@@ -9,11 +9,17 @@ import DetailComponent from "./DetailComponent";
 import Button from "../button/Button";
 import SingleSlideImages from "./SingleSlideImages";
 import SelectSize from "./SelectSizeComponent";
+import { useState } from "react";
 
 const Singleproduct = () => {
   const { _id } = useParams();
   const { data, status, isLoading, isError, error } =
     useFetchSingleProduct(_id);
+  const [isOn, setIsOn] = useState(false);
+
+  const handleSelectVisibility = () => {
+    setIsOn(!isOn);
+  };
 
   if (isLoading) return <h2>Loading...</h2>;
   if (isError) return <p>{error.message}</p>;
@@ -62,15 +68,26 @@ const Singleproduct = () => {
                     <div></div>
                   </div>
                   <div className="single-size-container">
-                    <div className="single-size-title">
+                    <div
+                      className="single-size-title"
+                      onClick={handleSelectVisibility}
+                    >
                       <p>Select your size</p>
                       <RiArrowDownSFill />
                     </div>
                     <div className="single-size-content">
-                      {/*//TODO:after I modified the backend, maked sure to use the _id for the key!!!*/}
-                      {data?.data.product.size?.map((onesize) => (
-                        <SelectSize onesize={onesize} key={onesize} />
-                      ))}
+                      <div
+                        className={
+                          isOn
+                            ? "single-content-content isVisible"
+                            : "single-content-content"
+                        }
+                      >
+                        {/*//TODO:after I modified the backend, maked sure to use the _id for the key!!!*/}
+                        {data?.data.product.size?.map((onesize) => (
+                          <SelectSize onesize={onesize} key={onesize} />
+                        ))}
+                      </div>
                     </div>
                   </div>
                   <div className="single-add-like-btns">
