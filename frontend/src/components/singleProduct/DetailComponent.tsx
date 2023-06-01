@@ -1,14 +1,22 @@
-import { RiArrowDownSFill } from "react-icons/ri";
-import Images from "../imageComponent/Images";
-import "./detail.scss";
-import { CgRadioCheck } from "react-icons/cg"; //, CgRadioChecked
-import Button from "../button/Button";
-import { CiHeart } from "react-icons/ci";
-//import { BsHeartFill } from "react-icons/bs";
+export type ChildrenProps = {
+  children: React.ReactNode;
+}
 
-const DetailComponent = () => {
+
+const DetailComponent = ({ children }: ChildrenProps) => {
   return (
-    <section className="detail-container">
+    <div>{children}</div>
+  );
+};
+
+export default DetailComponent;
+
+
+
+
+/*
+
+<section className="detail-container">
       <div className="detail-detail-content">
         <section className="detail-images-container">
           <div className="detail-slide">
@@ -67,7 +75,5 @@ const DetailComponent = () => {
         </article>
       </div>
     </section>
-  );
-};
 
-export default DetailComponent;
+*/

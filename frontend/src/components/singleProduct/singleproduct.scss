@@ -8,9 +8,182 @@
 .singlepage-header {
   @include mixins.innerPageWidthHeigh;
 
-  .detail-back {
-    //background-color: rgb(232, 238, 144);
+  .single-back {
+    width: 220px;
     padding: 25px 0 20px 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    & svg, & p  {
+      cursor: pointer;
+    }
+  }
+
+  .single-single-content {
+    //background-color: lightgrey;
+    display: flex;
+    gap: 60px;
+    width: 100%;
+    height: auto;
+    background-color: hsl(43, 100%, 99%);
+  }
+
+  .single-images-container {
+    //background-color: lightcoral;
+    display: flex;
+    height: 780px;
+
+    .single-slide {
+      //background-color: lightsalmon;
+      height: auto;
+      overflow-y: scroll;
+      padding: 0 0 20px 20px;
+      min-width: 180px;
+
+      & div {
+        width: 140px;
+        height: 160px;
+        background-color: hsl(0, 0%, 96%);
+        margin-bottom: 20px;
+        border-radius: 22px;
+
+        & img {
+          width: 100%;
+          height: 100%;
+          background-size: cover;
+          object-fit: cover;
+          border-radius: 22px;
+        }
+      }
+    }
+    .single-img {
+      width: 600px;
+      border-radius: 22px;
+      //background-color: red;
+
+      & img {
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        object-fit: cover;
+        border-radius: 22px;
+        background-color: hsl(0, 0%, 96%);
+      }
+    }
+  }
+  .single-article {
+    //background-color: lightgreen;
+    padding: 10px 0;
+
+    .single-heading-3 {
+      font-size: 2.75rem;
+      padding-bottom: 40px;
+      //background-color: red;
+    }
+    .single-pricing {
+      padding-bottom: 10px;
+      .single-heading-4 {
+        font-size: 1.75rem;
+        font-weight: 700;
+      }
+
+      & p {
+        font-size: 13px;
+        margin-top: -6px;
+      }
+    }
+    .single-p {
+      padding-bottom: 30px;
+
+      .single-color {
+        font-weight: 700;
+      }
+    }
+    .single-slide-article {
+      //background-color: aqua;
+      display: flex;
+      gap: 20px;
+      width: auto;
+      height: auto;
+      margin-bottom: 30px;
+
+      & div {
+        min-width: 90px;
+        height: 90px;
+        border-radius: 22px;
+        background-color: hsl(0, 0%, 96%);
+      }
+    }
+
+    .single-size-container {
+      //background-color: red;
+      margin-bottom: 30px;
+
+      .single-size-title {
+        border: solid 1px hsl(266, 89%, 17%);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 14px;
+        border-radius: 9px;
+        cursor: pointer;
+
+        & svg {
+          color: hsl(266, 89%, 17%);
+        }
+      }
+      .single-size-content {
+        border: solid 1px hsl(266, 89%, 17%);
+        border-bottom-left-radius: 9px;
+        border-bottom-right-radius: 9px;
+
+        .single-size-size {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          padding: 14px;
+          cursor: pointer;
+
+          &:hover {
+            background-color: hsl(0, 0%, 96%);
+          }
+
+          .single-size {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+          }
+        }
+      }
+    }
+    .single-add-like-btns {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      .single-add-btn {
+        padding: 15px 58px;
+        border: none;
+        border-radius: 9px;
+        background-color: hsl(266, 89%, 17%);
+        color: hsl(0, 0%, 100%);
+        font-size: 1.125rem;
+        cursor: pointer;
+      }
+
+      & svg {
+        cursor: pointer;
+
+        &:hover {
+          animation: bounce 0.3s infinite alternate;
+        }
+        @keyframes bounce {
+          to {
+            transform: scale(1.2);
+          }
+        }
+      }
+    }
   }
 }
-
