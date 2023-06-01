@@ -16,7 +16,9 @@ const PopupdetailComponent = () => {
         <div className="popup-close">
           <IoClose onClick={hanndlePopup} />
         </div>
-        <DetailComponent />
+        <DetailComponent>
+          detail
+        </DetailComponent>
       </div>
     </section>
   );
