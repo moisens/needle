@@ -15,7 +15,8 @@
     align-items: center;
     gap: 20px;
 
-    & svg, & p  {
+    & svg,
+    & p {
       cursor: pointer;
     }
   }
@@ -117,7 +118,6 @@
     }
 
     .single-size-container {
-      //background-color: red;
       margin-bottom: 30px;
 
       .single-size-title {
@@ -134,25 +134,38 @@
         }
       }
       .single-size-content {
-        border: solid 1px hsl(266, 89%, 17%);
-        border-bottom-left-radius: 9px;
-        border-bottom-right-radius: 9px;
+        position: relative;
 
-        .single-size-size {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          padding: 14px;
-          cursor: pointer;
+        .single-content-content {
+          border-bottom-left-radius: 9px;
+          border-bottom-right-radius: 9px;
+          z-index: 10;
+          background-color: hsl(0, 0%, 100%);
+          border: solid 1px hsl(266, 89%, 17%);
+          position: absolute;
+          width: 100%;
+          display: none;
 
-          &:hover {
-            background-color: hsl(0, 0%, 96%);
+          &.isVisible {
+            display: block;
           }
 
-          .single-size {
+          .single-size-size {
             display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 10px;
+            padding: 14px;
+            cursor: pointer;
+
+            &:hover {
+              background-color: hsl(0, 0%, 96%);
+            }
+
+            .single-size {
+              display: flex;
+              align-items: center;
+              gap: 10px;
+            }
           }
         }
       }
