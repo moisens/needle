@@ -12,7 +12,7 @@ const SingleSlideImages = ({ data }: SingleProps) => {
   return (
     <>
       {product.image.map((img) => (
-        <div>
+        <div key={img}>
           <Images src={img} alt={product.tailorname} />
         </div>
       ))}

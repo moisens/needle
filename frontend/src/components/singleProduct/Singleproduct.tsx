@@ -6,11 +6,9 @@ import { CiHeart } from "react-icons/ci";
 import { useFetchSingleProduct } from "../../hooks/useFetchProduct";
 import { useParams } from "react-router-dom";
 import DetailComponent from "./DetailComponent";
-import { CgRadioCheck } from "react-icons/cg";
 import Button from "../button/Button";
 import SingleSlideImages from "./SingleSlideImages";
-
-
+import SelectSize from "./SelectSizeComponent";
 
 const Singleproduct = () => {
   const { _id } = useParams();
@@ -44,14 +42,20 @@ const Singleproduct = () => {
                   </div>
                 </section>
                 <article className="single-article">
-                  <h3 className="single-heading-3">{data?.data.product.tailorname}</h3>
+                  <h3 className="single-heading-3">
+                    {data?.data.product.tailorname}
+                  </h3>
                   <div className="single-pricing">
-                    <h4 className="single-heading-4">{data?.data.product.price}€</h4>
+                    <h4 className="single-heading-4">
+                      {data?.data.product.price}€
+                    </h4>
                     <p>Includes VTA</p>
                   </div>
                   <p className="single-p">
-                    <span className="single-color">Color</span>: {data?.data.product.color}
+                    <span className="single-color">Color</span>:{" "}
+                    {data?.data.product.color}
                   </p>
+                  {/*//TODO: create `UniqueColor` component*/}
                   <div className="single-slide-article">
                     <div></div>
                     <div></div>
@@ -63,20 +67,10 @@ const Singleproduct = () => {
                       <RiArrowDownSFill />
                     </div>
                     <div className="single-size-content">
-                      <div className="single-size-size">
-                        <div className="single-size">
-                          <CgRadioCheck size="1.8rem" />
-                          <p>L</p>
-                        </div>
-                        <p>Available</p>
-                      </div>
-                      <div className="single-size-size">
-                        <div className="single-size">
-                          <CgRadioCheck size="1.8rem" />
-                          <p>M</p>
-                        </div>
-                        <p>Available</p>
-                      </div>
+                      {/*//TODO:after I modified the backend, maked sure to use the _id for the key!!!*/}
+                      {data?.data.product.size?.map((onesize) => (
+                        <SelectSize onesize={onesize} key={onesize} />
+                      ))}
                     </div>
                   </div>
                   <div className="single-add-like-btns">
