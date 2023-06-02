@@ -9,13 +9,20 @@ import DetailComponent from "./DetailComponent";
 import Button from "../button/Button";
 import SingleSlideImages from "./SingleSlideImages";
 import SelectSize from "./SelectSizeComponent";
+//import { ICardproducts } from "../../types/typeDatas";
 import { useState } from "react";
+//import useCart from "../../hooks/useCart"
 
-const Singleproduct = () => {
+const Singleproduct = () => {//{ product }: ICardproducts
   const { _id } = useParams();
   const { data, status, isLoading, isError, error } =
     useFetchSingleProduct(_id);
+
   const [isOn, setIsOn] = useState(false);
+  const [chosenSize, setChoseSize] = useState("");
+  //const { dispatch, REDUCER_ACTIONS } = useCart();
+
+  
 
   const handleSelectVisibility = () => {
     setIsOn(!isOn);
@@ -72,7 +79,7 @@ const Singleproduct = () => {
                       className="single-size-title"
                       onClick={handleSelectVisibility}
                     >
-                      <p>Select your size</p>
+                      <p>{chosenSize === "" ? "Select your size" : chosenSize}</p>
                       <RiArrowDownSFill />
                     </div>
                     <div className="single-size-content">
@@ -83,14 +90,21 @@ const Singleproduct = () => {
                             : "single-content-content"
                         }
                       >
-                        {/*//TODO:after I modified the backend, maked sure to use the _id for the key!!!*/}
+                        {/*//TODO:after I modified the backend, make sure to use the _id for the key!!!*/}
                         {data?.data.product.size?.map((onesize) => (
-                          <SelectSize onesize={onesize} key={onesize} />
+                          <SelectSize 
+                            onesize={onesize} 
+                            chosenSize={chosenSize} 
+                            setChoseSize={setChoseSize} 
+                            setIsOn={setIsOn}
+                            key={onesize} 
+                          />
                         ))}
                       </div>
                     </div>
                   </div>
                   <div className="single-add-like-btns">
+                    {/*if there is no size don't add to cart eh!!!!*/}
                     <Button as="button" className="single-add-btn">
                       Add to Cart
                     </Button>
