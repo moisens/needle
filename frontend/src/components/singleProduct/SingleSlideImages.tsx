@@ -11,7 +11,7 @@ const SingleSlideImages = ({ data }: SingleProps) => {
   const { product } = data;
   return (
     <>
-      {product.image.map((img) => (
+      {product?.image?.map((img) => (
         <div key={img}>
           <Images src={img} alt={product.tailorname} />
         </div>

@@ -22,12 +22,9 @@ const fetchClothesWomen = async (
  * Fetch single product
 */
 
-type QuerykeyProps = {
-  queryKey: string | undefined;
-  _id: string | undefined
-}
 
-const fetchSingleProduct = async (_id: QuerykeyProps): Promise<ResponseIProducts> => {
+
+const fetchSingleProduct = async (_id: string): Promise<ResponseIProducts> => {
   return await axios(`/api/v1/products/${_id}`)
 }
 
@@ -141,8 +138,8 @@ export const useFetchWomenDress = (page: number) => {
  * Return a UseQueryResult<ICardproducts, Error> Promise
  */
 
-export const useFetchSingleProduct = (_id: QuerykeyProps) => {
-  return useQuery<ResponseIProducts, Error>(["women-clothes", _id], () => fetchSingleProduct(_id), {
+export const useFetchSingleProduct = (_id: string) => {
+  return useQuery<ResponseIProducts, Error>(["women-clothes", _id], () => fetchSingleProduct(_id || ""), {
     staleTime: 120000,
   })
 }
