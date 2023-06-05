@@ -121,7 +121,7 @@ export const reducer = (
     return { ...state, cart: [...filteredCart] };
   }
 
-  if (action.type === REDUCER_ACTION_TYPE.QUANTITY) {
+  if (action.type === REDUCER_ACTION_TYPE.QUANTITY) { 
     if (!action.payload)
       throw new Error("action.payload is missing in QUANTITY functionality");
 
