@@ -14,7 +14,7 @@ type SinglePageproducts = {
   setChoseSize: React.Dispatch<React.SetStateAction<string>>;
   handleSelectVisibility: () => void;
   handleAddToCart: () => void;
-  customClass?: string;
+  customClass: string;
 };
 
 const SinglepageComponent = ({
@@ -85,6 +85,7 @@ const SinglepageComponent = ({
                     chosenSize={chosenSize}
                     setChoseSize={setChoseSize}
                     setIsOn={setIsOn}
+                    customClass={customClass}
                     key={onesize}
                   />
                 ))}
@@ -92,7 +93,6 @@ const SinglepageComponent = ({
             </div>
           </div>
           <div className={`${customClass}-add-like-btns`}>
-            {/*if there is no size don't add to cart eh!!!!*/}
             <Button
               as="button"
               className={`${customClass}-add-btn`}

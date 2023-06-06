@@ -6,16 +6,17 @@ export type SizeProp = {
   chosenSize: string;
   setChoseSize: React.Dispatch<React.SetStateAction<string>>;
   setIsOn: React.Dispatch<React.SetStateAction<boolean>>
+  customClass: string
 };
 
-const SelectSize = ({ onesize, chosenSize, setChoseSize, setIsOn }: SizeProp) => {
+const SelectSize = ({ onesize, chosenSize, setChoseSize, setIsOn, customClass }: SizeProp) => {
   const handleChosenSize = () => {
     setChoseSize(onesize);
     setIsOn(false)
   };
   return (
-    <div className="single-size-size" onClick={handleChosenSize}>
-      <div className="single-size">
+    <div className={`${customClass}-size-size`} onClick={handleChosenSize}>
+      <div className={`${customClass}-size`}>
         {chosenSize !== onesize ? (
           <CgRadioCheck size="1.8rem" />
         ) : (
