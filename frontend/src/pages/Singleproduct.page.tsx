@@ -1,9 +1,5 @@
 import "./pages.scss";
 import "../components/singleProduct/singleproduct.scss";
-//import { useFetchSingleProduct } from "../hooks/useFetchProduct";
-//import { useParams } from "react-router-dom";
-//import { useState } from "react";
-//import useCart from "../hooks/useCart";
 import { BsArrowLeft } from "react-icons/bs";
 import SinglepageComponent from "../components/singleProduct/SinglepageComponent";
 import useSingleProduct from "../hooks/useSingleProduct";

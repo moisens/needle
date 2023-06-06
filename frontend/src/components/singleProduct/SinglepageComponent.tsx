@@ -36,25 +36,25 @@ const SinglepageComponent = ({
           </div>
           <div className={`${customClass}-img`}>
             <Images
-              src={data?.data.product.image[0]}
-              alt={data?.data.product.tailorname}
-              title={data?.data.product.tailorname}
+              src={data?.data.product?.image[0]}
+              alt={data?.data.product?.tailorname}
+              title={data?.data.product?.tailorname}
             />
           </div>
         </section>
         <article className={`${customClass}-article`}>
           <h3 className={`${customClass}-heading-3`}>
-            {data?.data.product.tailorname}
+            {data?.data.product?.tailorname}
           </h3>
           <div className={`${customClass}-pricing`}>
             <h4 className={`${customClass}-heading-4`}>
-              {data?.data.product.price}€
+              {data?.data.product?.price}€
             </h4>
             <p>Includes VTA</p>
           </div>
           <p className={`${customClass}-p`}>
             <span className={`${customClass}-color`}>Color</span>:{" "}
-            {data?.data.product.color}
+            {data?.data.product?.color}
           </p>
           {/*//TODO: create `UniqueColor` component*/}
           <div className={`${customClass}-slide-article`}>
@@ -79,7 +79,7 @@ const SinglepageComponent = ({
                 }
               >
                 {/*//TODO:after I modified the backend, make sure to use the _id for the key!!!*/}
-                {data?.data.product.size?.map((onesize) => (
+                {data?.data.product?.size?.map((onesize) => (
                   <SelectSize
                     onesize={onesize}
                     chosenSize={chosenSize}
