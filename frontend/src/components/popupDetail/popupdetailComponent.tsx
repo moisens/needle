@@ -40,7 +40,7 @@ const PopupdetailComponent = () => {
     >
       <div className="popup-detail-content">
         <div className="popup-close">
-          <IoClose onClick={hanndlePopup} />
+          <IoClose size="1.8rem" onClick={hanndlePopup} />
         </div>
         {status === "success" ? (
           <SinglepageComponent
