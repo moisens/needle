@@ -51,27 +51,32 @@ const SingleproductPage = () => {
           </header>
           <section className="singlepage-infos-section">
             <section className="singlepage-infos-container">
-              <div className="singlepage-infos-article-content">
+              <section className="singlepage-infos-article-content">
                 <article className="singlepage-article">
-                  <h2>Description</h2>
-                  <p>
-                    Reinvent the wheel locked and loaded, so time vampire cross
-                    sabers note for the previous submit: the devil should be on
-                    the left shoulder yet we should leverage.
+                  <h3 className="singlepage-article-h3">Description</h3>
+                  <p className="singlepage-article-p">
+                    {data?.data.product?.description}
                   </p>
                 </article>
                 <article className="singlepage-article">
-                  <h2>Description</h2>
-                  <p>
-                    Reinvent the wheel locked and loaded, so time vampire cross
-                    sabers note for the previous submit: the devil should be on
-                    the left shoulder yet we should leverage.
-                  </p>
+                  <h3 className="singlepage-article-h3">Clothes materials</h3>
+                  {/*//TODO: after modifiying the backend, use id as a key */}
+                  {data?.data.product?.clothesmaterials.map((item) => (
+                    <p className="singlepage-article-p" key={item}>
+                      {item}
+                    </p>
+                  ))}
                 </article>
-              </div>
-              <div className="singlepage-infos-image">
-                <Images src="" alt="" />
-              </div>
+              </section>
+              <section className="singlepage-infos-image-section">
+                <div className="singlepage-infos-imge">
+                  <Images
+                    src={data?.data.product?.image[0]}
+                    alt={data?.data.product?.tailorname}
+                    title={data?.data.product?.tailorname}
+                  />
+                </div>
+              </section>
             </section>
           </section>
         </section>
