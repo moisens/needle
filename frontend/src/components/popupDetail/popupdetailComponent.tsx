@@ -23,8 +23,8 @@ const PopupdetailComponent = () => {
 
   const defaulClassName = "details";
 
-  const hanndlePopup = () => {
-    setPopup(false);
+  const handlePopup = () => {
+    setPopup(!popup);
   };
 
   if (isLoading) return <h2>Loading...</h2>;
@@ -33,14 +33,14 @@ const PopupdetailComponent = () => {
   return (
     <section
       className={
-        !popup
+        popup
           ? "popup-detail-container popup-isActive"
           : "popup-detail-container"
       }
     >
       <div className="popup-detail-content">
         <div className="popup-close">
-          <IoClose size="1.8rem" onClick={hanndlePopup} />
+          <IoClose size="1.8rem" onClick={handlePopup} />
         </div>
         {status === "success" ? (
           <SinglepageComponent
