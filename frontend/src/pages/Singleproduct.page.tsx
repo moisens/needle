@@ -83,24 +83,29 @@ const SingleproductPage = () => {
           </section>
           <section className="singlepage-suggestion-container">
             <div className="singlepage-suggestion-div">
-              <h2>You might like these products</h2>
+              <h3 className="singlepage-h3">You might like these products</h3>
               <div className="singlepage-suggestion-slider-container">
-                <section className="page-pagination-text">
+                <section className="singlepage-pagination-text">
+                  <Link to={`/single-product`}>
+                    <section className="singlepage-pagination-image">
+                      <Images src="" alt="" />
+                    </section>
+                  </Link>
                   <Link to="/single-product">
-                    <h6 className="pagination-text-H6">tailorname</h6>
-                    <p className="pagination-text-price">price &euro; </p>
-                    <p className="pagination-text-color">color</p>
-                    <p className="pagination-text-size">
-                      <span className="pagination-text-span">
+                    <h6 className="singlepage-text-H6">tailorname</h6>
+                    <p className="singlepage-text-price">price &euro; </p>
+                    <p className="singlepage-text-color">color</p>
+                    <p className="singlepage-text-size">
+                      <span className="singlepage-text-span">
                         Available sizes
                       </span>
                       : M, L, XL
                     </p>
                   </Link>
-                  <section className="pagination-hidden-info">
+                  <section className="singlepage-hidden-info">
                     <Button
                       as="button"
-                      className="pagination-product-btn"
+                      className="singlepage-product-btn"
                       handleClick={() => console.log("something")}
                     >
                       Add to cart
