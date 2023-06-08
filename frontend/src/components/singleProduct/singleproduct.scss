@@ -62,7 +62,6 @@
     .single-img {
       width: 600px;
       border-radius: 22px;
-      //background-color: red;
 
       & img {
         width: 100%;
@@ -104,11 +103,16 @@
     }
     .single-slide-article {
       //background-color: aqua;
+      min-width: 100%;
       display: flex;
       gap: 20px;
-      width: auto;
       height: auto;
+      overflow: scroll;
       margin-bottom: 30px;
+
+      &::-webkit-scrollbar {
+        width: 0;
+      }
 
       & div {
         min-width: 90px;
@@ -242,6 +246,111 @@
           border-radius: 22px;
           background-size: cover;
           object-fit: cover;
+        }
+      }
+    }
+  }
+}
+.singlepage-suggestion-container {
+  width: 100vw;
+
+  .singlepage-suggestion-div {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 80px 80px 200px;
+
+    .singlepage-h3 {
+      font-size: 1.563rem;
+      padding-bottom: 60px;
+    }
+    .singlepage-suggestion-slider-container {
+      min-width: 100%;
+      height: auto;
+      @include mixins.displayFlex;
+      gap: 30px;
+      overflow: scroll;
+
+      &::-webkit-scrollbar {
+        width: 0;
+      }
+
+      .singlepage-pagination-text {
+        min-width: 300px;
+        height: auto;
+
+        .singlepage-pagination-image {
+          width: 100%;
+          height: 360px;
+          background-color: hsl(0, 0%, 96%);
+          border-radius: 22px;
+
+          img {
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            object-fit: cover;
+            border-radius: 25px;
+            pointer-events: none;
+          }
+        }
+
+        .singlepage-text-H6 {
+          font-family: "Oswald";
+          font-size: 1.125rem;
+          font-weight: 100;
+          letter-spacing: 0.5px;
+          color: variables.$grayish-color;
+        }
+        .singlepage-text-price {
+          font-size: 1.125rem;
+          font-weight: bold;
+          color: variables.$dark-purple;
+        }
+        .singlepage-text-size {
+          display: none;
+          transition: all ease 0.8s;
+          .singlepage-text-span {
+            font-weight: 600;
+            color: variables.$light-grayish-color;
+          }
+          padding-bottom: 20px;
+        }
+        .singlepage-hidden-info {
+          display: none;
+          transition: all ease 0.8s;
+
+          .singlepage-product-btn {
+            width: 100%;
+            height: 66px;
+            border: none;
+            border-radius: 15px;
+            cursor: pointer;
+            background-color: variables.$super-darkpurple;
+            color: variables.$white-color;
+            transition: all ease 0.8s;
+            @include mixins.displayCenter-center;
+            gap: 15px;
+            transition: all ease 0.8s;
+
+            &:hover {
+              background-color: variables.$dark-purple;
+            }
+          }
+        }
+        a {
+          color: variables.$grayish-color;
+        }
+        &:hover {
+          .singlepage-pagination-text {
+            top: 276px;
+          }
+          //.singlepage-pagination-image {
+          //  border-radius: 0;
+          //}
+          .singlepage-text-size,
+          .singlepage-hidden-info {
+            display: block;
+          }
         }
       }
     }
