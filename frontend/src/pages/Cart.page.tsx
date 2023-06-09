@@ -24,7 +24,7 @@ const Cartpage = () => {
           <header className="cart-header">
             <section className="cartpage-articles-container">
               {cart.map((item) => (
-                <CartArticleComponent key={item._id} {...item} />
+                <CartArticleComponent key={item._id} item={item} />
               ))}
               <div className="articles-items-infos">
                 <p>Items in the shopping cart are not reserved!</p>
