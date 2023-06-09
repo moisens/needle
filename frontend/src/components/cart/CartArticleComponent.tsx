@@ -32,7 +32,7 @@ const CartArticleComponent = ({ item }: ItemsProps) => {
         <div className="article-infos-price">
           <div className="article-delete-moveto">
             <p onClick={onRemoveItem}>delete</p>
-            <p>Move to Price</p>
+            <p>Move to Like</p>
           </div>
           <p className="article-total-price">{price} €</p>
         </div>
