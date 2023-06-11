@@ -95,6 +95,11 @@
             width: 100%;
             border: solid .8px hsl(268, 73%, 43%);
             border-radius: 22px;
+            display: none;
+
+            &.isActive {
+              display: block;
+            }
 
             .article-quantity {
               background-color: hsl(0, 0%, 100%);
