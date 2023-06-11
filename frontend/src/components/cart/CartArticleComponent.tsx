@@ -1,6 +1,7 @@
 import Images from "../imageComponent/Images";
 import { IProducts } from "../../context/CartContext";
 import useCart from "../../hooks/useCart";
+import SelectCartQuantity from "./SelectCartQuantity";
 
 export type ItemsProps = {
   item: IProducts
@@ -8,9 +9,11 @@ export type ItemsProps = {
 
 const CartArticleComponent = ({ item }: ItemsProps) => {
   const { tailorname, color, size, image, price } = item;
-  const { REDUCER_ACTIONS, dispatch } = useCart();
+  const { REDUCER_ACTIONS, dispatch, totalItems } = useCart();
 
   const onRemoveItem = () => dispatch({ type: REDUCER_ACTIONS.REMOVE, payload: item })
+  console.log("totalItems", totalItems);
+  
 
   return (
     <article className="articles-content">
@@ -24,10 +27,7 @@ const CartArticleComponent = ({ item }: ItemsProps) => {
             <p>color: {color}</p>
             <p>size: {size[0]}</p>{/* //TODO: Create a size component with all the functionality! */}
           </div>
-          <form className="article-form-content">
-            <label htmlFor="number" />{/* //TODO: Create a Form component!! */}
-            <input type="number" name="number" placeholder="choose" />
-          </form>
+          <SelectCartQuantity />
         </div>
         <div className="article-infos-price">
           <div className="article-delete-moveto">
