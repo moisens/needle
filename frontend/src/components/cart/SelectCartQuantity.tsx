@@ -1,30 +1,42 @@
-import { useState } from "react";
+import { Listbox } from "@headlessui/react";
 import { RiArrowDownSFill } from "react-icons/ri";
+import { IProducts } from "../../types/typeDatas";
 
+export type ItemsProps = {
+  item: IProducts;
+  selectQty: number;
+  setSelectQty: React.Dispatch<React.SetStateAction<number>>;
+};
 
+const SelectCartQuantity = ({ item, selectQty, setSelectQty }: ItemsProps) => {
+  const { inventory } = item;
 
+  const optionValues: number[] = [...Array(inventory).keys()].map((i) => i + 1);
 
-const SelectCartQuantity = () => {
-  const [isActive, setIsActive] = useState(false);
-  const handleIsActive = () => {
-    setIsActive(!isActive);
-  };
   return (
     <section className="article-section-container">
-      <div className="select-select-content" onClick={handleIsActive}>
-        <p>1</p> <RiArrowDownSFill size="1.8rem" />
-      </div>
-      <div
-        className={
-          isActive
-            ? "article-quantity-container isActive"
-            : "article-quantity-container"
-        }
-      >
-        <article className="article-quantity">1</article>
-        <article className="article-quantity">2</article>
-        <article className="article-quantity">3</article>
-      </div>
+      <Listbox value={selectQty} onChange={setSelectQty}>
+        {/**/}
+        <div className="select-select-content">
+          <Listbox.Button className="select-button">
+            <span className="block truncate">{selectQty}</span>
+            <span>
+              <RiArrowDownSFill />
+            </span>
+          </Listbox.Button>
+          <Listbox.Options className="article-quantity-container">
+            {optionValues.map((quantity) => (
+              <Listbox.Option
+                className="article-qty"
+                value={quantity}
+                key={`opt${quantity}`}
+              >
+                {quantity}
+              </Listbox.Option>
+            ))}
+          </Listbox.Options>
+        </div>
+      </Listbox>
     </section>
   );
 };
