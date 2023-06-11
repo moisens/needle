@@ -74,6 +74,51 @@
             font-weight: 700;
           }
         }
+        .article-section-container {
+          position: relative;
+          .select-select-content {
+            width: 100px;
+            height: 60px;
+            border: solid .8px hsl(268, 73%, 43%);
+            border-radius: 22px;
+            font-size: 1.188rem;
+            padding: 0 15px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+          }
+          .article-quantity-container {
+            position: absolute;
+            top: 62px;
+            width: 100%;
+            border: solid .8px hsl(268, 73%, 43%);
+            border-radius: 22px;
+
+            .article-quantity {
+              background-color: hsl(0, 0%, 100%);
+              padding: 15px;
+              text-align: center;
+              cursor: pointer;
+
+              &:nth-child(1) {
+                border-top-left-radius: 22px;
+                border-top-right-radius: 22px;
+              }
+              &:nth-last-child(1) {
+                border-bottom-left-radius: 22px;
+                border-bottom-right-radius: 22px;
+              }
+
+              &:hover {
+                background-color: #F5F5F5;
+              }
+
+            }
+
+          }
+        }
       }
     }
     .articles-items-infos {
