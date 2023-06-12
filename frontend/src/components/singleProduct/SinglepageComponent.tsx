@@ -5,7 +5,7 @@ import SelectSize from "../../components/singleProduct/SelectSizeComponent";
 import Button from "../../components/button/Button";
 import { CiHeart } from "react-icons/ci";
 import { ResponseIProducts } from "../../types/typeDatas";
-import useCart from "../../hooks/useCart";
+import useSingleProduct from "../../hooks/useSingleProduct";
 
 type SinglePageproducts = {
   data: ResponseIProducts;
@@ -24,7 +24,7 @@ const SinglepageComponent = ({
   handleAddToCart,
   customClass,
 }: SinglePageproducts) => {
-  const { chosenSize } = useCart();
+  const { chosenSize } = useSingleProduct();
   return (
     <section className={`${customClass}-container`}>
       <div className={`${customClass}-single-content`}>
