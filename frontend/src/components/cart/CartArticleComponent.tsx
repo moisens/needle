@@ -4,16 +4,15 @@ import useCart from "../../hooks/useCart";
 import SelectCartQuantity from "./SelectCartQuantity";
 
 export type ItemsProps = {
-  item: IProducts
-}
+  item: IProducts;
+};
 
 const CartArticleComponent = ({ item }: ItemsProps) => {
-  const { tailorname, color, size, image, price } = item;
-  const { REDUCER_ACTIONS, dispatch } = useCart();
+  const { tailorname, color, image, price } = item;
+  const { REDUCER_ACTIONS, dispatch, chosenSize } = useCart();
 
-  const onRemoveItem = () => dispatch({ type: REDUCER_ACTIONS.REMOVE, payload: item })
-
-  
+  const onRemoveItem = () =>
+    dispatch({ type: REDUCER_ACTIONS.REMOVE, payload: item });
 
   return (
     <article className="articles-content">
@@ -25,7 +24,7 @@ const CartArticleComponent = ({ item }: ItemsProps) => {
           <div className="article-infos-content">
             <h3>{tailorname}</h3>
             <p>color: {color}</p>
-            <p>size: {size[0]}</p>{/* //TODO: Create a size component with all the functionality! */}
+            <p>size: {chosenSize}</p>
           </div>
           <SelectCartQuantity item={item} />
         </div>

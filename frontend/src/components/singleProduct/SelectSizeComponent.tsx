@@ -1,17 +1,17 @@
 import { CgRadioCheck } from "react-icons/cg";
 import { MdRadioButtonChecked } from "react-icons/md";
+import useCart from "../../hooks/useCart";
 
 export type SizeProp = {
   onesize: string;
-  chosenSize: string;
-  setChoseSize: React.Dispatch<React.SetStateAction<string>>;
   setIsOn: React.Dispatch<React.SetStateAction<boolean>>
   customClass: string
 };
 
-const SelectSize = ({ onesize, chosenSize, setChoseSize, setIsOn, customClass }: SizeProp) => {
+const SelectSize = ({ onesize, setIsOn, customClass }: SizeProp) => {
+  const { chosenSize, setChosenSize } = useCart();
   const handleChosenSize = () => {
-    setChoseSize(onesize);
+    setChosenSize(onesize);
     setIsOn(false)
   };
   return (

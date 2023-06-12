@@ -5,13 +5,12 @@ import SelectSize from "../../components/singleProduct/SelectSizeComponent";
 import Button from "../../components/button/Button";
 import { CiHeart } from "react-icons/ci";
 import { ResponseIProducts } from "../../types/typeDatas";
+import useCart from "../../hooks/useCart";
 
 type SinglePageproducts = {
   data: ResponseIProducts;
   isOn: boolean;
   setIsOn: React.Dispatch<React.SetStateAction<boolean>>;
-  chosenSize: string;
-  setChoseSize: React.Dispatch<React.SetStateAction<string>>;
   handleSelectVisibility: () => void;
   handleAddToCart: () => void;
   customClass: string;
@@ -21,12 +20,11 @@ const SinglepageComponent = ({
   data,
   isOn,
   setIsOn,
-  chosenSize,
-  setChoseSize,
   handleSelectVisibility,
   handleAddToCart,
   customClass,
 }: SinglePageproducts) => {
+  const { chosenSize } = useCart();
   return (
     <section className={`${customClass}-container`}>
       <div className={`${customClass}-single-content`}>
@@ -82,8 +80,6 @@ const SinglepageComponent = ({
                 {data?.data.product?.size?.map((onesize) => (
                   <SelectSize
                     onesize={onesize}
-                    chosenSize={chosenSize}
-                    setChoseSize={setChoseSize}
                     setIsOn={setIsOn}
                     customClass={customClass}
                     key={onesize}

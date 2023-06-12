@@ -5,8 +5,7 @@ import { useFetchSingleProduct } from "./useFetchProduct";
 
 const useSingleProduct = () => {
   const [isOn, setIsOn] = useState(false);
-  const [chosenSize, setChoseSize] = useState("");
-  const { dispatch, REDUCER_ACTIONS } = useCart();
+  const { dispatch, REDUCER_ACTIONS, chosenSize } = useCart();
 
   const { _id } = useParams();
   const typedId = _id as string;
@@ -29,8 +28,6 @@ const useSingleProduct = () => {
     isOn,
     setIsOn,
     data,
-    chosenSize,
-    setChoseSize,
     status,
     isLoading,
     isError,

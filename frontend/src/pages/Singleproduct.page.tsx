@@ -13,8 +13,6 @@ const SingleproductPage = () => {
     isOn,
     setIsOn,
     data,
-    chosenSize,
-    setChoseSize,
     status,
     isLoading,
     isError,
@@ -43,8 +41,6 @@ const SingleproductPage = () => {
                 handleAddToCart={handleAddToCart}
                 isOn={isOn}
                 setIsOn={setIsOn}
-                chosenSize={chosenSize}
-                setChoseSize={setChoseSize}
                 customClass={defaulClassName}
               />
             ) : (
