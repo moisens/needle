@@ -51,8 +51,6 @@ const initialStateContext: UseCartContextType = {
   dispatch: () => {},
   totalItems: 0,
   totalPrice: "",
-  chosenSize: "", 
-  setChosenSize: () => {}
 };
 
 export const reducer = (

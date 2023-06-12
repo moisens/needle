@@ -1,4 +1,4 @@
-import { useReducer, useMemo, useState } from "react";
+import { useReducer, useMemo } from "react";
 import {
   ICartState,
   REDUCER_ACTION_TYPE,
@@ -7,7 +7,6 @@ import {
 
 const useCartContext = (intialCartState: ICartState) => {
   const [state, dispatch] = useReducer(reducer, intialCartState);
-  const [chosenSize, setChosenSize] = useState("");
 
   const REDUCER_ACTIONS = useMemo(() => REDUCER_ACTION_TYPE, []);
 
@@ -32,15 +31,12 @@ const useCartContext = (intialCartState: ICartState) => {
     return itemA - itemB;
   });
 
-
   return {
     REDUCER_ACTIONS,
     totalItems,
     totalPrice,
     cart,
     dispatch,
-    chosenSize, 
-    setChosenSize
   };
 };
 

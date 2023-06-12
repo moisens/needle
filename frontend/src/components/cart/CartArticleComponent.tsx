@@ -2,6 +2,7 @@ import Images from "../imageComponent/Images";
 import { IProducts } from "../../context/CartContext";
 import useCart from "../../hooks/useCart";
 import SelectCartQuantity from "./SelectCartQuantity";
+import useSingleProduct from "../../hooks/useSingleProduct";
 
 export type ItemsProps = {
   item: IProducts;
@@ -9,7 +10,8 @@ export type ItemsProps = {
 
 const CartArticleComponent = ({ item }: ItemsProps) => {
   const { tailorname, color, image, price } = item;
-  const { REDUCER_ACTIONS, dispatch, chosenSize } = useCart();
+  const { REDUCER_ACTIONS, dispatch } = useCart();
+  const { chosenSize } = useSingleProduct();
 
   const onRemoveItem = () =>
     dispatch({ type: REDUCER_ACTIONS.REMOVE, payload: item });

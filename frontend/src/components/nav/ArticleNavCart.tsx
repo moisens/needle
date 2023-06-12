@@ -1,7 +1,10 @@
 import { IProducts } from "../../context/CartContext";
+import useSingleProduct from "../../hooks/useSingleProduct";
 import Images from "../imageComponent/Images";
 
-const ArticleNavCart = ({ tailorname, size, qty, image, price }: IProducts) => {
+const ArticleNavCart = ({ tailorname, qty, image, price }: IProducts) => {
+  const { chosenSize } = useSingleProduct();
+
   return (
     <article className="cart-article-content">
       <div className="cart-image-content">
@@ -11,7 +14,7 @@ const ArticleNavCart = ({ tailorname, size, qty, image, price }: IProducts) => {
         <div>
           <p className="cart-p">{tailorname}</p>
           {/* //TODO: work on the size functionality in a separate component!!! */}
-          <p className="cart-p">Size: {size[0]}</p>
+          <p className="cart-p">Size: {chosenSize}</p>
           <p className="cart-p">Quantity: {qty}</p>
         </div>
         <div className="cart-price">
