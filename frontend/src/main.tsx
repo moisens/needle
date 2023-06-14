@@ -5,6 +5,7 @@ import { MaincategoryProvider } from "./context/MaincategoryContext";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import { ProductCartProvider } from "./context/CartContext";
+import { LikeContextProvider } from "./context/LikeContext";
 
 const queryClient = new QueryClient();
 
@@ -13,7 +14,9 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <QueryClientProvider client={queryClient}>
       <MaincategoryProvider>
         <ProductCartProvider>
-          <App />
+          <LikeContextProvider>
+            <App />
+          </LikeContextProvider>
         </ProductCartProvider>
       </MaincategoryProvider>
       <ReactQueryDevtools initialIsOpen={false} />

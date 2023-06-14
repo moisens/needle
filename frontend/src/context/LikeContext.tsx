@@ -93,6 +93,20 @@ export const reducer = (
       ],
     };
   }
+
+  if (action.type === REDUCERS_ACTIONS_TYPE.REMOVE) {
+    if (!action.payload) throw new Error("action.payload is missing in REMOVE functionality");
+
+    const { _id } = action.payload;
+    const filtredItems: IProducts[] = state.like.filter(item => item._id !== _id);
+
+    return {
+      ...state,
+      like: [...filtredItems]
+    }
+
+  }
+
   throw new Error("Unidentified reducer action type!");
 };
 
@@ -101,3 +115,5 @@ const Likecontext = createContext({});
 export const LikeContextProvider = ({ children }: ChildrenLikeProps) => {
   return <Likecontext.Provider value={{}}>{children}</Likecontext.Provider>;
 };
+
+export default Likecontext;
