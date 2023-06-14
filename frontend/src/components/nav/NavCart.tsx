@@ -1,54 +1,29 @@
-import { MdOutlineShoppingBag } from "react-icons/md";
 import useCart from "../../hooks/useCart";
+import { IProducts } from "../../types/typeDatas";
 import Button from "../button/Button";
 import ArticleNavCart from "./ArticleNavCart";
-import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
-const NavCart = () => {
-  const { totalItems, cart, totalPrice } = useCart();
-  const [toggleCart, setToggleCart] = useState(false);
-  const containerRef = useRef<HTMLDivElement>(null);
+export type CartLikeNavType = {
+  prods: IProducts[],
+  toggleCart: boolean,
 
-  const handleOnMouseOver = () => {
-    setToggleCart(true);
-  };
+}
 
-  const handleOnMouseOut = () => {
-    const timeout = setTimeout(() => {
-      setToggleCart(false);
-    }, 3500);
-    return () => clearTimeout(timeout);
-  };
-
-  useEffect(() => {
-    const container = containerRef.current;
-    
-    const handleMouseLeave = (e: MouseEvent) => {
-      if (!container?.contains(e.relatedTarget as Node)) {
-        handleOnMouseOut()
-      }
-    }
-
-    container?.addEventListener('mouseleave', handleMouseLeave)
-    return () => container?.removeEventListener('mouseleave', handleMouseLeave)
-
-  }, []);
+const NavCart = ({ prods, toggleCart }: CartLikeNavType) => {
+  const { totalPrice } = useCart();
 
   return (
     <section
-      className={toggleCart ? "carts-container isActive" : "carts-container"}
-      onMouseOver={handleOnMouseOver}
-      ref={containerRef}
+      className="cart-like-content"
+      
     >
-      <MdOutlineShoppingBag size="1.8rem" className="cart-cart-shopping-icon" />
-      <div className="cart-count">{totalItems}</div>
       <div className={toggleCart ? "cart-content isVisible" : "cart-content"}>
         <h4 className="cart-heading-4">My Shopping Cart</h4>
         <section className="cart-articles-container">
           <div className="cart-cart-articles">
-            {cart.length > 0 ? (
-              cart.map((productCart) => {
+            {prods.length > 0 ? (
+              prods.map((productCart) => {
                 const { _id } = productCart;
                 return <ArticleNavCart key={_id} {...productCart} />;
               })
@@ -58,7 +33,7 @@ const NavCart = () => {
           </div>
           <div
             className={
-              cart.length > 0
+              prods.length > 0
                 ? "cart-total-cart is-cart-visible"
                 : "cart-total-cart"
             }
@@ -67,7 +42,7 @@ const NavCart = () => {
             {totalPrice}
           </div>
           <Button as="button" className="cart-btn-btn">
-           <Link to="/cart"> Go To Cart</Link>
+            <Link to="/cart"> Go To Cart</Link>
           </Button>
         </section>
       </div>
