@@ -1,4 +1,5 @@
 import { createContext, ReactNode } from "react";
+import useLikeContext from "../hooks/useLikeContext";
 
 export type IProducts = {
   readonly _id: string;
@@ -34,6 +35,19 @@ export interface ReducerAction {
 export const REDUCERS_ACTIONS_TYPE = {
   ADD: "ADD",
   REMOVE: "REMOVE",
+};
+
+export const initialLikeState: ILikeState = {
+  like: [],
+};
+
+export type ReducerActionType = typeof REDUCERS_ACTIONS_TYPE;
+export type UseLikeContextType = ReturnType<typeof useLikeContext>;
+
+const initialStateContext: UseLikeContextType = {
+  like: [],
+  REDUCER_ACTIONS: REDUCERS_ACTIONS_TYPE,
+  dispatch: () => {},
 };
 
 export const reducer = (
@@ -95,25 +109,31 @@ export const reducer = (
   }
 
   if (action.type === REDUCERS_ACTIONS_TYPE.REMOVE) {
-    if (!action.payload) throw new Error("action.payload is missing in REMOVE functionality");
+    if (!action.payload)
+      throw new Error("action.payload is missing in REMOVE functionality");
 
     const { _id } = action.payload;
-    const filtredItems: IProducts[] = state.like.filter(item => item._id !== _id);
+    const filtredItems: IProducts[] = state.like.filter(
+      (item) => item._id !== _id
+    );
 
     return {
       ...state,
-      like: [...filtredItems]
-    }
-
+      like: [...filtredItems],
+    };
   }
 
   throw new Error("Unidentified reducer action type!");
 };
 
-const Likecontext = createContext({});
+const Likecontext = createContext<UseLikeContextType>(initialStateContext);
 
 export const LikeContextProvider = ({ children }: ChildrenLikeProps) => {
-  return <Likecontext.Provider value={{}}>{children}</Likecontext.Provider>;
+  return (
+    <Likecontext.Provider value={useLikeContext(initialLikeState)}>
+      {children}
+    </Likecontext.Provider>
+  );
 };
 
 export default Likecontext;

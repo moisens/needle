@@ -1,9 +1,26 @@
+import { useReducer, useMemo } from "react";
+import {
+  ILikeState,
+  REDUCERS_ACTIONS_TYPE,
+  reducer,
+} from "../context/LikeContext";
 
+const useLikeContext = (initialLikeState: ILikeState) => {
+  const [state, dispatch] = useReducer(reducer, initialLikeState);
 
-const useLikeContext = () => {
-  return (
-    <div>useLikeContext</div>
-  )
-}
+  const REDUCER_ACTIONS = useMemo(() => REDUCERS_ACTIONS_TYPE, []);
 
-export default useLikeContext
+  const like = state.like.sort((a, b) => {
+    const itemA = Number(a._id);
+    const itemB = Number(b._id);
+    return itemA - itemB;
+  });
+
+  return {
+    dispatch,
+    REDUCER_ACTIONS,
+    like,
+  };
+};
+
+export default useLikeContext;
