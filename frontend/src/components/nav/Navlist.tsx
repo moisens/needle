@@ -30,8 +30,9 @@ const Navlist = () => {
           onMouseOut={() => handleOnMouseOut()}
         >
           <li className="list-li">
-            {/* //TODO - Find a way to render `All clothes` when the user click on `Clothes` link  */} 
+            {/* //TODO: - Find a way to render `All clothes` when the user click on `Clothes` link  */} 
             <NavLink
+            //TODO: the link must be dynamic, use categorie from context
               to={currentLink ? `women-clothes/${currentLink}`: "women-clothes/clothes"}
               className={({ isActive }) =>
                 isActive ? "list-a activeLink" : "list-a"

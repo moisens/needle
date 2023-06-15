@@ -7,6 +7,7 @@ const DropdownList = ({ links, setImageUrl }: SubLinkDropdown) => {
       {links.map((link) => (
         <li className="dropdown-li" key={link.id}>
           <NavLink
+          //TODO: use category from the context, to display women clothes or men clothes!
             to={`women-clothes/${link.url}`}
             className={({ isActive }) =>
               isActive ? "dropdown-li-a activeLink" : "dropdown-li-a"

@@ -8,12 +8,17 @@ import NavCart from "./NavCart";
 import useCart from "../../hooks/useCart";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { useEffect, useRef, useState } from "react";
+import useLike from "../../hooks/useLike";
 
 const Nav = () => {
   const { totalItems, cart } = useCart();
+  const { like, totalLikes } = useLike();
   const [toggleCart, setToggleCart] = useState(false);
 
   const containerRef = useRef<HTMLDivElement>(null);
+
+
+  
 
   const handleOnMouseOver = () => {
     setToggleCart(true);
@@ -47,10 +52,14 @@ const Nav = () => {
           <Listcategories />
           <Navlist />
           <section className="fav-cart-user">
-            <section className="carts-favorites-container">
+            <section className="carts-favorites-container"
+             onMouseOver={handleOnMouseOver}
+             onMouseLeave={handleOnMouseOut}
+             ref={containerRef}
+            >
               <AiOutlineHeart size="1.875rem" />
-              <section className="favorites-count">8</section>
-              {/* <NavCart  /> */}
+              <section className="cart-count">{totalLikes}</section>
+              <NavCart prods={like} toggleCart={toggleCart} />
             </section>
             <section
               className="carts-favorites-container"
