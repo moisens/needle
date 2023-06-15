@@ -46,6 +46,7 @@ export type UseLikeContextType = ReturnType<typeof useLikeContext>;
 
 const initialStateContext: UseLikeContextType = {
   like: [],
+  totalLikes: 0,
   REDUCER_ACTIONS: REDUCERS_ACTIONS_TYPE,
   dispatch: () => {},
 };
