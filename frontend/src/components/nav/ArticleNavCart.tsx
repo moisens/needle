@@ -13,7 +13,6 @@ const ArticleNavCart = ({ tailorname, qty, image, price }: IProducts) => {
       <div className="cart-infos-container">
         <div>
           <p className="cart-p">{tailorname}</p>
-          {/* //TODO: work on the size functionality in a separate component!!! */}
           <p className="cart-p">Size: {chosenSize}</p>
           <p className="cart-p">Quantity: {qty}</p>
         </div>
