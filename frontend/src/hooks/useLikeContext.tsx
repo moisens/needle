@@ -10,7 +10,9 @@ const useLikeContext = (initialLikeState: ILikeState) => {
 
   const REDUCER_ACTIONS = useMemo(() => REDUCERS_ACTIONS_TYPE, []);
 
-  //TODO: create total items
+  const totalLikes = state.like.reduce((prevValue, likeItem) => {
+    return prevValue + likeItem.qty;
+  }, 0);
 
   const like = state.like.sort((a, b) => {
     const itemA = Number(a._id);
@@ -22,6 +24,7 @@ const useLikeContext = (initialLikeState: ILikeState) => {
     dispatch,
     REDUCER_ACTIONS,
     like,
+    totalLikes,
   };
 };
 
