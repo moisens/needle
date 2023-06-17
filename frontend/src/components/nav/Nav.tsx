@@ -7,42 +7,58 @@ import { Outlet } from "react-router-dom";
 import NavCart from "./NavCart";
 import useCart from "../../hooks/useCart";
 import { MdOutlineShoppingBag } from "react-icons/md";
-import { useEffect, useRef, useState } from "react";
+import { useState } from "react";
 import useLike from "../../hooks/useLike";
 
 const Nav = () => {
   const { totalItems, cart } = useCart();
   const { like, totalLikes } = useLike();
-  const [toggleCart, setToggleCart] = useState(false);
+  //const [toggleCart, setToggleCart] = useState(false);
 
-  const containerRef = useRef<HTMLDivElement>(null);
+  const [isHovered, setIsHovered] = useState({
+    likeItem: false,
+    cartItem: false,
+  });
 
-
-  
-
-  const handleOnMouseOver = () => {
-    setToggleCart(true);
+  const handleOnHover = (itemToHover: string) => {
+    setIsHovered((prevState) => ({
+      ...prevState,
+      [itemToHover]: true,
+    }));
   };
 
-  const handleOnMouseOut = () => {
-    const timeout = setTimeout(() => {
-      setToggleCart(false);
-    }, 500);
-    return () => clearTimeout(timeout);
+  const handleOnMouseOut = (itemToHover: string) => {
+    setIsHovered((prevState) => ({
+      ...prevState,
+      [itemToHover]: false,
+    }));
   };
 
-  useEffect(() => {
-    const container = containerRef.current;
+  //const containerRef = useRef<HTMLDivElement>(null);
 
-    const handleMouseLeave = (e: MouseEvent) => {
-      if (container?.contains(e.relatedTarget as Node)) {
-        handleOnMouseOut();
-      }
-    };
+  // const handleOnMouseOver = () => {
+  //   setToggleCart(true);
+  // };
 
-    container?.addEventListener("mouseleave", handleMouseLeave);
-    return () => container?.removeEventListener("mouseleave", handleMouseLeave);
-  }, []);
+  // const handleOnMouseOut = () => {
+  //   const timeout = setTimeout(() => {
+  //     setToggleCart(false);
+  //   }, 500);
+  //   return () => clearTimeout(timeout);
+  // };
+
+  // useEffect(() => {
+  //   const container = containerRef.current;
+
+  //   const handleMouseLeave = (e: MouseEvent) => {
+  //     if (container?.contains(e.relatedTarget as Node)) {
+  //       handleOnMouseOut();
+  //     }
+  //   };
+
+  //   container?.addEventListener("mouseleave", handleMouseLeave);
+  //   return () => container?.removeEventListener("mouseleave", handleMouseLeave);
+  // }, []);
 
   return (
     <>
@@ -52,27 +68,38 @@ const Nav = () => {
           <Listcategories />
           <Navlist />
           <section className="fav-cart-user">
-            <section className="carts-favorites-container"
-             onMouseOver={handleOnMouseOver}
-             onMouseLeave={handleOnMouseOut}
-             ref={containerRef}
+            <section
+              className="carts-favorites-container"
+              onMouseOver={() => handleOnHover("likeItem")}
+              onMouseOut={() => handleOnMouseOut("likeItem")}
             >
               <AiOutlineHeart size="1.875rem" />
               <section className="cart-count">{totalLikes}</section>
-              <NavCart prods={like} toggleCart={toggleCart} />
+              <div
+                className={
+                  isHovered.likeItem ? "cart-content isVisible" : "cart-content"
+                }
+              >
+                <NavCart prods={like} />
+              </div>
             </section>
             <section
               className="carts-favorites-container"
-              onMouseOver={handleOnMouseOver}
-              onMouseLeave={handleOnMouseOut}
-              ref={containerRef}
+              onMouseOver={() => handleOnHover("cartItem")}
+              onMouseOut={() => handleOnMouseOut("cartItem")}
             >
               <MdOutlineShoppingBag
                 size="1.8rem"
                 className="cart-cart-shopping-icon"
               />
               <div className="cart-count">{totalItems}</div>
-              <NavCart prods={cart} toggleCart={toggleCart} />
+              <div
+                className={
+                  isHovered.cartItem ? "cart-content isVisible" : "cart-content"
+                }
+              >
+                <NavCart prods={cart} />
+              </div>
             </section>
 
             <section className="user-container">

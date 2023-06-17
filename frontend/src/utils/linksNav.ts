@@ -51,31 +51,36 @@ export const navWomenClothes: SubLinksWithImage[] = [
     image: "https://img.freepik.com/photos-gratuite/sexy-jeune-femme-brune-qui-pose-dans-robe-bleue-studio-fond-marron_155003-45236.jpg?w=1800&t=st=1671206865~exp=1671207465~hmac=4944bc1d779363b69a8132cb502eec222f969f75a008367613426407427df726"
   },
 ];
-export const navWomenShoes: Navlinks[] = [
+export const navWomenShoes: SubLinksWithImage[] = [
   {
     id: "7c045a66-7113",
     url: "/women",
     text: "Women",
+    image: "https://img.freepik.com/photos-gratuite/sexy-jeune-femme-brune-qui-pose-dans-robe-bleue-studio-fond-marron_155003-45236.jpg?w=1800&t=st=1671206865~exp=1671207465~hmac=4944bc1d779363b69a8132cb502eec222f969f75a008367613426407427df726"
   },
   {
     id: "7c045ebc-7113",
     url: "/women-shoes",
     text: "Shoes",
+    image: "https://img.freepik.com/photos-gratuite/sexy-jeune-femme-brune-qui-pose-dans-robe-bleue-studio-fond-marron_155003-45236.jpg?w=1800&t=st=1671206865~exp=1671207465~hmac=4944bc1d779363b69a8132cb502eec222f969f75a008367613426407427df726"
   },
   {
     id: "7c04607e-7113",
     url: "/women-stilettos",
     text: "Stilettos",
+    image: "https://img.freepik.com/photos-gratuite/sexy-jeune-femme-brune-qui-pose-dans-robe-bleue-studio-fond-marron_155003-45236.jpg?w=1800&t=st=1671206865~exp=1671207465~hmac=4944bc1d779363b69a8132cb502eec222f969f75a008367613426407427df726"
   },
   {
     id: "7c0461c8-7113",
     url: "/women-ankle-boots",
     text: "Ankle boots",
+    image: "https://img.freepik.com/photos-gratuite/sexy-jeune-femme-brune-qui-pose-dans-robe-bleue-studio-fond-marron_155003-45236.jpg?w=1800&t=st=1671206865~exp=1671207465~hmac=4944bc1d779363b69a8132cb502eec222f969f75a008367613426407427df726"
   },
   {
     id: "7c0462ea-7113",
     url: "/women-sandals",
     text: "Sandals",
+    image: "https://img.freepik.com/photos-gratuite/sexy-jeune-femme-brune-qui-pose-dans-robe-bleue-studio-fond-marron_155003-45236.jpg?w=1800&t=st=1671206865~exp=1671207465~hmac=4944bc1d779363b69a8132cb502eec222f969f75a008367613426407427df726"
   },
 ];
 
