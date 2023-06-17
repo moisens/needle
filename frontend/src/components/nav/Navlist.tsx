@@ -1,6 +1,6 @@
 import { NavLink, useLocation } from "react-router-dom";
 import DropdownList from "./DropdownList";
-import { navWomenClothes } from "../../utils/linksNav";
+import { navWomenClothes, navWomenShoes } from "../../utils/linksNav";
 import { useState } from "react";
 
 const Navlist = () => {
@@ -77,7 +77,7 @@ const Navlist = () => {
             }
           >
             <ul className="dropdown-ul-content">
-              <DropdownList links={navWomenClothes} setImageUrl={setImageUrl} />
+              <DropdownList links={navWomenShoes} setImageUrl={setImageUrl} />
             </ul>
             <section className="link-image-content">
               <img src={imageUrl} alt="image-link" />
