@@ -1,6 +1,7 @@
 import Images from "../imageComponent/Images";
 import { IProducts } from "../../context/CartContext";
 import useCart from "../../hooks/useCart";
+import useLike from "../../hooks/useLike";
 import SelectCartQuantity from "./SelectCartQuantity";
 import useSingleProduct from "../../hooks/useSingleProduct";
 
@@ -11,10 +12,16 @@ export type ItemsProps = {
 const CartArticleComponent = ({ item }: ItemsProps) => {
   const { tailorname, color, image, price } = item;
   const { REDUCER_ACTIONS, dispatch } = useCart();
+  const { REDUCER_ACTIONS: LIKE_REDUCERS, dispatch: likedispatch } = useLike();
   const { chosenSize } = useSingleProduct();
 
   const onRemoveItem = () =>
     dispatch({ type: REDUCER_ACTIONS.REMOVE, payload: item });
+
+  const onAddToFavorites = () => {
+    likedispatch({ type: LIKE_REDUCERS.ADD, payload: item });
+    onRemoveItem()
+  };
 
   return (
     <article className="articles-content">
@@ -33,7 +40,7 @@ const CartArticleComponent = ({ item }: ItemsProps) => {
         <div className="article-infos-price">
           <div className="article-delete-moveto">
             <p onClick={onRemoveItem}>delete</p>
-            <p>Move to Like</p>
+            <p onClick={onAddToFavorites}>Move to Like</p>
           </div>
           <p className="article-total-price">{price * item.qty} €</p>
         </div>

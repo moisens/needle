@@ -348,7 +348,7 @@
             &.is-cart-visible {
               display: flex;
 
-              .favorites-not-visible {
+              &.favorites-not-visible {
                 display: none;
               }
             }
