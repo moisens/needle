@@ -80,7 +80,7 @@ const Nav = () => {
                   isHovered.likeItem ? "cart-content isVisible" : "cart-content"
                 }
               >
-                <NavCart prods={like} />
+                <NavCart prods={like} isHovered={isHovered} />
               </div>
             </section>
             <section
@@ -98,7 +98,7 @@ const Nav = () => {
                   isHovered.cartItem ? "cart-content isVisible" : "cart-content"
                 }
               >
-                <NavCart prods={cart} />
+                <NavCart prods={cart} isHovered={isHovered} />
               </div>
             </section>
 

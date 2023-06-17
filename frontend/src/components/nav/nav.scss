@@ -209,7 +209,7 @@
 
     .carts-favorites-container {
       @include mixins.displayFlex;
-        position: relative;
+      position: relative;
 
       .cart-count {
         @include mixins.countProduct(
@@ -256,8 +256,6 @@
         &.isVisible {
           display: block;
         }
-
-        
       }
 
       .cart-like-content {
@@ -349,6 +347,10 @@
 
             &.is-cart-visible {
               display: flex;
+
+              .favorites-not-visible {
+                display: none;
+              }
             }
           }
 
