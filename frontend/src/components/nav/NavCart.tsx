@@ -6,14 +6,20 @@ import { Link } from "react-router-dom";
 
 export type CartLikeNavType = {
   prods: IProducts[];
+  isHovered: {
+    likeItem: boolean;
+    cartItem: boolean;
+  };
 };
 
-const NavCart = ({ prods }: CartLikeNavType) => {
+const NavCart = ({ prods, isHovered }: CartLikeNavType) => {
   const { totalPrice } = useCart();
 
   return (
     <section className="cart-like-content">
-      <h4 className="cart-heading-4">My Shopping Cart</h4>
+      <h4 className="cart-heading-4">
+        {isHovered.likeItem ? "My wishlist " : "My shopping cart"}
+      </h4>
       <section className="cart-articles-container">
         <div className="cart-cart-articles">
           {prods.length > 0 ? (
@@ -22,21 +28,27 @@ const NavCart = ({ prods }: CartLikeNavType) => {
               return <ArticleNavCart key={_id} {...productCart} />;
             })
           ) : (
-            <div className="cart-cart-empty">Your cart is empty</div>
+            <div className="cart-cart-empty">
+              {isHovered.likeItem
+                ? "Your wishlist is empty"
+                : "Your cart is empty"}
+            </div>
           )}
         </div>
         <div
           className={
             prods.length > 0
-              ? "cart-total-cart is-cart-visible"
+              ? "cart-total-cart is-cart-visible favorites-not-visible"
               : "cart-total-cart"
           }
         >
           <h3>Total: </h3>
           {totalPrice}
         </div>
-        <Button as="button" className="cart-btn-btn">
-          <Link to="/cart"> Go To Cart</Link>
+        <Button as="button" className="cart-btn-btn is visible">
+          <Link to={isHovered.likeItem ? "/wishlist" : "/cart"}>
+            {isHovered.likeItem ? "Go To Wishlist" : "Go To Cart"}
+          </Link>
         </Button>
       </section>
     </section>
