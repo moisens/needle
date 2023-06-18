@@ -15,6 +15,12 @@ export type CartLikeNavType = {
 const NavCart = ({ prods, isHovered }: CartLikeNavType) => {
   const { totalPrice } = useCart();
 
+  const classHideAndShowPrice = (): string => {
+    return prods.length > 0
+      ? "cart-total-cart is-cart-visible "
+      : "cart-total-cart";
+  };
+
   return (
     <section className="cart-like-content">
       <h4 className="cart-heading-4">
@@ -37,9 +43,9 @@ const NavCart = ({ prods, isHovered }: CartLikeNavType) => {
         </div>
         <div
           className={
-            prods.length > 0
-              ? "cart-total-cart is-cart-visible favorites-not-visible"
-              : "cart-total-cart"
+            isHovered.likeItem
+              ? "cart-total-in-favorite"
+              : classHideAndShowPrice()
           }
         >
           <h3>Total: </h3>
