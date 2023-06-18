@@ -345,13 +345,17 @@
             font-size: 1rem;
             display: none;
 
+            .favorites-not-visible {
+              display: none;
+            }
+
             &.is-cart-visible {
               display: flex;
-
-              &.favorites-not-visible {
-                display: none;
-              }
             }
+          }
+
+          .cart-total-in-favorite {
+            display: none;
           }
 
           .cart-btn-btn {
