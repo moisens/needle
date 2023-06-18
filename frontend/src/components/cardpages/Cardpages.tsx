@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 
 const Cardpages = ({ product }: ICardproducts) => {
   const { dispatch, REDUCER_ACTIONS } = useCart();
+  //TODO: later, need to use `onAddToCart` from useSingleProduct!
   const onAddToCart = () =>
     dispatch({ type: REDUCER_ACTIONS.ADD, payload: { ...product, qty: 1 } });
 
