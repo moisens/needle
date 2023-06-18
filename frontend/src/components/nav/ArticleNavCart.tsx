@@ -4,19 +4,25 @@ import useLike from "../../hooks/useLike";
 import useSingleProduct from "../../hooks/useSingleProduct";
 import Images from "../imageComponent/Images";
 
-const ArticleNavCart = (item: IProducts) => {
+const ArticleNavCart = ({
+  item,
+  isHovered,
+}: {
+  item: IProducts;
+  isHovered: boolean;
+}) => {
   const { tailorname, qty, image, price } = item;
   const { chosenSize } = useSingleProduct();
   const { REDUCER_ACTIONS, dispatch } = useCart();
-  const { REDUCER_ACTIONS: LIKE_REDUCERS, dispatch: likedispatch } = useLike()
+  const { REDUCER_ACTIONS: LIKE_REDUCERS, dispatch: likedispatch } = useLike();
 
   const onRemoveItem = () =>
     dispatch({ type: REDUCER_ACTIONS.REMOVE, payload: item });
 
-    const onAddToFavorites = () => {
-      likedispatch({ type: LIKE_REDUCERS.ADD, payload: item });
-      onRemoveItem()
-    };
+  const onAddToFavorites = () => {
+    likedispatch({ type: LIKE_REDUCERS.ADD, payload: item });
+    onRemoveItem();
+  };
 
   return (
     <article className="cart-article-content">
@@ -27,14 +33,18 @@ const ArticleNavCart = (item: IProducts) => {
         <div>
           <p className="cart-p">{tailorname}</p>
           <p className="cart-p">Size: {chosenSize}</p>
-          <p className="cart-p">Quantity: {qty}</p>
+          <p className={!isHovered ? "cart-p" : "cart-p quantity"}>
+            Quantity: {qty}
+          </p>
         </div>
         <div className="cart-price">
           <p className="cart-p">{`${price * qty}`} €</p>
         </div>
         <div className="cart-functionality">
           <div>
-            <p className="cart-p moveto" onClick={onAddToFavorites}>Move to Favorite</p>
+            <p className="cart-p moveto" onClick={onAddToFavorites}>
+              Move to Favorite
+            </p>
           </div>
           <div>
             <p className="cart-p delete" onClick={onRemoveItem}>

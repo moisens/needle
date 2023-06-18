@@ -73,7 +73,7 @@ const Nav = () => {
               onMouseOver={() => handleOnHover("likeItem")}
               onMouseOut={() => handleOnMouseOut("likeItem")}
             >
-              <AiOutlineHeart size="1.875rem" />
+              <AiOutlineHeart size="1.875rem" className="cart-cart-shopping-icon" />
               <section className="cart-count">{totalLikes}</section>
               <div
                 className={
