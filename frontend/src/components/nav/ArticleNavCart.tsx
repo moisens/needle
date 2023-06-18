@@ -24,10 +24,13 @@ const ArticleNavCart = ({
     onRemoveItem();
   };
 
-  const onAddToCartAndRmoveFromLike = () => {
-    dispatch({ type: REDUCER_ACTIONS.ADD, payload: item });
+  const onRemoveFromFavorites = () =>
     likedispatch({ type: LIKE_REDUCERS.REMOVE, payload: item });
-  }
+
+  const onAddToCartAndRmoveFromFavorites = () => {
+    dispatch({ type: REDUCER_ACTIONS.ADD, payload: item });
+    onRemoveFromFavorites();
+  };
 
   return (
     <article className="cart-article-content">
@@ -47,12 +50,20 @@ const ArticleNavCart = ({
         </div>
         <div className="cart-functionality">
           <div>
-            <p className="cart-p moveto" onClick={isHovered ? onAddToCartAndRmoveFromLike : onAddToFavorites}>
+            <p
+              className="cart-p moveto"
+              onClick={
+                isHovered ? onAddToCartAndRmoveFromFavorites : onAddToFavorites
+              }
+            >
               {isHovered ? "Move to Cart" : "Move to Favorite"}
             </p>
           </div>
           <div>
-            <p className="cart-p delete" onClick={onRemoveItem}>
+            <p
+              className="cart-p delete"
+              onClick={isHovered ? onRemoveFromFavorites : onRemoveItem}
+            >
               Delete
             </p>
           </div>
