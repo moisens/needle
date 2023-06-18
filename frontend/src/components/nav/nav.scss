@@ -318,6 +318,10 @@
               div {
                 .cart-p {
                   font-size: 0.9375rem;
+
+                  &.delete, &.moveto {
+                    cursor: pointer;
+                  }
                 }
               }
               .cart-price {

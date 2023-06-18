@@ -29,9 +29,9 @@ const NavCart = ({ prods, isHovered }: CartLikeNavType) => {
       <section className="cart-articles-container">
         <div className="cart-cart-articles">
           {prods.length > 0 ? (
-            prods.map((productCart) => {
-              const { _id } = productCart;
-              return <ArticleNavCart key={_id} {...productCart} />;
+            prods.map((item) => {
+              const { _id } = item;
+              return <ArticleNavCart key={_id} {...item} />;
             })
           ) : (
             <div className="cart-cart-empty">
