@@ -224,6 +224,11 @@
           11px
         );
         @include mixins.displayCenter-center;
+        display: none;
+
+        &.isVisible {
+          display: flex;
+        }
       }
 
       .cart-cart-shopping-icon {
