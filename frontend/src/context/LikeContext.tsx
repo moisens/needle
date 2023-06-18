@@ -82,7 +82,7 @@ export const reducer = (
     const itemsExist: IProducts | undefined = state.like.find(
       (item) => item._id === _id
     );
-    const qty = itemsExist ? itemsExist.qty + 1 : 1;
+    const qty = itemsExist ? 1 : 1; //Here I don't want to increase the like's number. A product can be liked only 1 time!
 
     return {
       ...state,
