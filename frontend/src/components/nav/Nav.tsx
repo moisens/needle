@@ -74,7 +74,7 @@ const Nav = () => {
               onMouseOut={() => handleOnMouseOut("likeItem")}
             >
               <AiOutlineHeart size="1.875rem" className="cart-cart-shopping-icon" />
-              <section className="cart-count">{totalLikes}</section>
+              <section className={totalLikes > 0 ? "cart-count isVisible" : "cart-count"}>{totalLikes}</section>
               <div
                 className={
                   isHovered.likeItem ? "cart-content isVisible" : "cart-content"
@@ -92,7 +92,7 @@ const Nav = () => {
                 size="1.8rem"
                 className="cart-cart-shopping-icon"
               />
-              <div className="cart-count">{totalItems}</div>
+              <div className={totalItems > 0 ? "cart-count isVisible" : "cart-count"}>{totalItems}</div>
               <div
                 className={
                   isHovered.cartItem ? "cart-content isVisible" : "cart-content"
