@@ -1,4 +1,5 @@
 import useCart from "../../hooks/useCart";
+import useLike from "../../hooks/useLike";
 import { ICardproducts } from "../../types/typeDatas";
 import Button from "../button/Button";
 import Images from "../imageComponent/Images";
@@ -8,14 +9,22 @@ import { Link } from "react-router-dom";
 
 const Cardpages = ({ product }: ICardproducts) => {
   const { dispatch, REDUCER_ACTIONS } = useCart();
-  //TODO: later, need to use `onAddToCart` from useSingleProduct!
+  const { REDUCER_ACTIONS: LIKES_REDUCERS, dispatch: dispatchlike } = useLike();
+  //TODO: later, need to use `onAddToCart` from useSingleProduct - Only add tocart if there is a size!!!
   const onAddToCart = () =>
     dispatch({ type: REDUCER_ACTIONS.ADD, payload: { ...product, qty: 1 } });
+
+  const onAddToFavorites = () =>
+    dispatchlike({ type: LIKES_REDUCERS.ADD, payload: { ...product, qty: 1 } });
 
   return (
     <section className="page-pagination-product">
       <section className="page-like">
-        <CiHeart size="2.2rem" className="page-like-icon" />
+        <CiHeart
+          size="2.2rem"
+          className="page-like-icon"
+          onClick={onAddToFavorites}
+        />
       </section>
       <Link to={`/single-product/${product?._id}`}>
         <section className="page-pagination-image">
