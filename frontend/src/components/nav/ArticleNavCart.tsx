@@ -4,12 +4,17 @@ import useLike from "../../hooks/useLike";
 import useSingleProduct from "../../hooks/useSingleProduct";
 import Images from "../imageComponent/Images";
 
+export type IsHoveredType = {
+  likeItem: boolean;
+  cartItem: boolean;
+};
+
 const ArticleNavCart = ({
   item,
   isHovered,
 }: {
   item: IProducts;
-  isHovered: boolean;
+  isHovered: IsHoveredType;
 }) => {
   const { tailorname, qty, image, price } = item;
   const { chosenSize } = useSingleProduct();
@@ -41,7 +46,7 @@ const ArticleNavCart = ({
         <div>
           <p className="cart-p">{tailorname}</p>
           <p className="cart-p">Size: {chosenSize}</p>
-          <p className={!isHovered ? "cart-p" : "cart-p quantity"}>
+          <p className={!isHovered.likeItem ? "cart-p" : "cart-p quantity"}>
             Quantity: {qty}
           </p>
         </div>
@@ -53,16 +58,20 @@ const ArticleNavCart = ({
             <p
               className="cart-p moveto"
               onClick={
-                isHovered ? onAddToCartAndRmoveFromFavorites : onAddToFavorites
+                isHovered.likeItem
+                  ? onAddToCartAndRmoveFromFavorites
+                  : onAddToFavorites
               }
             >
-              {isHovered ? "Move to Cart" : "Move to Favorite"}
+              {isHovered.likeItem ? "Move to Cart" : "Move to Favorite"}
             </p>
           </div>
           <div>
             <p
               className="cart-p delete"
-              onClick={isHovered ? onRemoveFromFavorites : onRemoveItem}
+              onClick={
+                isHovered.likeItem ? onRemoveFromFavorites : onRemoveItem
+              }
             >
               Delete
             </p>
