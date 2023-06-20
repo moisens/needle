@@ -16,7 +16,7 @@ const Wishlist = () => {
           <section className="wishlist-whish-container">
             {like.map((wish) => {
               const { _id } = wish;
-              return <WishList key={_id} {...wish} />;
+              return <WishList key={_id} wish={wish} />;
             })}
           </section>
         </section>
