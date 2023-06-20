@@ -3,6 +3,8 @@ import { FiTrash2 } from "react-icons/fi";
 import { MdOutlineShoppingBag } from "react-icons/md";
 import { IProducts } from "../../types/typeDatas";
 import { Link } from "react-router-dom";
+import useLike from "../../hooks/useLike";
+import useCart from "../../hooks/useCart";
 
 export type WishSingleProdType = {
   wish: IProducts;
@@ -10,6 +12,19 @@ export type WishSingleProdType = {
 
 const WishList = ({ wish }: WishSingleProdType) => {
   const { _id, image, tailorname, color, price, size } = wish;
+  const { REDUCER_ACTIONS: LIKE_REDUCERS, dispatch: likedispatch } = useLike();
+  const { REDUCER_ACTIONS, dispatch } = useCart();
+
+
+  const onAddToCart = () => dispatch({ type: REDUCER_ACTIONS.ADD, payload: { ...wish, qty: 1 } });
+  const onRemoveFromWishList = () => likedispatch({ type: LIKE_REDUCERS.REMOVE, payload: wish })
+
+  const handleAddCartAndRemoveWishlist = () => {
+    onAddToCart();
+    onRemoveFromWishList()
+  }
+
+
 
   return (
     <>
@@ -19,10 +34,10 @@ const WishList = ({ wish }: WishSingleProdType) => {
             <Images src={image[0]} alt={tailorname} title={tailorname} />
           </Link>
           <div className="wishlist-icons">
-            <div>
+            <div onClick={handleAddCartAndRemoveWishlist}>
               <MdOutlineShoppingBag size="1.6rem" />
             </div>
-            <div>
+            <div onClick={onRemoveFromWishList}>
               <FiTrash2 size="1.6rem" />
             </div>
           </div>
@@ -35,7 +50,7 @@ const WishList = ({ wish }: WishSingleProdType) => {
             <p>{price} €</p>
             <p>
               available size:{" "}
-              {/*//TODO: on the back add an id, the use it here! */}
+              {/*//TODO: on the back-end add an id, then use it here! */}
               {size.map((siz) => (
                 <span key={siz}>{siz}</span>
               ))}
