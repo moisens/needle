@@ -10,19 +10,19 @@ const Cartpage = () => {
 
   return (
     <main className="pages-container">
-      <section className="cartpage-container">
-        <section
-          className={`${
-            totalItems <= 0
-              ? "cart-items-numbers hidden-number"
-              : "cart-items-numbers"
-          }`}
-        >
-          <h3>{`My Cart (${totalItems} ${
-            totalItems > 1 ? "items" : "item"
-          })`}</h3>
-        </section>
-        {totalItems > 0 ? (
+      {totalItems > 0 ? (
+        <section className="cartpage-container">
+          <section
+            className={`${
+              totalItems <= 0
+                ? "cart-items-numbers hidden-number"
+                : "cart-items-numbers"
+            }`}
+          >
+            <h3>{`My Cart (${totalItems} ${
+              totalItems > 1 ? "items" : "item"
+            })`}</h3>
+          </section>
           <header className="cart-header">
             <section className="cartpage-articles-container">
               {cart.map((item) => (
@@ -56,11 +56,11 @@ const Cartpage = () => {
               </div>
             </section>
           </header>
-        ) : (
-          <EmptyCartWishlist />
-        )}
-        {/*Last viewed products section goes here!*/}
-      </section>
+        </section>
+      ) : (
+        <EmptyCartWishlist />
+      )}
+      {/*Last viewed products section goes here!*/}
     </main>
   );
 };
