@@ -1,8 +1,10 @@
 import Button from "../button/Button";
-
+import { useLocation } from "react-router-dom";
 
 const EmptyCartWishlist = () => {
+  const location = useLocation();
 
+  const newLoaction = location.pathname.split("/").join().slice(1, 9);
 
   return (
     <section className="cart-empty">
@@ -20,8 +22,16 @@ const EmptyCartWishlist = () => {
         </div>
       </div>
       <div className="cart-emty-infos">
-        <h4 className="cart-emty-h4">Your cart is empty!</h4>
-        <p>Would you like to add some products?</p>
+        <h4 className="cart-emty-h4">
+          {newLoaction === "wishlist"
+            ? "Your wishlist is empty!"
+            : "Your cart is empty!"}
+        </h4>
+        <p>
+          {newLoaction === "wishlist"
+            ? "Would you want to like  a product?"
+            : "Would you like to add some products?"}
+        </p>
         {/* //TODO: conditionally change the text: user ? 'something' : 'something else' */}
         <Button as="button" className="empty-btn-btn">
           Connect
