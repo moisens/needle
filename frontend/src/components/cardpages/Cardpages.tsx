@@ -11,9 +11,9 @@ import { Link } from "react-router-dom";
 const Cardpages = ({ product }: ICardproducts) => {
   const { dispatch, REDUCER_ACTIONS } = useCart();
   const { REDUCER_ACTIONS: LIKES_REDUCERS, dispatch: dispatchlike } = useLike();
-  const [isLiked, setIsLiked] = useState(false);
+  const [isLiked, setIsLiked] = useState(false); //TODO: add to local storage so that the state persist when it re-renders!!
 
-  //TODO: later, need to use `onAddToCart` from useSingleProduct - Only add tocart if there is a size!!!
+  //TODO: later, need to use `onAddToCart` from useSingleProduct - Only add to cart if there is a size!!!
   const onAddToCart = () =>
     dispatch({ type: REDUCER_ACTIONS.ADD, payload: { ...product, qty: 1 } });
 
