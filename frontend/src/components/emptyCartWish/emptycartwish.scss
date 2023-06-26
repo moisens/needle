@@ -1,0 +1,75 @@
+.cart-empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  padding: 160px 40px;
+
+  .cart-emty-template {
+    width: 415px;
+    border: solid 0.8px hsl(266, 82%, 15%);
+    border-radius: 22px;
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    background-color: hsl(0, 0%, 100%);
+
+    .fake-img-square {
+      min-width: 160px;
+      height: 160px;
+      background-color: hsl(0, 0%, 96%);
+      border-radius: 9px;
+    }
+    .fake-text-section {
+      .fake-text-line {
+        width: 170px;
+        height: 20px;
+        background-color: hsl(0, 0%, 96%);
+        border-radius: 9px;
+        margin-bottom: 12px;
+
+        &.short {
+          width: 120px;
+        }
+      }
+      .fake-img-container {
+        display: flex;
+        gap: 20px;
+        margin: 15px 0 20px;
+
+        & > * {
+          width: 30px;
+          height: 30px;
+          background-color: hsl(0, 0%, 96%);
+        }
+      }
+      .fake-btn {
+        background-color: hsl(0, 1%, 87%);
+        width: 170px;
+        height: 40px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: hsl(0, 0%, 32%);
+      }
+    }
+  }
+  .cart-emty-infos {
+    .cart-emty-h4 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      padding-bottom: 10px;
+    }
+    .empty-btn-btn {
+      background-color: hsl(266, 82%, 15%);
+      border: none;
+      border-radius: 9px;
+      width: 200px;
+      height: 60px;
+      margin-top: 20px;
+      color: hsl(0, 0%, 100%);
+      font-size: 1.2rem;
+      cursor: pointer;
+    }
+  }
+}
