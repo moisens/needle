@@ -2,32 +2,16 @@ import { NavLink, useLocation } from "react-router-dom";
 import DropdownList from "./DropdownList";
 import { navWomenClothes, navWomenShoes } from "../../utils/linksNav";
 import { useState } from "react";
+import useHover from "../../hooks/useHover";
 
 const Navlist = () => {
   //FIXME: The images will need to come from an array (json file)
   const [imageUrl, setImageUrl] = useState<string>(
     "https://img.freepik.com/photos-gratuite/boutique-vetements-boutique-vetements-cintre-boutique-moderne_1150-8886.jpg?w=1800&t=st=1671723298~exp=1671723898~hmac=d351c7a2a0482bb61ed88b35d33be2ad0346c71a6c6b39a45d2d1f04a85067d4"
   );
-  const [isHovered, setIsHovered] = useState({
-    clothes: false,
-    shoes: false,
-  });
+  const { isHovered, handleOnHover, handleOnMouseOut } = useHover();
   const location = useLocation();
   const currentLink = location.pathname.split("/")[2];
-
-  const handleOnHoverLink = (itemToHover: string) => {
-    setIsHovered((prevState) => ({
-      ...prevState,
-      [itemToHover]: true,
-    }));
-  };
-
-  const handleOnMouseOut = (itemToHover: string) => {
-    setIsHovered((prevState) => ({
-      ...prevState,
-      [itemToHover]: false,
-    }));
-  };
 
   return (
     <section className="linknav-container">
@@ -35,7 +19,7 @@ const Navlist = () => {
         {/*link clothes*/}
         <section
           className="uls-dropdown"
-          onMouseOver={() => handleOnHoverLink("clothes")}
+          onMouseOver={() => handleOnHover("clothes")}
           onMouseOut={() => handleOnMouseOut("clothes")}
         >
           <li className="list-li">
@@ -73,7 +57,7 @@ const Navlist = () => {
         {/*link shoes*/}
         <section
           className="uls-dropdown"
-          onMouseOver={() => handleOnHoverLink("shoes")}
+          onMouseOver={() => handleOnHover("shoes")}
           onMouseOut={() => handleOnMouseOut("shoes")}
         >
           <li className="list-li">
