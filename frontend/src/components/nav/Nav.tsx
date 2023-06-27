@@ -13,7 +13,6 @@ import useLike from "../../hooks/useLike";
 const Nav = () => {
   const { totalItems, cart } = useCart();
   const { like, totalLikes } = useLike();
-  //const [toggleCart, setToggleCart] = useState(false);
 
   const [isHovered, setIsHovered] = useState({
     likeItem: false,
@@ -34,32 +33,6 @@ const Nav = () => {
     }));
   };
 
-  //const containerRef = useRef<HTMLDivElement>(null);
-
-  // const handleOnMouseOver = () => {
-  //   setToggleCart(true);
-  // };
-
-  // const handleOnMouseOut = () => {
-  //   const timeout = setTimeout(() => {
-  //     setToggleCart(false);
-  //   }, 500);
-  //   return () => clearTimeout(timeout);
-  // };
-
-  // useEffect(() => {
-  //   const container = containerRef.current;
-
-  //   const handleMouseLeave = (e: MouseEvent) => {
-  //     if (container?.contains(e.relatedTarget as Node)) {
-  //       handleOnMouseOut();
-  //     }
-  //   };
-
-  //   container?.addEventListener("mouseleave", handleMouseLeave);
-  //   return () => container?.removeEventListener("mouseleave", handleMouseLeave);
-  // }, []);
-
   return (
     <>
       <nav className="navbar-container">
@@ -73,8 +46,17 @@ const Nav = () => {
               onMouseOver={() => handleOnHover("likeItem")}
               onMouseOut={() => handleOnMouseOut("likeItem")}
             >
-              <AiOutlineHeart size="1.875rem" className="cart-cart-shopping-icon" />
-              <section className={totalLikes > 0 ? "cart-count isVisible" : "cart-count"}>{totalLikes}</section>
+              <AiOutlineHeart
+                size="1.875rem"
+                className="cart-cart-shopping-icon"
+              />
+              <section
+                className={
+                  totalLikes > 0 ? "cart-count isVisible" : "cart-count"
+                }
+              >
+                {totalLikes}
+              </section>
               <div
                 className={
                   isHovered.likeItem ? "cart-content isVisible" : "cart-content"
@@ -92,7 +74,13 @@ const Nav = () => {
                 size="1.8rem"
                 className="cart-cart-shopping-icon"
               />
-              <div className={totalItems > 0 ? "cart-count isVisible" : "cart-count"}>{totalItems}</div>
+              <div
+                className={
+                  totalItems > 0 ? "cart-count isVisible" : "cart-count"
+                }
+              >
+                {totalItems}
+              </div>
               <div
                 className={
                   isHovered.cartItem ? "cart-content isVisible" : "cart-content"
