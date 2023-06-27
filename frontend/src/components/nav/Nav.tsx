@@ -7,31 +7,13 @@ import { Outlet } from "react-router-dom";
 import NavCart from "./NavCart";
 import useCart from "../../hooks/useCart";
 import { MdOutlineShoppingBag } from "react-icons/md";
-import { useState } from "react";
 import useLike from "../../hooks/useLike";
+import useHover from "../../hooks/useHover";
 
 const Nav = () => {
   const { totalItems, cart } = useCart();
   const { like, totalLikes } = useLike();
-
-  const [isHovered, setIsHovered] = useState({
-    likeItem: false,
-    cartItem: false,
-  });
-
-  const handleOnHover = (itemToHover: string) => {
-    setIsHovered((prevState) => ({
-      ...prevState,
-      [itemToHover]: true,
-    }));
-  };
-
-  const handleOnMouseOut = (itemToHover: string) => {
-    setIsHovered((prevState) => ({
-      ...prevState,
-      [itemToHover]: false,
-    }));
-  };
+  const { isHovered, handleOnHover, handleOnMouseOut } = useHover();
 
   return (
     <>
