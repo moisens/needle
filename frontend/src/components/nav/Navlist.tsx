@@ -4,21 +4,30 @@ import { navWomenClothes, navWomenShoes } from "../../utils/linksNav";
 import { useState } from "react";
 
 const Navlist = () => {
+  //FIXME: The images will need to come from an array (json file)
   const [imageUrl, setImageUrl] = useState<string>(
     "https://img.freepik.com/photos-gratuite/boutique-vetements-boutique-vetements-cintre-boutique-moderne_1150-8886.jpg?w=1800&t=st=1671723298~exp=1671723898~hmac=d351c7a2a0482bb61ed88b35d33be2ad0346c71a6c6b39a45d2d1f04a85067d4"
   );
-  const [isHovered, setIsHovered] = useState(false);
+  const [isHovered, setIsHovered] = useState({
+    clothes: false,
+    shoes: false,
+  });
   const location = useLocation();
   const currentLink = location.pathname.split("/")[2];
 
-  //useEffect(() => {
-  //  document.body.addEventListener('click', closeDropdown);
-  //  return () => document.body.removeEventListener('click', closeDropdown)
-  //}, []);
-  //const closeDropdown = () => setIsHovered(false)
+  const handleOnHoverLink = (itemToHover: string) => {
+    setIsHovered((prevState) => ({
+      ...prevState,
+      [itemToHover]: true,
+    }));
+  };
 
-  const handleOnHoverLink = () => setIsHovered(true);
-  const handleOnMouseOut = () => setIsHovered(false);
+  const handleOnMouseOut = (itemToHover: string) => {
+    setIsHovered((prevState) => ({
+      ...prevState,
+      [itemToHover]: false,
+    }));
+  };
 
   return (
     <section className="linknav-container">
@@ -26,14 +35,18 @@ const Navlist = () => {
         {/*link clothes*/}
         <section
           className="uls-dropdown"
-          onMouseOver={() => handleOnHoverLink()}
-          onMouseOut={() => handleOnMouseOut()}
+          onMouseOver={() => handleOnHoverLink("clothes")}
+          onMouseOut={() => handleOnMouseOut("clothes")}
         >
           <li className="list-li">
-            {/* //TODO: - Find a way to render `All clothes` when the user click on `Clothes` link  */} 
+            {/* //TODO: - Find a way to render `All clothes` when the user click on `Clothes` link  */}
             <NavLink
-            //TODO: the link must be dynamic, use categorie from context
-              to={currentLink ? `women-clothes/${currentLink}`: "women-clothes/clothes"}
+              //TODO: the link must be dynamic, use categorie from context
+              to={
+                currentLink
+                  ? `women-clothes/${currentLink}`
+                  : "women-clothes/clothes"
+              }
               className={({ isActive }) =>
                 isActive ? "list-a activeLink" : "list-a"
               }
@@ -43,7 +56,9 @@ const Navlist = () => {
           </li>
           <ul
             className={
-              isHovered ? "dropdown-container isHovered" : "dropdown-container"
+              isHovered.clothes
+                ? "dropdown-container isHovered"
+                : "dropdown-container"
             }
           >
             <ul className="dropdown-ul-content">
@@ -58,8 +73,8 @@ const Navlist = () => {
         {/*link shoes*/}
         <section
           className="uls-dropdown"
-          onMouseOver={() => handleOnHoverLink()}
-          onMouseOut={() => handleOnMouseOut()}
+          onMouseOver={() => handleOnHoverLink("shoes")}
+          onMouseOut={() => handleOnMouseOut("shoes")}
         >
           <li className="list-li">
             <NavLink
@@ -73,7 +88,9 @@ const Navlist = () => {
           </li>
           <ul
             className={
-              isHovered ? "dropdown-container isHovered" : "dropdown-container"
+              isHovered.shoes
+                ? "dropdown-container isHovered"
+                : "dropdown-container"
             }
           >
             <ul className="dropdown-ul-content">
