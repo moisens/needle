@@ -35,6 +35,7 @@ export interface ReducerAction {
 export const REDUCERS_ACTIONS_TYPE = {
   ADD: "ADD",
   REMOVE: "REMOVE",
+  SET_LIKE: "SET_LIKE",
 };
 
 export const initialLikeState: ILikeState = {
@@ -121,6 +122,19 @@ export const reducer = (
     return {
       ...state,
       like: [...filtredItems],
+    };
+  }
+
+  if (action.type === REDUCERS_ACTIONS_TYPE.SET_LIKE) {
+    if (!action.payload)
+      throw new Error("action.payload is missing in SET_LIKE functionality");
+    const { _id } = action.payload;
+    const likeditems: IProducts[] = state.like.filter(
+      (item) => item._id !== _id
+    );
+    return {
+      ...state,
+      like: [...likeditems],
     };
   }
 
