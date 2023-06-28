@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 const Cardpages = ({ product }: ICardproducts) => {
   const { dispatch, REDUCER_ACTIONS } = useCart();
   const { REDUCER_ACTIONS: LIKES_REDUCERS, dispatch: dispatchlike } = useLike();
-  const [isLiked, setIsLiked] = useState(false); //TODO: add to local storage so that the state persist when it re-renders!!
+  const [isLiked, setIsLiked] = useState<boolean>(false);
 
   //TODO: later, need to use `onAddToCart` from useSingleProduct - Only add to cart if there is a size!!!
   const onAddToCart = () =>
@@ -25,6 +25,7 @@ const Cardpages = ({ product }: ICardproducts) => {
   const handleIsLiked = () => {
     setIsLiked(!isLiked);
   };
+
 
   return (
     <section className="page-pagination-product">
