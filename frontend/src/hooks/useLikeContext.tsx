@@ -1,13 +1,19 @@
-import { useReducer, useMemo } from "react";
+import { useReducer, useMemo, useEffect } from "react";
 import {
   ILikeState,
   REDUCERS_ACTIONS_TYPE,
   reducer,
 } from "../context/LikeContext";
 
-
 const useLikeContext = (initialLikeState: ILikeState) => {
-  const [state, dispatch] = useReducer(reducer, initialLikeState);
+  const [state, dispatch] = useReducer(
+    reducer,
+    initialLikeState,
+    (initialState) =>
+      JSON.parse(
+        localStorage.getItem("liked-products") || JSON.stringify(initialState)
+      )
+  );
 
   const REDUCER_ACTIONS = useMemo(() => REDUCERS_ACTIONS_TYPE, []);
 
@@ -21,7 +27,9 @@ const useLikeContext = (initialLikeState: ILikeState) => {
     return itemA - itemB;
   });
 
-
+  useEffect(() => {
+    localStorage.setItem("liked-products", JSON.stringify(state));
+  }, [state]);
 
   return {
     dispatch,
