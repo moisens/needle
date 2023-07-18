@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import useCart from "../../hooks/useCart";
 import useLike from "../../hooks/useLike";
@@ -6,12 +7,16 @@ import Button from "../button/Button";
 import Images from "../imageComponent/Images";
 import { BsHeartFill } from "react-icons/bs";
 import { BsHeart } from "react-icons/bs";
-import { Link } from "react-router-dom";
+import isLikedProduct from "../../utils/isLikedProduct";
+
+
 
 const Cardpages = ({ product }: ICardproducts) => {
   const { dispatch, REDUCER_ACTIONS } = useCart();
-  const { REDUCER_ACTIONS: LIKES_REDUCERS, dispatch: dispatchlike } = useLike();
+  const { REDUCER_ACTIONS: LIKES_REDUCERS, dispatch: dispatchlike, like } = useLike();
   const [isLiked, setIsLiked] = useState<boolean>(false);
+
+  
 
   //TODO: later, need to use `onAddToCart` from useSingleProduct - Only add to cart if there is a size!!!
   const onAddToCart = () =>
@@ -30,7 +35,7 @@ const Cardpages = ({ product }: ICardproducts) => {
   return (
     <section className="page-pagination-product">
       <section className="page-like">
-        {!isLiked ? (
+        {!isLiked && isLikedProduct(like, product) ? (
           <BsHeart
             size="1.8rem"
             className="page-like-icon"
