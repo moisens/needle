@@ -8,11 +8,15 @@ import {
 const useLikeContext = (initialLikeState: ILikeState) => {
   const [state, dispatch] = useReducer(
     reducer,
-    initialLikeState,
-    (initialState) =>
-      JSON.parse(
-        localStorage.getItem("liked-products") || JSON.stringify(initialState)
-      )
+    // initialLikeState,
+    // (initialState) =>
+    //   JSON.parse(
+    //     localStorage.getItem("liked-products") || JSON.stringify(initialState)
+    //   )
+    useMemo(() => {
+      const localStorageData = localStorage.getItem("liked-products")
+      return localStorageData ? JSON.parse(localStorageData) : initialLikeState
+    }, [initialLikeState])
   );
 
   const REDUCER_ACTIONS = useMemo(() => REDUCERS_ACTIONS_TYPE, []);
