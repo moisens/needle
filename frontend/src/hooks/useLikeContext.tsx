@@ -14,8 +14,8 @@ const useLikeContext = (initialLikeState: ILikeState) => {
     //     localStorage.getItem("liked-products") || JSON.stringify(initialState)
     //   )
     useMemo(() => {
-      const localStorageData = localStorage.getItem("liked-products")
-      return localStorageData ? JSON.parse(localStorageData) : initialLikeState
+      const localStorageData = localStorage.getItem("liked-products");
+      return localStorageData ? JSON.parse(localStorageData) : initialLikeState;
     }, [initialLikeState])
   );
 

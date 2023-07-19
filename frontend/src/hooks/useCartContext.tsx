@@ -1,4 +1,4 @@
-import { useReducer, useMemo } from "react";
+import { useReducer, useMemo, useEffect } from "react";
 import {
   ICartState,
   REDUCER_ACTION_TYPE,
@@ -6,7 +6,19 @@ import {
 } from "../context/CartContext";
 
 const useCartContext = (intialCartState: ICartState) => {
-  const [state, dispatch] = useReducer(reducer, intialCartState);
+  const [state, dispatch] = useReducer(
+    reducer,
+    useMemo(() => {
+      const localStorageCartData = localStorage.getItem("products-in-cart");
+      return localStorageCartData
+        ? JSON.parse(localStorageCartData)
+        : intialCartState;
+    }, [intialCartState])
+  );
+
+  useEffect(() => {
+    localStorage.setItem("products-in-cart", JSON.stringify(state));
+  }, [state]);
 
   const REDUCER_ACTIONS = useMemo(() => REDUCER_ACTION_TYPE, []);
 
