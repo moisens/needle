@@ -25,6 +25,8 @@ const SinglepageComponent = ({
   customClass,
 }: SinglePageproducts) => {
   const { chosenSize } = useSingleProduct();
+  console.log(chosenSize);
+  
   return (
     <section className={`${customClass}-container`}>
       <div className={`${customClass}-single-content`}>
@@ -46,7 +48,7 @@ const SinglepageComponent = ({
           </h3>
           <div className={`${customClass}-pricing`}>
             <h4 className={`${customClass}-heading-4`}>
-              {data?.data.product?.price}€
+              &euro; {data?.data.product?.price}
             </h4>
             <p>Includes VTA</p>
           </div>
