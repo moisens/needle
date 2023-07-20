@@ -2,26 +2,26 @@ import "./popup.scss";
 import { IoClose } from "react-icons/io5";
 import { useState } from "react";
 import useSingleProduct from "../../hooks/useSingleProduct";
-import SinglepageComponent from "../singleProduct/SinglepageComponent";
-import { ResponseIProducts } from "../../types/typeDatas";
+//import SinglepageComponent from "../singleProduct/SinglepageComponent";
+//import { ResponseIProducts } from "../../types/typeDatas";
 
 const PopupdetailComponent = () => {
   const [popup, setPopup] = useState(false);
   const {
-    isOn,
-    setIsOn,
-    data,
-    chosenSize,
-    setChoseSize,
+    //isOn,
+    //setIsOn,
+    //data,
+    //chosenSize,
+    //setChosenSize,
     status,
     isLoading,
     isError,
     error,
-    handleSelectVisibility,
-    handleAddToCart,
+    //handleSelectVisibility,
+    //handleAddToCart,
   } = useSingleProduct();
 
-  const defaulClassName = "details";
+  //const defaulClassName = "details";
 
   const handlePopup = () => {
     setPopup(!popup);
@@ -43,16 +43,7 @@ const PopupdetailComponent = () => {
           <IoClose size="1.8rem" onClick={handlePopup} />
         </div>
         {status === "success" ? (
-          <SinglepageComponent
-            data={data as ResponseIProducts}
-            handleSelectVisibility={handleSelectVisibility}
-            handleAddToCart={handleAddToCart}
-            isOn={isOn}
-            setIsOn={setIsOn}
-            chosenSize={chosenSize}
-            setChoseSize={setChoseSize}
-            customClass={defaulClassName}
-          />
+          <p>CREATE AN OTHER COMPONENT WITH THE _ID</p>
         ) : (
           <>Fallback component with a message!</>
         )}
