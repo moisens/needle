@@ -10,21 +10,23 @@ export type SizeProp = {
 
 const SelectSize = ({ onesize, setIsOn, customClass }: SizeProp) => {
   const { chosenSize, setChosenSize } = useSingleProduct();
+  console.log(chosenSize);
   
   const handleChosenSize = () => {
     setChosenSize(onesize);
     setIsOn(false)
   };
   return (
-    <div className={`${customClass}-size-size`} onClick={handleChosenSize}>
+    <div className={`${customClass}-size-size`} >
       <div className={`${customClass}-size`}>
-        {chosenSize !== onesize ? (
-          <CgRadioCheck size="1.8rem" />
-        ) : (
-          <MdRadioButtonChecked size="1.8rem" />
-        )}
-
-        <p>{onesize}</p>
+        <input
+          type="radio"
+          id={`input-${onesize}`}
+          value={onesize}
+          checked={chosenSize === onesize}
+          onChange={handleChosenSize}
+        />
+        <label htmlFor={`input-${onesize}`}>{onesize}</label>
       </div>
       <p>Available</p>
     </div>
