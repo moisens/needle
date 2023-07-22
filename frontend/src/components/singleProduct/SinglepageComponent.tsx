@@ -25,7 +25,7 @@ const SinglepageComponent = ({
   customClass,
 }: SinglePageproducts) => {
   const { chosenSize } = useSingleProduct();
-  console.log(chosenSize);
+  
   
   return (
     <section className={`${customClass}-container`}>
@@ -62,7 +62,7 @@ const SinglepageComponent = ({
             <div></div>
             <div></div>
           </div>
-          <div className={`${customClass}-size-container`}>
+          <form className={`${customClass}-size-container`}>
             <div
               className={`${customClass}-size-title`}
               onClick={handleSelectVisibility}
@@ -89,7 +89,7 @@ const SinglepageComponent = ({
                 ))}
               </div>
             </div>
-          </div>
+          </form>
           <div className={`${customClass}-add-like-btns`}>
             <Button
               as="button"
