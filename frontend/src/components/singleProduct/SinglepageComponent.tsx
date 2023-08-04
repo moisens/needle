@@ -2,10 +2,13 @@ import SingleSlideImages from "../../components/singleProduct/SingleSlideImages"
 import Images from "../../components/imageComponent/Images";
 import { RiArrowDownSFill } from "react-icons/ri";
 import SelectSize from "../../components/singleProduct/SelectSizeComponent";
+import { RadioGroup } from "@headlessui/react";
 import Button from "../../components/button/Button";
 import { CiHeart } from "react-icons/ci";
 import { ResponseIProducts } from "../../types/typeDatas";
 import useSingleProduct from "../../hooks/useSingleProduct";
+import { useState } from "react";
+import { IoIosRadioButtonOn, IoMdRadioButtonOff } from "react-icons/io";
 
 type SinglePageproducts = {
   data: ResponseIProducts;
@@ -24,9 +27,9 @@ const SinglepageComponent = ({
   handleAddToCart,
   customClass,
 }: SinglePageproducts) => {
-  const { chosenSize } = useSingleProduct();
-  
-  
+  //const { chosenSize } = useSingleProduct();
+  const [chosenSize, setChosenSize] = useState("");
+
   return (
     <section className={`${customClass}-container`}>
       <div className={`${customClass}-single-content`}>
@@ -56,7 +59,7 @@ const SinglepageComponent = ({
             <span className={`${customClass}-color`}>Color</span>:{" "}
             {data?.data.product?.color}
           </p>
-          {/*//TODO: create `UniqueColor` component*/}
+          {/*//TODO: create `UniqueColor` component later!!!*/}
           <div className={`${customClass}-slide-article`}>
             <div></div>
             <div></div>
@@ -79,14 +82,25 @@ const SinglepageComponent = ({
                 }
               >
                 {/*//TODO:after I modified the backend, make sure to use the _id for the key!!!*/}
-                {data?.data.product?.size?.map((onesize) => (
-                  <SelectSize
-                    onesize={onesize}
-                    setIsOn={setIsOn}
-                    customClass={customClass}
-                    key={onesize}
-                  />
-                ))}
+                <RadioGroup value={chosenSize} onChange={setChosenSize}>
+                  {data?.data.product?.size?.map((onseSize) => (
+                    <RadioGroup.Option value={onseSize} key={onseSize}>
+                      {({ checked }) => (
+                        <>
+                          <span className={checked ? "style-checked" : ""}>
+                            {/* //TODO: Change the style!!!!*/}
+                            {checked ? (
+                              <IoIosRadioButtonOn />
+                            ) : (
+                              <IoMdRadioButtonOff color="hsl(265, 69%, 59%)" />
+                            )}
+                          </span>
+                          <div>{onseSize}</div> <p>Available</p>
+                        </>
+                      )}
+                    </RadioGroup.Option>
+                  ))}
+                </RadioGroup>
               </div>
             </div>
           </form>
