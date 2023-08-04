@@ -1,13 +1,12 @@
 import SingleSlideImages from "../../components/singleProduct/SingleSlideImages";
 import Images from "../../components/imageComponent/Images";
 import { RiArrowDownSFill } from "react-icons/ri";
-import SelectSize from "../../components/singleProduct/SelectSizeComponent";
+//import SelectSize from "../../components/singleProduct/SelectSizeComponent";
 import { RadioGroup } from "@headlessui/react";
 import Button from "../../components/button/Button";
 import { CiHeart } from "react-icons/ci";
 import { ResponseIProducts } from "../../types/typeDatas";
 import useSingleProduct from "../../hooks/useSingleProduct";
-import { useState } from "react";
 import { IoIosRadioButtonOn, IoMdRadioButtonOff } from "react-icons/io";
 
 type SinglePageproducts = {
@@ -22,13 +21,11 @@ type SinglePageproducts = {
 const SinglepageComponent = ({
   data,
   isOn,
-  setIsOn,
+  //setIsOn,
   handleSelectVisibility,
-  handleAddToCart,
   customClass,
 }: SinglePageproducts) => {
-  //const { chosenSize } = useSingleProduct();
-  const [chosenSize, setChosenSize] = useState("");
+  const { chosenSize, setChosenSize, handleAddToCart } = useSingleProduct();
 
   return (
     <section className={`${customClass}-container`}>
