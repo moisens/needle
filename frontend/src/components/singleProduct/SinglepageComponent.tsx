@@ -1,13 +1,13 @@
 import SingleSlideImages from "../../components/singleProduct/SingleSlideImages";
 import Images from "../../components/imageComponent/Images";
 import { RiArrowDownSFill } from "react-icons/ri";
-//import SelectSize from "../../components/singleProduct/SelectSizeComponent";
-import { RadioGroup } from "@headlessui/react";
+import SelectSize from "../../components/singleProduct/SelectSizeComponent";
+//import { RadioGroup } from "@headlessui/react";
 import Button from "../../components/button/Button";
 import { CiHeart } from "react-icons/ci";
 import { ResponseIProducts } from "../../types/typeDatas";
 import useSingleProduct from "../../hooks/useSingleProduct";
-import { IoIosRadioButtonOn, IoMdRadioButtonOff } from "react-icons/io";
+//import { IoIosRadioButtonOn, IoMdRadioButtonOff } from "react-icons/io";
 
 type SinglePageproducts = {
   data: ResponseIProducts;
@@ -25,7 +25,9 @@ const SinglepageComponent = ({
   handleSelectVisibility,
   customClass,
 }: SinglePageproducts) => {
-  const { chosenSize, setChosenSize, handleAddToCart } = useSingleProduct();
+  const { chosenSize, handleAddToCart } = useSingleProduct();
+  console.log('From single page: ',chosenSize);
+  
 
   return (
     <section className={`${customClass}-container`}>
@@ -78,26 +80,7 @@ const SinglepageComponent = ({
                     : `${customClass}-content-content`
                 }
               >
-                {/*//TODO:after I modified the backend, make sure to use the _id for the key!!!*/}
-                <RadioGroup value={chosenSize} onChange={setChosenSize}>
-                  {data?.data.product?.size?.map((onseSize) => (
-                    <RadioGroup.Option value={onseSize} key={onseSize}>
-                      {({ checked }) => (
-                        <>
-                          <span className={checked ? "style-checked" : ""}>
-                            {/* //TODO: Change the style!!!!*/}
-                            {checked ? (
-                              <IoIosRadioButtonOn />
-                            ) : (
-                              <IoMdRadioButtonOff color="hsl(265, 69%, 59%)" />
-                            )}
-                          </span>
-                          <div>{onseSize}</div> <p>Available</p>
-                        </>
-                      )}
-                    </RadioGroup.Option>
-                  ))}
-                </RadioGroup>
+                <SelectSize data={data} />
               </div>
             </div>
           </form>
@@ -118,3 +101,29 @@ const SinglepageComponent = ({
 };
 
 export default SinglepageComponent;
+
+{
+  /*
+
+<RadioGroup value={chosenSize} onChange={setChosenSize}>
+                  {data?.data.product?.size?.map((onseSize) => (
+                    <RadioGroup.Option value={onseSize} key={onseSize}>
+                      {({ checked }) => (
+                        <>
+                          <span className={checked ? "style-checked" : ""}>
+                          
+                            {checked ? (
+                              <IoIosRadioButtonOn />
+                            ) : (
+                              <IoMdRadioButtonOff color="hsl(265, 69%, 59%)" />
+                            )}
+                          </span>
+                          <div>{onseSize}</div> <p>Available</p>
+                        </>
+                      )}
+                    </RadioGroup.Option>
+                  ))}
+                </RadioGroup>
+
+*/
+}
