@@ -1,14 +1,14 @@
 import { RadioGroup } from "@headlessui/react";
 import { IoIosRadioButtonOn, IoMdRadioButtonOff } from "react-icons/io";
-import useSingleProduct from "../../hooks/useSingleProduct";
 import { ResponseIProducts } from "../../types/typeDatas";
+import useSelectsize from "../../hooks/useSelectSizeContext";
 
 type SelectSize = {
   data: ResponseIProducts;
 };
 
 const SelectSize = ({ data }: SelectSize) => {
-  const { chosenSize, setChosenSize } = useSingleProduct();
+  const { chosenSize, setChosenSize } = useSelectsize();
 
   return (
     <RadioGroup value={chosenSize} onChange={setChosenSize}>

@@ -7,6 +7,7 @@ import Button from "../../components/button/Button";
 import { CiHeart } from "react-icons/ci";
 import { ResponseIProducts } from "../../types/typeDatas";
 import useSingleProduct from "../../hooks/useSingleProduct";
+import useSelectsize from "../../hooks/useSelectSizeContext";
 //import { IoIosRadioButtonOn, IoMdRadioButtonOff } from "react-icons/io";
 
 type SinglePageproducts = {
@@ -25,9 +26,8 @@ const SinglepageComponent = ({
   handleSelectVisibility,
   customClass,
 }: SinglePageproducts) => {
-  const { chosenSize, handleAddToCart } = useSingleProduct();
-  console.log('From single page: ',chosenSize);
-  
+  const { handleAddToCart } = useSingleProduct();
+  const { chosenSize } = useSelectsize();
 
   return (
     <section className={`${customClass}-container`}>

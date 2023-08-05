@@ -32,3 +32,5 @@ export const SelectSizeProvider = ({ children }: ChildrenProps) => {
     </SelectSizeContext.Provider>
   );
 };
+
+export default SelectSizeContext;
