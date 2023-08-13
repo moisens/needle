@@ -3,7 +3,7 @@ import { IProducts } from "../../context/CartContext";
 import useCart from "../../hooks/useCart";
 import useLike from "../../hooks/useLike";
 import SelectCartQuantity from "./SelectCartQuantity";
-import useSingleProduct from "../../hooks/useSingleProduct";
+import useSelectsize from "../../hooks/useSelectSizeContext";
 
 export type ItemsProps = {
   item: IProducts;
@@ -13,7 +13,7 @@ const CartArticleComponent = ({ item }: ItemsProps) => {
   const { tailorname, color, image, price } = item;
   const { REDUCER_ACTIONS, dispatch } = useCart();
   const { REDUCER_ACTIONS: LIKE_REDUCERS, dispatch: likedispatch } = useLike();
-  const { chosenSize } = useSingleProduct();
+  const { chosenSize } = useSelectsize();
 
   const onRemoveItem = () =>
     dispatch({ type: REDUCER_ACTIONS.REMOVE, payload: item });

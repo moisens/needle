@@ -20,7 +20,7 @@ const useSingleProduct = () => {
   };
 
   const handleAddToCart = () => {
-    if (chosenSize === "" || !product) return;
+    if (!chosenSize[0].size || !product) return;
     const onAddToCart = () =>
       dispatch({ type: REDUCER_ACTIONS.ADD, payload: { ...product, qty: 1 } });
     onAddToCart();
