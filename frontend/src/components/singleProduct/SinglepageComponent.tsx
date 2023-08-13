@@ -2,13 +2,11 @@ import SingleSlideImages from "../../components/singleProduct/SingleSlideImages"
 import Images from "../../components/imageComponent/Images";
 import { RiArrowDownSFill } from "react-icons/ri";
 import SelectSize from "../../components/singleProduct/SelectSizeComponent";
-//import { RadioGroup } from "@headlessui/react";
 import Button from "../../components/button/Button";
 import { CiHeart } from "react-icons/ci";
 import { ResponseIProducts } from "../../types/typeDatas";
 import useSingleProduct from "../../hooks/useSingleProduct";
 import useSelectsize from "../../hooks/useSelectSizeContext";
-//import { IoIosRadioButtonOn, IoMdRadioButtonOff } from "react-icons/io";
 
 type SinglePageproducts = {
   data: ResponseIProducts;
@@ -28,6 +26,8 @@ const SinglepageComponent = ({
 }: SinglePageproducts) => {
   const { handleAddToCart } = useSingleProduct();
   const { chosenSize } = useSelectsize();
+
+  
 
   return (
     <section className={`${customClass}-container`}>
@@ -69,7 +69,7 @@ const SinglepageComponent = ({
               className={`${customClass}-size-title`}
               onClick={handleSelectVisibility}
             >
-              <p>{chosenSize === "" ? "Select your size" : chosenSize}</p>
+              <p>{!chosenSize[0]?.size ? "Select your size" : chosenSize[0]?.size}</p>
               <RiArrowDownSFill />
             </div>
             <div className={`${customClass}-size-content`}>
@@ -102,28 +102,3 @@ const SinglepageComponent = ({
 
 export default SinglepageComponent;
 
-{
-  /*
-
-<RadioGroup value={chosenSize} onChange={setChosenSize}>
-                  {data?.data.product?.size?.map((onseSize) => (
-                    <RadioGroup.Option value={onseSize} key={onseSize}>
-                      {({ checked }) => (
-                        <>
-                          <span className={checked ? "style-checked" : ""}>
-                          
-                            {checked ? (
-                              <IoIosRadioButtonOn />
-                            ) : (
-                              <IoMdRadioButtonOff color="hsl(265, 69%, 59%)" />
-                            )}
-                          </span>
-                          <div>{onseSize}</div> <p>Available</p>
-                        </>
-                      )}
-                    </RadioGroup.Option>
-                  ))}
-                </RadioGroup>
-
-*/
-}

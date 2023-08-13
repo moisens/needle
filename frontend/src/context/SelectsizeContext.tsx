@@ -1,12 +1,16 @@
 import { createContext, useState } from "react";
 
+export type SizeAndIdType = {
+  _id: string;
+  size: string;
+};
 interface SelectSizeContextProp {
-  chosenSize: string;
-  setChosenSize: React.Dispatch<React.SetStateAction<string>>;
+  chosenSize: SizeAndIdType[];
+  setChosenSize: React.Dispatch<React.SetStateAction<SizeAndIdType[]>>;
 }
 
 const initialSizeStateContext: SelectSizeContextProp = {
-  chosenSize: "",
+  chosenSize: [],
   setChosenSize: () => {},
 };
 
@@ -19,7 +23,7 @@ const SelectSizeContext = createContext<SelectSizeContextProp>(
 );
 
 export const SelectSizeProvider = ({ children }: ChildrenProps) => {
-  const [chosenSize, setChosenSize] = useState<string>("");
+  const [chosenSize, setChosenSize] = useState<SizeAndIdType[]>([]);
 
   return (
     <SelectSizeContext.Provider
