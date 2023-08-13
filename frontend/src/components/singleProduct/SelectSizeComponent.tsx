@@ -9,6 +9,9 @@ type SelectSize = {
 
 const SelectSize = ({ data }: SelectSize) => {
   const { chosenSize, setChosenSize } = useSelectsize();
+  console.log(chosenSize);
+  
+
 
   const handleSizeChange = (productId: string) => (newSize: string) => {
     setChosenSize((prevSizes) => {

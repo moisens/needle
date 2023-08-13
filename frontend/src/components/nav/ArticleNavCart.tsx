@@ -45,7 +45,7 @@ const ArticleNavCart = ({
       <div className="cart-infos-container">
         <div>
           <p className="cart-p">{tailorname}</p>
-          <p className="cart-p">Size: {chosenSize[0]?.size}</p>
+           <p className="cart-p">Size: {chosenSize[chosenSize.length - 1]?.size}</p>{/*//TODO:check if equal _id  */}
           <p className={!isHovered.likeItem ? "cart-p" : "cart-p quantity"}>
             Quantity: {qty}
           </p>
