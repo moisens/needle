@@ -27,6 +27,14 @@ const SinglepageComponent = ({
   const { handleAddToCart } = useSingleProduct();
   const { chosenSize } = useSelectsize();
 
+
+  const handleSelectAndUpdateSize = () => {
+    const lastIndexSize = chosenSize.length - 1;
+    const selectedSize = chosenSize[lastIndexSize]?.size || "Select your size";
+    return selectedSize; 
+  }
+
+
   
 
   return (
@@ -69,7 +77,7 @@ const SinglepageComponent = ({
               className={`${customClass}-size-title`}
               onClick={handleSelectVisibility}
             >
-              <p>{!chosenSize[0]?.size ? "Select your size" : chosenSize[0]?.size}</p>
+              <p>{handleSelectAndUpdateSize()}</p>
               <RiArrowDownSFill />
             </div>
             <div className={`${customClass}-size-content`}>
