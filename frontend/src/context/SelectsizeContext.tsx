@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState, useEffect } from "react";
 
 export type SizeAndIdType = {
   _id: string;
@@ -23,7 +23,18 @@ const SelectSizeContext = createContext<SelectSizeContextProp>(
 );
 
 export const SelectSizeProvider = ({ children }: ChildrenProps) => {
-  const [chosenSize, setChosenSize] = useState<SizeAndIdType[]>([]);
+  const initialSelectedSizes: SizeAndIdType[] = [];
+  const [chosenSize, setChosenSize] = useState<SizeAndIdType[]>(
+    () => {
+      const storedSizes = localStorage.getItem("selected-size");
+      return storedSizes ? JSON.parse(storedSizes) : initialSelectedSizes;
+    }
+  );
+
+
+  useEffect(() => {
+    localStorage.setItem("selected-size", JSON.stringify(chosenSize))
+  }, [chosenSize])
 
   return (
     <SelectSizeContext.Provider
