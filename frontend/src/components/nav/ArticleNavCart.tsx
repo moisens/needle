@@ -1,7 +1,7 @@
 import { IProducts } from "../../context/CartContext";
 import useCart from "../../hooks/useCart";
 import useLike from "../../hooks/useLike";
-import useSingleProduct from "../../hooks/useSingleProduct";
+import useSelectsize from "../../hooks/useSelectSizeContext";
 import Images from "../imageComponent/Images";
 
 export type IsHoveredType = {
@@ -17,7 +17,7 @@ const ArticleNavCart = ({
   isHovered: IsHoveredType;
 }) => {
   const { tailorname, qty, image, price } = item;
-  const { chosenSize } = useSingleProduct();
+  const { chosenSize } = useSelectsize();
   const { REDUCER_ACTIONS, dispatch } = useCart();
   const { REDUCER_ACTIONS: LIKE_REDUCERS, dispatch: likedispatch } = useLike();
 
@@ -45,7 +45,7 @@ const ArticleNavCart = ({
       <div className="cart-infos-container">
         <div>
           <p className="cart-p">{tailorname}</p>
-          <p className="cart-p">Size: {chosenSize}</p>
+          <p className="cart-p">Size: {chosenSize[0]?.size}</p>
           <p className={!isHovered.likeItem ? "cart-p" : "cart-p quantity"}>
             Quantity: {qty}
           </p>

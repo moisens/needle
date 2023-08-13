@@ -33,7 +33,7 @@ const CartArticleComponent = ({ item }: ItemsProps) => {
           <div className="article-infos-content">
             <h3>{tailorname}</h3>
             <p>color: {color}</p>
-            <p>size: {chosenSize}</p>
+            <p>size: {chosenSize[0]?.size}</p>
           </div>
           <SelectCartQuantity item={item} />
         </div>
